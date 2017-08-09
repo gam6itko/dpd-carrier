@@ -1,0 +1,24 @@
+{
+    "name": "gam6itko/dpd-carrier",
+    "description": "DPD carrier api library",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gam6itko",
+            "email": "gam6itko@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gam6itko\\DpdCarrier\\": "src/Gam6itko/DpdCarrier"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+        "ext-soap": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
