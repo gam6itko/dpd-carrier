@@ -16,6 +16,9 @@ class DeliveryPoint
     protected $regionCode;
 
     /** @var string */
+    protected $countryName;
+
+    /** @var string */
     protected $countryCode;
 
     public function __construct($cityId = null)
@@ -33,7 +36,7 @@ class DeliveryPoint
 
     /**
      * @param int $cityId
-     * @return PickupOrDelivery
+     * @return DeliveryPoint
      */
     public function setCityId($cityId)
     {
@@ -51,7 +54,7 @@ class DeliveryPoint
 
     /**
      * @param string $index
-     * @return PickupOrDelivery
+     * @return DeliveryPoint
      */
     public function setIndex($index)
     {
@@ -69,7 +72,7 @@ class DeliveryPoint
 
     /**
      * @param string $cityName
-     * @return PickupOrDelivery
+     * @return DeliveryPoint
      */
     public function setCityName($cityName)
     {
@@ -87,13 +90,33 @@ class DeliveryPoint
 
     /**
      * @param string $regionCode
-     * @return PickupOrDelivery
+     * @return DeliveryPoint
      */
     public function setRegionCode($regionCode)
     {
         $this->regionCode = $regionCode;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getCountryName()
+    {
+        return $this->countryName;
+    }
+
+    /**
+     * @param string $countryName
+     * @return DeliveryPoint
+     */
+    public function setCountryName($countryName)
+    {
+        $this->countryName = $countryName;
+        return $this;
+    }
+
+
 
     /**
      * @return string
@@ -105,7 +128,7 @@ class DeliveryPoint
 
     /**
      * @param string $countryCode
-     * @return PickupOrDelivery
+     * @return DeliveryPoint
      */
     public function setCountryCode($countryCode)
     {

@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class DeliveryOptions
 {
+    use ToArrayTrait;
+
     /** @var bool */
     protected $selfPickup;
 
@@ -30,9 +34,10 @@ class DeliveryOptions
     /** @var float */
     protected $declaredValue;
 
-    public function toArray()
+    public function __construct($selfPickup = false, $selfDelivery = true)
     {
-        return get_object_vars($this);
+        $this->selfPickup = $selfPickup;
+        $this->selfDelivery = $selfDelivery;
     }
 
     /**

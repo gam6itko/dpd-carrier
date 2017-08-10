@@ -1,6 +1,14 @@
 <?php
 namespace Gam6itko\DpdCarrier;
 
+use Gam6itko\DpdCarrier\Type\Address;
+use Gam6itko\DpdCarrier\Type\City;
+use Gam6itko\DpdCarrier\Type\DataInternational;
+use Gam6itko\DpdCarrier\Type\Order;
+use Gam6itko\DpdCarrier\Type\Parameter;
+use Gam6itko\DpdCarrier\Type\Parcel;
+use Gam6itko\DpdCarrier\Type\ServiceCost;
+
 /**
  * Class DpdWebServiceConfig
  * @package Gam6itko\DpdCarrier
@@ -25,8 +33,9 @@ class DpdWebServiceConfig
     {
         return [
             'calculator2' => [
-                'getServiceCost2'          => [self::WRAPIN => 'request'],
-                'getServiceCostByParcels2' => [self::WRAPIN => 'request'],
+                'getServiceCost2'             => [self::WRAPIN => 'request'],
+                'getServiceCostByParcels2'    => [self::WRAPIN => 'request'],
+                'getServiceCostInternational' => [self::WRAPIN => 'request'],
             ],
             'geography2'  => [
                 'getCitiesCashPay'          => [self::WRAPIN => 'request'],

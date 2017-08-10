@@ -2,6 +2,7 @@
 namespace Gam6itko\DpdCarrier;
 
 use Gam6itko\DpdCarrier\Type\Address;
+use Gam6itko\DpdCarrier\Type\City;
 use Gam6itko\DpdCarrier\Type\DataInternational;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
@@ -9,6 +10,7 @@ use Gam6itko\DpdCarrier\Type\Header;
 use Gam6itko\DpdCarrier\Type\Order;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
+use Gam6itko\DpdCarrier\Type\ServiceCost;
 
 class DpdWebService
 {
@@ -34,7 +36,12 @@ class DpdWebService
         $this->config = new DpdWebServiceConfig(rtrim($wsdlHost, '/'));
     }
 
-
+    /**
+     * @param DeliveryPoint $pickup
+     * @param DeliveryPoint $delivery
+     * @param DeliveryOptions $options
+     * @return ServiceCost[]
+     */
     public function getServiceCost2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
     {
         return $this->doRequest(__FUNCTION__, array_merge([
@@ -43,12 +50,46 @@ class DpdWebService
         ], $options->toArray()));
     }
 
-    public function getServiceCostByParcels2()
+    /**
+     * @param DeliveryPoint $pickup
+     * @param DeliveryPoint $delivery
+     * @param DeliveryOptions $options
+     * @param Parcel $parcel
+     * @return Parcel[]
+     */
+    public function getServiceCostByParcels2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, Parcel $parcel)
     {
+        $options = array_merge($options->toArray(), ['parcel' => $parcel->toArray()]);
+        return $this->doRequest(__FUNCTION__, array_merge([
+            'pickup'   => $pickup,
+            'delivery' => $delivery
+        ], $options));
     }
 
-    public function getCitiesCashPay()
+    /**
+     * @param DeliveryPoint $pickup
+     * @param DeliveryPoint $delivery
+     * @param DeliveryOptions $options
+     * @param Parcel $parcel
+     * @param bool $insurance
+     * @return array
+     */
+    public function getServiceCostInternational(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, Parcel $parcel, $insurance = false)
     {
+        $optionsArr = array_merge($options->toArray(), $parcel->toArray());
+        return $this->doRequest(__FUNCTION__, array_merge([
+            'pickup'   => $pickup,
+            'delivery' => $delivery
+        ], $optionsArr));
+    }
+
+    /**
+     * @param string $countryCode
+     * @return City[]
+     */
+    public function getCitiesCashPay($countryCode = 'RU')
+    {
+        return $this->doRequest(__FUNCTION__, ['countryCode' => $countryCode]);
     }
 
     public function getTerminalsSelfDelivery2()
@@ -151,13 +192,18 @@ class DpdWebService
      */
     private function getSoapClient($methodName)
     {
+        //todo stash clients for different WSDL
         return new \SoapClient($this->config->getWsdl($methodName), [
+            'trace'    => true,
+            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
             'classmap' => [
                 'address'           => Address::class,
+                'city'              => City::class,
                 'dataInternational' => DataInternational::class,
                 'order'             => Order::class,
                 'parcel'            => Parcel::class,
                 'parameter'         => Parameter::class,
+                'serviceCost'       => ServiceCost::class,
             ]]);
     }
 

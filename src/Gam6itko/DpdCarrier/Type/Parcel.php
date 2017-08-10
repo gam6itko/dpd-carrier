@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class Parcel
 {
+    use ToArrayTrait;
+
     /** @var string */
     protected $number;
 
@@ -32,6 +36,25 @@ class Parcel
 
     /** @var float */
     protected $codAmount;
+
+    /** @var float */
+    protected $quantity;
+
+    /**
+     * Parcel constructor.
+     * @param float|int $weight
+     * @param float|int $length
+     * @param float|int $height
+     * @param float|int $width
+     */
+    public function __construct($weight = 0, $length = 0, $height = 0, $width = 0)
+    {
+        $this->weight = $weight;
+        $this->length = $length;
+        $this->height = $height;
+        $this->width = $width;
+    }
+
 
     /**
      * @return string
@@ -210,6 +233,24 @@ class Parcel
     public function setCodAmount($codAmount)
     {
         $this->codAmount = $codAmount;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param float $quantity
+     * @return Parcel
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
         return $this;
     }
 }
