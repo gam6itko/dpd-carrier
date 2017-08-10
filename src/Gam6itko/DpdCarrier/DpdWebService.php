@@ -331,7 +331,7 @@ class DpdWebService
     {
         //todo stash clients for different WSDL
         return new \SoapClient($this->config->getWsdl($methodName), [
-            'trace'    => true,
+//            'trace'    => true,
             'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
             'classmap' => [
                 'address'                => Address::class,
