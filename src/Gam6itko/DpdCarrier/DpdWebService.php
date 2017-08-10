@@ -123,9 +123,9 @@ class DpdWebService
      * @param DeliveryPoint $point
      * @return ParcelShop[]
      */
-    public function getParcelShops(DeliveryPoint $point)
+    public function getParcelShops(DeliveryPoint $point = null)
     {
-        $result = $this->doRequest(__FUNCTION__, $point->toArray());
+        $result = $this->doRequest(__FUNCTION__, $point ? $point->toArray() : []);
         return $result->parcelShop;
     }
 
