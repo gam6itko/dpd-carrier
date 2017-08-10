@@ -2,6 +2,7 @@
 namespace Gam6itko\DpdCarrier;
 
 use Gam6itko\DpdCarrier\Type\Address;
+use Gam6itko\DpdCarrier\Type\AddressStatus;
 use Gam6itko\DpdCarrier\Type\City;
 use Gam6itko\DpdCarrier\Type\DataInternational;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
@@ -11,12 +12,15 @@ use Gam6itko\DpdCarrier\Type\GeoCoordinates;
 use Gam6itko\DpdCarrier\Type\Header;
 use Gam6itko\DpdCarrier\Type\Limits;
 use Gam6itko\DpdCarrier\Type\Order;
+use Gam6itko\DpdCarrier\Type\OrderStatus;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\Type\ParcelShop;
 use Gam6itko\DpdCarrier\Type\Schedule;
 use Gam6itko\DpdCarrier\Type\Services;
 use Gam6itko\DpdCarrier\Type\ServiceCost;
+use Gam6itko\DpdCarrier\Type\StateParcel;
+use Gam6itko\DpdCarrier\Type\StateParcels;
 use Gam6itko\DpdCarrier\Type\Terminal;
 
 class DpdWebService
@@ -133,62 +137,166 @@ class DpdWebService
         return $result->terminal[0];
     }
 
+    /**
+     * @param Header $header
+     * @param Order $order
+     * @return OrderStatus
+     */
     public function createOrder(Header $header, Order $order)
     {
-        return $this->doRequest(__FUNCTION__, [
+        $result = $this->doRequest(__FUNCTION__, [
             'header' => $header,
             'order'  => $order
         ]);
+
+        return $result[0];
     }
 
-    public function cancelOrder()
+    /**
+     * @param OrderStatus $orderState
+     * @return OrderStatus
+     */
+    public function cancelOrder(OrderStatus $orderState)
     {
+        $result = $this->doRequest(__FUNCTION__, [
+            'cancel' => $orderState->toArray()
+        ]);
+        return $result[0];
     }
 
-    public function getOrderStatus()
+    /**
+     * @param $orderNumberInternal
+     * @param null $datePickup
+     * @return OrderStatus
+     */
+    public function getOrderStatus($orderNumberInternal, $datePickup = null)
     {
+        $result = $this->doRequest(__FUNCTION__, [
+            'order' => [
+                'orderNumberInternal' => $orderNumberInternal,
+                'datePickup'          => $datePickup,
+            ]
+        ]);
+        return $result[0];
     }
 
-    public function createAddress()
+    /**
+     * @param Address $address
+     * @return AddressStatus
+     */
+    public function createAddress(Address $address)
     {
+        return $this->doRequest(__FUNCTION__, [
+            'clientAddress' => $address->toArray()
+        ]);
     }
 
-    public function updateAddress()
+    /**
+     * @param Address $address
+     * @return AddressStatus
+     */
+    public function updateAddress(Address $address)
     {
+        return $this->doRequest(__FUNCTION__, [
+            'clientAddress' => $address->toArray()
+        ]);
     }
 
-    public function getInvoiceFile()
+    /**
+     * @param $orderNum
+     * @param null $parcelCount
+     * @param null $cargoValue
+     * @return string - pdf content
+     */
+    public function getInvoiceFile($orderNum, $parcelCount = null, $cargoValue = null)
     {
+        $result = $this->doRequest(__FUNCTION__, array_filter([
+            'orderNum'    => $orderNum,
+            'parcelCount' => $parcelCount,
+            'cargoValue'  => $cargoValue,
+        ]));
+        return $result->file;
     }
 
-    public function getRegisterFile()
+    /**
+     * @param $datePickup
+     * @param null $regularNum
+     * @param null $cityPickupId
+     * @param null $addressCode
+     * @return array
+     */
+    public function getRegisterFile($datePickup, $regularNum = null, $cityPickupId = null, $addressCode = null)
     {
+        $result = $this->doRequest(__FUNCTION__, array_filter([
+            'datePickup'   => $datePickup,
+            'regularNum'   => $regularNum,
+            'cityPickupId' => $cityPickupId,
+            'addressCode'  => $addressCode,
+        ]));
+        return $result->file;
+
     }
 
+    /**
+     * @return StateParcels
+     */
     public function getStatesByClient()
     {
+        return $this->doRequest(__FUNCTION__);
     }
 
-    public function confirm()
+    /**
+     * @param $docId
+     * @return array|mixed|\stdClass
+     */
+    public function confirm($docId)
     {
+        return $this->doRequest(__FUNCTION__, ['docId' => $docId]);
     }
 
-    public function getStatesByClientOrder()
+    /**
+     * @param $clientOrderNr
+     * @param null $pickupDate
+     * @return StateParcels
+     */
+    public function getStatesByClientOrder($clientOrderNr, $pickupDate = null)
     {
+        return $this->doRequest(__FUNCTION__, [
+            'clientOrderNr' => $clientOrderNr,
+            'pickupDate'    => $pickupDate,
+        ]);
     }
 
-    public function getStatesByClientParcel()
+    /**
+     * @param $clientOrderNr
+     * @param null $pickupDate
+     * @return StateParcels
+     */
+    public function getStatesByClientParcel($clientOrderNr, $pickupDate = null)
     {
+        return $this->doRequest(__FUNCTION__, [
+            'clientOrderNr' => $clientOrderNr,
+            'pickupDate'    => $pickupDate,
+        ]);
     }
 
-    public function getStatesByDPDOrder()
+    /**
+     * @param $dpdOrderNr
+     * @param null $pickupYear
+     * @return StateParcels
+     */
+    public function getStatesByDPDOrder($dpdOrderNr, $pickupYear = null)
     {
+        return $this->doRequest(__FUNCTION__, [
+            'dpdOrderNr' => $dpdOrderNr,
+            'pickupYear' => $pickupYear,
+        ]);
     }
 
     /**
      * @param $methodName
      * @param array $array
-     * @return array|\stdClass
+     * @return array|\stdClass|mixed
      * @throws \SoapFault
      */
     private function doRequest($methodName, array $array = [])
@@ -229,6 +337,8 @@ class DpdWebService
                 'address'                => Address::class,
                 'city'                   => City::class,
                 'dataInternational'      => DataInternational::class,
+                'dpdOrderStatus'         => OrderStatus::class,
+                'dpdClientAddressStatus' => AddressStatus::class,
                 'extraService'           => ExtraService::class,
                 'geoCoordinates'         => GeoCoordinates::class,
                 'limits'                 => Limits::class,
@@ -239,6 +349,8 @@ class DpdWebService
                 'serviceCost'            => ServiceCost::class,
                 'services'               => Services::class,
                 'schedule'               => Schedule::class,
+                'stateParcels'           => StateParcels::class,
+                'stateParcel'            => StateParcel::class,
                 'terminalSelf'           => Terminal::class,
                 'terminalStoragePeriods' => Terminal::class,
             ]]);

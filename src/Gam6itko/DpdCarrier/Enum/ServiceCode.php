@@ -1,7 +1,7 @@
 <?php
 namespace Gam6itko\DpdCarrier\Enum;
 
-final class ServiceType
+final class ServiceCode
 {
     /** DPD 18:00 */
     const BZP = 'BZP';

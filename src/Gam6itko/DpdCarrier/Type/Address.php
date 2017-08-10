@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class Address
 {
+    use ToArrayTrait;
+
     /** @var string */
     protected $code;
 
