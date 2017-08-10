@@ -24,12 +24,22 @@ class DpdWebServiceConfig
     /** @var string */
     protected $wsdlHost;
 
-    public function __construct($wsdlHost)
+    public function __construct($testMode = true)
     {
-        $this->wsdlHost = rtrim($wsdlHost, '/');
+        $this->wsdlHost = $testMode ? $this->getWsdlHostTest() : $this->getWsdlHostProd();
     }
 
-    public function get()
+    public function getWsdlHostTest()
+    {
+        return 'http://wstest.dpd.ru';
+    }
+
+    public function getWsdlHostProd()
+    {
+        return 'http://ws.dpd.ru';
+    }
+
+    public function getServicesMap()
     {
         return [
             'calculator2' => [
@@ -65,7 +75,7 @@ class DpdWebServiceConfig
 
     public function getWsdl($methodName)
     {
-        foreach ($this->get() as $wsdlKey => $wsdlConf) {
+        foreach ($this->getServicesMap() as $wsdlKey => $wsdlConf) {
             foreach ($wsdlConf as $mName => $mConf) {
                 if ($methodName === $mName) {
                     return sprintf("{$this->wsdlHost}/services/$wsdlKey?wsdl");
@@ -91,7 +101,7 @@ class DpdWebServiceConfig
 
     public function getMethodConf($methodName)
     {
-        foreach ($this->get() as $wsdlKey => $wsdlConf) {
+        foreach ($this->getServicesMap() as $wsdlKey => $wsdlConf) {
             foreach ($wsdlConf as $mName => $mConf) {
                 if ($methodName === $mName) {
                     return $mConf;

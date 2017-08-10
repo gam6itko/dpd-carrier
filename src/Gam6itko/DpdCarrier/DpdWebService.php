@@ -38,13 +38,20 @@ class DpdWebService
      * CseService constructor.
      * @param $clientNumber
      * @param $clientKey
-     * @param string $wsdlHost
+     * @param $testMode
+     * @internal param string $wsdlHost
      */
-    public function __construct($clientNumber, $clientKey, $wsdlHost = 'http://wstest.dpd.ru')
+    public function __construct($clientNumber, $clientKey, $testMode = true)
     {
         $this->clientNumber = $clientNumber;
         $this->clientKey = $clientKey;
-        $this->config = new DpdWebServiceConfig(rtrim($wsdlHost, '/'));
+        $this->testMode = $testMode;
+        $this->config = new DpdWebServiceConfig($testMode);
+    }
+
+    public function setConfig(DpdWebServiceConfig $config)
+    {
+        $this->config = $config;
     }
 
     /**
@@ -331,7 +338,7 @@ class DpdWebService
     {
         //todo stash clients for different WSDL
         return new \SoapClient($this->config->getWsdl($methodName), [
-//            'trace'    => true,
+            'trace'    => $this->testMode,
             'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
             'classmap' => [
                 'address'                => Address::class,
