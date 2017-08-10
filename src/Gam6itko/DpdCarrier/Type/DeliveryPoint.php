@@ -1,13 +1,20 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class DeliveryPoint
 {
+    use ToArrayTrait;
+
     /** @var integer */
     protected $cityId;
 
     /** @var string */
     protected $index;
+
+    /** @var string */
+    protected $cityCode;
 
     /** @var string */
     protected $cityName;
@@ -59,6 +66,24 @@ class DeliveryPoint
     public function setIndex($index)
     {
         $this->index = $index;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCityCode()
+    {
+        return $this->cityCode;
+    }
+
+    /**
+     * @param string $cityCode
+     * @return DeliveryPoint
+     */
+    public function setCityCode($cityCode)
+    {
+        $this->cityCode = $cityCode;
         return $this;
     }
 

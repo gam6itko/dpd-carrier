@@ -41,7 +41,7 @@ class DpdWebServiceConfig
                 'getCitiesCashPay'          => [self::WRAPIN => 'request'],
                 'getTerminalsSelfDelivery2' => [self::WRAPIN => false],
                 'getParcelShops'            => [self::WRAPIN => 'request'],
-                'getStoragePeriod'          => [self::WRAPIN => false],
+                'getStoragePeriod'          => [self::WRAPIN => 'request'],
             ],
             'order2'      => [
                 'createOrder'     => [self::WRAPIN => 'orders'],

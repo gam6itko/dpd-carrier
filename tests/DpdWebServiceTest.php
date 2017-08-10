@@ -6,7 +6,9 @@ use Gam6itko\DpdCarrier\Type\City;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\Parcel;
+use Gam6itko\DpdCarrier\Type\ParcelShop;
 use Gam6itko\DpdCarrier\Type\ServiceCost;
+use Gam6itko\DpdCarrier\Type\Terminal;
 use PHPUnit\Framework\TestCase;
 
 class DpdWebServiceTest extends TestCase
@@ -49,6 +51,31 @@ class DpdWebServiceTest extends TestCase
 
         $this->assertNotEmpty($result);
         $this->assertInstanceOf(City::class, $result[0]);
+    }
+
+    public function testGetParcelShops()
+    {
+        $point = (new DeliveryPoint())
+            ->setCountryCode('RU')
+            ->setRegionCode(77);
+        $result = $this->getDpdWebService()->getParcelShops($point);
+        $this->assertNotEmpty($result);
+        $this->assertInstanceOf(ParcelShop::class, $result[0]);
+    }
+
+    public function testGetTerminalsSelfDelivery2()
+    {
+        $result = $this->getDpdWebService()->getTerminalsSelfDelivery2();
+        $this->assertNotEmpty($result);
+        $this->assertInstanceOf(Terminal::class, $result[0]);
+    }
+
+
+    public function testGetStoragePeriod()
+    {
+        $result = $this->getDpdWebService()->getStoragePeriod('OEL', ServiceType::PCL);
+        $this->assertNotEmpty($result);
+        $this->assertInstanceOf(Terminal::class, $result);
     }
 
     protected function getDpdWebService($test = true)

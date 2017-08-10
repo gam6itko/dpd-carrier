@@ -6,11 +6,18 @@ use Gam6itko\DpdCarrier\Type\City;
 use Gam6itko\DpdCarrier\Type\DataInternational;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
+use Gam6itko\DpdCarrier\Type\ExtraService;
+use Gam6itko\DpdCarrier\Type\GeoCoordinates;
 use Gam6itko\DpdCarrier\Type\Header;
+use Gam6itko\DpdCarrier\Type\Limits;
 use Gam6itko\DpdCarrier\Type\Order;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
+use Gam6itko\DpdCarrier\Type\ParcelShop;
+use Gam6itko\DpdCarrier\Type\Schedule;
+use Gam6itko\DpdCarrier\Type\Services;
 use Gam6itko\DpdCarrier\Type\ServiceCost;
+use Gam6itko\DpdCarrier\Type\Terminal;
 
 class DpdWebService
 {
@@ -92,16 +99,38 @@ class DpdWebService
         return $this->doRequest(__FUNCTION__, ['countryCode' => $countryCode]);
     }
 
+    /**
+     * @return Terminal[]
+     */
     public function getTerminalsSelfDelivery2()
     {
+        $result = $this->doRequest(__FUNCTION__);
+        return $result->terminal;
     }
 
-    public function getParcelShops()
+    /**
+     * @param DeliveryPoint $point
+     * @return ParcelShop[]
+     */
+    public function getParcelShops(DeliveryPoint $point)
     {
+        $result = $this->doRequest(__FUNCTION__, $point->toArray());
+        return $result->parcelShop;
     }
 
-    public function getStoragePeriod()
+    /**
+     * @param $terminalCode
+     * @param $serviceCode
+     * @return Terminal
+     */
+    public function getStoragePeriod($terminalCode, $serviceCode)
     {
+        $result = $this->doRequest(__FUNCTION__, [
+            'terminalCode' => $terminalCode,
+            'serviceCode'  => $serviceCode,
+        ]);
+
+        return $result->terminal[0];
     }
 
     public function createOrder(Header $header, Order $order)
@@ -158,11 +187,11 @@ class DpdWebService
 
     /**
      * @param $methodName
-     * @param $array
-     * @return array
+     * @param array $array
+     * @return array|\stdClass
      * @throws \SoapFault
      */
-    private function doRequest($methodName, $array)
+    private function doRequest($methodName, array $array = [])
     {
         $soapRequest = $this->buildRequest($array);
         $soapRequest = $this->config->wrapin($methodName, $soapRequest);
@@ -197,13 +226,21 @@ class DpdWebService
             'trace'    => true,
             'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
             'classmap' => [
-                'address'           => Address::class,
-                'city'              => City::class,
-                'dataInternational' => DataInternational::class,
-                'order'             => Order::class,
-                'parcel'            => Parcel::class,
-                'parameter'         => Parameter::class,
-                'serviceCost'       => ServiceCost::class,
+                'address'                => Address::class,
+                'city'                   => City::class,
+                'dataInternational'      => DataInternational::class,
+                'extraService'           => ExtraService::class,
+                'geoCoordinates'         => GeoCoordinates::class,
+                'limits'                 => Limits::class,
+                'order'                  => Order::class,
+                'parcel'                 => Parcel::class,
+                'parcelShop'             => ParcelShop::class,
+                'parameter'              => Parameter::class,
+                'serviceCost'            => ServiceCost::class,
+                'services'               => Services::class,
+                'schedule'               => Schedule::class,
+                'terminalSelf'           => Terminal::class,
+                'terminalStoragePeriods' => Terminal::class,
             ]]);
     }
 
