@@ -1,7 +1,7 @@
 <?php
 namespace Gam6itko\DpdCarrier\Enum;
 
-class PaymentType
+final class PaymentType
 {
     const Sender = 'ОУО';
     const Receiver = 'ОУП';

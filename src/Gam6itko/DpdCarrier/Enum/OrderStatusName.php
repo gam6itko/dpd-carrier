@@ -1,7 +1,7 @@
 <?php
 namespace Gam6itko\DpdCarrier\Enum;
 
-class OrderStatusName
+final class OrderStatusName
 {
     const OK = 'OK';
     const OrderPending = 'OrderPending';
