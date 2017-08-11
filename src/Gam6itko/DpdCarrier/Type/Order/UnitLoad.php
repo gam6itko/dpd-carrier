@@ -1,5 +1,5 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Order;
 
 class UnitLoad
 {

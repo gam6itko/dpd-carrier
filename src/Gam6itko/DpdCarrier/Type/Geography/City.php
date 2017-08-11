@@ -1,28 +1,15 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Geography;
 
-class City
+use Gam6itko\DpdCarrier\Type\AbstractDeliveryPoint;
+
+class City extends AbstractDeliveryPoint
 {
-    /** @var integer */
-    protected $cityId;
-
-    /** @var string */
-    protected $countryCode;
-
     /** @var string */
     protected $countryName;
 
-    /** @var integer */
-    protected $regionCode;
-
     /** @var string */
     protected $regionName;
-
-    /** @var string */
-    protected $cityCode;
-
-    /** @var string */
-    protected $cityName;
 
     /** @var string */
     protected $abbreviation;
@@ -32,42 +19,6 @@ class City
 
     /** @var string */
     protected $indexMax;
-
-    /**
-     * @return int
-     */
-    public function getCityId()
-    {
-        return $this->cityId;
-    }
-
-    /**
-     * @param int $cityId
-     * @return City
-     */
-    public function setCityId($cityId)
-    {
-        $this->cityId = $cityId;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountryCode()
-    {
-        return $this->countryCode;
-    }
-
-    /**
-     * @param string $countryCode
-     * @return City
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->countryCode = $countryCode;
-        return $this;
-    }
 
     /**
      * @return string
@@ -90,24 +41,6 @@ class City
     /**
      * @return string
      */
-    public function getRegionCode()
-    {
-        return $this->regionCode;
-    }
-
-    /**
-     * @param string $regionCode
-     * @return City
-     */
-    public function setRegionCode($regionCode)
-    {
-        $this->regionCode = $regionCode;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getRegionName()
     {
         return $this->regionName;
@@ -120,42 +53,6 @@ class City
     public function setRegionName($regionName)
     {
         $this->regionName = $regionName;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCityCode()
-    {
-        return $this->cityCode;
-    }
-
-    /**
-     * @param string $cityCode
-     * @return City
-     */
-    public function setCityCode($cityCode)
-    {
-        $this->cityCode = $cityCode;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCityName()
-    {
-        return $this->cityName;
-    }
-
-    /**
-     * @param string $cityName
-     * @return City
-     */
-    public function setCityName($cityName)
-    {
-        $this->cityName = $cityName;
         return $this;
     }
 

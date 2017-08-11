@@ -1,5 +1,7 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Geography;
+
+use Gam6itko\DpdCarrier\Type\ExtraService;
 
 abstract class AbstractParcelStore
 {

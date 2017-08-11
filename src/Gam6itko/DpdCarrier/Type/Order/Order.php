@@ -1,5 +1,9 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Order;
+
+use Gam6itko\DpdCarrier\Type\ExtraService;
+use Gam6itko\DpdCarrier\Type\Parameter;
+use Gam6itko\DpdCarrier\Type\Parcel;
 
 class Order
 {
@@ -42,7 +46,7 @@ class Order
     /** @var DataInternational */
     protected $dataInt;
 
-    /** @var Address */
+    /** @var ClientAddress */
     protected $receiverAddress;
 
     /** @var ExtraService */
@@ -289,7 +293,7 @@ class Order
     }
 
     /**
-     * @return Address
+     * @return ClientAddress
      */
     public function getReceiverAddress()
     {
@@ -297,7 +301,7 @@ class Order
     }
 
     /**
-     * @param Address $receiverAddress
+     * @param ClientAddress $receiverAddress
      * @return Order
      */
     public function setReceiverAddress($receiverAddress)

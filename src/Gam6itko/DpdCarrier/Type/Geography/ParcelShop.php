@@ -1,5 +1,5 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class ParcelShop extends AbstractParcelStore
 {

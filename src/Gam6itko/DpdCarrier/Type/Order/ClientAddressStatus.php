@@ -1,7 +1,7 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Order;
 
-class AddressStatus
+class ClientAddressStatus
 {
     /** @var string */
     protected $code;
@@ -22,7 +22,7 @@ class AddressStatus
 
     /**
      * @param string $code
-     * @return AddressStatus
+     * @return ClientAddressStatus
      */
     public function setCode($code)
     {
@@ -40,7 +40,7 @@ class AddressStatus
 
     /**
      * @param string $status
-     * @return AddressStatus
+     * @return ClientAddressStatus
      */
     public function setStatus($status)
     {
@@ -58,7 +58,7 @@ class AddressStatus
 
     /**
      * @param string $errorMessage
-     * @return AddressStatus
+     * @return ClientAddressStatus
      */
     public function setErrorMessage($errorMessage)
     {

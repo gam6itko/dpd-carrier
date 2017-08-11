@@ -1,5 +1,5 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Order;
 
 class Header
 {
@@ -9,7 +9,7 @@ class Header
     /** @var float */
     protected $payer;
 
-    /** @var Address */
+    /** @var ClientAddress */
     protected $senderAddress;
 
     /** @var string */
@@ -55,7 +55,7 @@ class Header
     }
 
     /**
-     * @return Address
+     * @return ClientAddress
      */
     public function getSenderAddress()
     {
@@ -63,7 +63,7 @@ class Header
     }
 
     /**
-     * @param Address $senderAddress
+     * @param ClientAddress $senderAddress
      * @return Header
      */
     public function setSenderAddress($senderAddress)

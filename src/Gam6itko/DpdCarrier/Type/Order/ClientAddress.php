@@ -1,9 +1,9 @@
 <?php
-namespace Gam6itko\DpdCarrier\Type;
+namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-class Address
+class ClientAddress
 {
     use ToArrayTrait;
 
@@ -95,7 +95,7 @@ class Address
 
     /**
      * @param string $code
-     * @return Address
+     * @return ClientAddress
      */
     public function setCode($code)
     {
@@ -113,7 +113,7 @@ class Address
 
     /**
      * @param string $name
-     * @return Address
+     * @return ClientAddress
      */
     public function setName($name)
     {
@@ -131,7 +131,7 @@ class Address
 
     /**
      * @param string $terminalCode
-     * @return Address
+     * @return ClientAddress
      */
     public function setTerminalCode($terminalCode)
     {
@@ -149,7 +149,7 @@ class Address
 
     /**
      * @param string $addressString
-     * @return Address
+     * @return ClientAddress
      */
     public function setAddressString($addressString)
     {
@@ -167,7 +167,7 @@ class Address
 
     /**
      * @param string $countryName
-     * @return Address
+     * @return ClientAddress
      */
     public function setCountryName($countryName)
     {
@@ -185,7 +185,7 @@ class Address
 
     /**
      * @param string $index
-     * @return Address
+     * @return ClientAddress
      */
     public function setIndex($index)
     {
@@ -203,7 +203,7 @@ class Address
 
     /**
      * @param string $region
-     * @return Address
+     * @return ClientAddress
      */
     public function setRegion($region)
     {
@@ -221,7 +221,7 @@ class Address
 
     /**
      * @param string $city
-     * @return Address
+     * @return ClientAddress
      */
     public function setCity($city)
     {
@@ -239,7 +239,7 @@ class Address
 
     /**
      * @param string $street
-     * @return Address
+     * @return ClientAddress
      */
     public function setStreet($street)
     {
@@ -257,7 +257,7 @@ class Address
 
     /**
      * @param string $streetAbbr
-     * @return Address
+     * @return ClientAddress
      */
     public function setStreetAbbr($streetAbbr)
     {
@@ -275,7 +275,7 @@ class Address
 
     /**
      * @param string $house
-     * @return Address
+     * @return ClientAddress
      */
     public function setHouse($house)
     {
@@ -293,7 +293,7 @@ class Address
 
     /**
      * @param string $houseKorpus
-     * @return Address
+     * @return ClientAddress
      */
     public function setHouseKorpus($houseKorpus)
     {
@@ -311,7 +311,7 @@ class Address
 
     /**
      * @param string $str
-     * @return Address
+     * @return ClientAddress
      */
     public function setStr($str)
     {
@@ -329,7 +329,7 @@ class Address
 
     /**
      * @param string $vlad
-     * @return Address
+     * @return ClientAddress
      */
     public function setVlad($vlad)
     {
@@ -347,7 +347,7 @@ class Address
 
     /**
      * @param string $extraInfo
-     * @return Address
+     * @return ClientAddress
      */
     public function setExtraInfo($extraInfo)
     {
@@ -365,7 +365,7 @@ class Address
 
     /**
      * @param string $office
-     * @return Address
+     * @return ClientAddress
      */
     public function setOffice($office)
     {
@@ -383,7 +383,7 @@ class Address
 
     /**
      * @param string $flat
-     * @return Address
+     * @return ClientAddress
      */
     public function setFlat($flat)
     {
@@ -401,7 +401,7 @@ class Address
 
     /**
      * @param string $workTimeFrom
-     * @return Address
+     * @return ClientAddress
      */
     public function setWorkTimeFrom($workTimeFrom)
     {
@@ -419,7 +419,7 @@ class Address
 
     /**
      * @param string $workTimeTo
-     * @return Address
+     * @return ClientAddress
      */
     public function setWorkTimeTo($workTimeTo)
     {
@@ -437,7 +437,7 @@ class Address
 
     /**
      * @param string $dinnerTimeFrom
-     * @return Address
+     * @return ClientAddress
      */
     public function setDinnerTimeFrom($dinnerTimeFrom)
     {
@@ -455,7 +455,7 @@ class Address
 
     /**
      * @param string $dinnerTimeTo
-     * @return Address
+     * @return ClientAddress
      */
     public function setDinnerTimeTo($dinnerTimeTo)
     {
@@ -473,7 +473,7 @@ class Address
 
     /**
      * @param string $contactFio
-     * @return Address
+     * @return ClientAddress
      */
     public function setContactFio($contactFio)
     {
@@ -491,7 +491,7 @@ class Address
 
     /**
      * @param string $contactPhone
-     * @return Address
+     * @return ClientAddress
      */
     public function setContactPhone($contactPhone)
     {
@@ -509,7 +509,7 @@ class Address
 
     /**
      * @param string $contactEmail
-     * @return Address
+     * @return ClientAddress
      */
     public function setContactEmail($contactEmail)
     {
@@ -527,7 +527,7 @@ class Address
 
     /**
      * @param string $instructions
-     * @return Address
+     * @return ClientAddress
      */
     public function setInstructions($instructions)
     {
@@ -545,7 +545,7 @@ class Address
 
     /**
      * @param string $needPass
-     * @return Address
+     * @return ClientAddress
      */
     public function setNeedPass($needPass)
     {
