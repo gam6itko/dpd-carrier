@@ -6,6 +6,6 @@ final class OrderStatusName
     const OK = 'OK';
     const OrderPending = 'OrderPending';
     const OrderDuplicate = '•OrderDuplicate';
-    const OrderError = 'OK';
+    const OrderError = 'OrderError';
     const Canceled = 'Canceled';
 }
