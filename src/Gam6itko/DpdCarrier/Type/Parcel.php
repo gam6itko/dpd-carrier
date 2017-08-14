@@ -7,6 +7,19 @@ class Parcel
 {
     use ToArrayTrait;
 
+    /** KG */
+    const MAX_WEIGHT = 1000;
+
+    /** meter */
+    const MAX_LENGTH = 0.35;
+
+    /** meter */
+    const MAX_WIDTH = 0.16;
+
+    /** meter */
+    const MAX_HEIGHT = 0.18;
+
+
     /** @var string */
     protected $number;
 
