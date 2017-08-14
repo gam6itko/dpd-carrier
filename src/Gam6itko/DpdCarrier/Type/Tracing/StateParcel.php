@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Tracing;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class StateParcel
 {
+    use ToArrayTrait;
+
     /** @var string */
     protected $clientOrderNr;
 

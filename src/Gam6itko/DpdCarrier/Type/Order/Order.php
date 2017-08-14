@@ -26,7 +26,7 @@ class Order
     protected $cargoVolume;
 
     /** @var bool */
-    protected $cargoRegistered;
+    protected $cargoRegistered = false;
 
     /** @var float */
     protected $cargoValue;

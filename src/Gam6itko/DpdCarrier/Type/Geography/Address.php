@@ -25,8 +25,12 @@ class Address extends AbstractDeliveryPoint
 
     /** @var string */
     protected $ownership;
+
     /** @var string */
     protected $descript;
+
+    /** @var string */
+    protected $index;
 
     /**
      * @return string
@@ -170,5 +174,21 @@ class Address extends AbstractDeliveryPoint
     {
         $this->descript = $descript;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * @param string $index
+     */
+    public function setIndex($index)
+    {
+        $this->index = $index;
     }
 }
