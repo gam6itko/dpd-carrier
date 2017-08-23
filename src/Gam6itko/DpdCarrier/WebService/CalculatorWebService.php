@@ -58,12 +58,12 @@ class CalculatorWebService extends AbstractWebService
      * @param DeliveryPoint $pickup
      * @param DeliveryPoint $delivery
      * @param DeliveryOptions $options
-     * @param Parcel $parcel
+     * @param Parcel[] $parcels
      * @return Parcel[]
      */
-    public function getServiceCostByParcels2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, Parcel $parcel)
+    public function getServiceCostByParcels2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, array $parcels)
     {
-        $options = array_merge($options->toArray(), ['parcel' => $parcel->toArray()]);
+        $options = array_merge($options->toArray(), ['parcel' => $parcels]);
         return $this->doRequest(__FUNCTION__, array_merge([
             'pickup'   => $pickup,
             'delivery' => $delivery

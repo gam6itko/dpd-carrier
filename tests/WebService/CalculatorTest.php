@@ -34,7 +34,7 @@ class CalculatorTest extends TestCase
             ->setDeclaredValue(34999);
         $parcel = new Parcel(5, 20, 20, 20, 20);
 
-        $result = $this->getDpdWebService()->getServiceCostByParcels2($pickup, $delivery, $options, $parcel);
+        $result = $this->getDpdWebService()->getServiceCostByParcels2($pickup, $delivery, $options, [$parcel]);
 
         $this->assertNotEmpty($result);
         $this->assertInstanceOf(ServiceCost::class, $result[0]);
