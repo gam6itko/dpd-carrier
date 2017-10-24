@@ -15,8 +15,10 @@ final class ServiceCode
     const CSM = 'CSM';
     /** DPD Online Classic */
     const PCL = 'PCL';
-    /** DPD Classic international */
+    /** DPD CLASSIC international IMPORT */
     const DPI = 'DPI';
+    /** DPD CLASSIC international EXPORT */
+    const DPE = 'DPE';
     /** DPD MAX domestic */
     const MAX = 'MAX';
 
@@ -32,7 +34,8 @@ final class ServiceCode
             'NDY' => 'DPD EXPRESS',
             'CSM' => 'DPD Online Express',
             'PCL' => 'DPD Online Classic',
-            'DPI' => 'DPD Classic international',
+            'DPI' => 'DPD CLASSIC international IMPORT',
+            'DPE' => 'DPD CLASSIC international EXPORT',
             'MAX' => 'DPD MAX domestic'
         ];
     }
