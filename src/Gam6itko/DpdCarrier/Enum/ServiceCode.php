@@ -21,6 +21,8 @@ final class ServiceCode
     const DPE = 'DPE';
     /** DPD MAX domestic */
     const MAX = 'MAX';
+    /** DPD Shop to Shop */
+    const PUP = 'PUP';
 
     /**
      * @return array
@@ -36,7 +38,8 @@ final class ServiceCode
             'PCL' => 'DPD Online Classic',
             'DPI' => 'DPD CLASSIC international IMPORT',
             'DPE' => 'DPD CLASSIC international EXPORT',
-            'MAX' => 'DPD MAX domestic'
+            'MAX' => 'DPD MAX domestic',
+            'PUP' => 'DPD Shop to Shop'
         ];
     }
 }
