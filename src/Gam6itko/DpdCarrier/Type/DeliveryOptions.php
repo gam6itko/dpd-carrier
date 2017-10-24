@@ -201,5 +201,4 @@ class DeliveryOptions
         $this->declaredValue = $declaredValue;
         return $this;
     }
-
 }

@@ -15,5 +15,4 @@ final class DeliveryState
     const Problem = 'Problem';
     const ReturnedFromDelivery = 'ReturnedFromDelivery';
     const NewOrderByDPD = 'NewOrderByDPD';
-
 }

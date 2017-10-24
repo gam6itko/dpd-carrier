@@ -552,5 +552,4 @@ class ClientAddress
         $this->needPass = $needPass;
         return $this;
     }
-
 }

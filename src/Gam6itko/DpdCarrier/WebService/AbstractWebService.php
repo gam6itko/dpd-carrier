@@ -28,9 +28,9 @@ abstract class AbstractWebService
         $this->soapClient = $this->buildSoapClient();
     }
 
-    protected abstract function getWsdlTest();
+    abstract protected function getWsdlTest();
 
-    protected abstract function getWsdlProd();
+    abstract protected function getWsdlProd();
 
     /**
      * @param $methodName

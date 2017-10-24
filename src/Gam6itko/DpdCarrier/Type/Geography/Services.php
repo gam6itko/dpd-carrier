@@ -44,5 +44,4 @@ class Services
         $this->days = $days;
         return $this;
     }
-
 }
