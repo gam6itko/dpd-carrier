@@ -22,7 +22,7 @@ final class ServiceCode
     /** DPD MAX domestic */
     const MAX = 'MAX';
     /** DPD Shop to Shop */
-    const PUP = 'PUP';
+//    const PUP = 'PUP';
 
     /**
      * @return array
@@ -39,7 +39,7 @@ final class ServiceCode
             'DPI' => 'DPD CLASSIC international IMPORT',
             'DPE' => 'DPD CLASSIC international EXPORT',
             'MAX' => 'DPD MAX domestic',
-            'PUP' => 'DPD Shop to Shop'
+//            'PUP' => 'DPD Shop to Shop'
         ];
     }
 }
