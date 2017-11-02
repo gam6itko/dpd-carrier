@@ -12,6 +12,9 @@ abstract class AbstractWebService
     /** @var \SoapClient */
     protected $soapClient;
 
+    /** @var bool */
+    protected $testMode;
+
     /**
      * CseService constructor.
      * @param $clientNumber
