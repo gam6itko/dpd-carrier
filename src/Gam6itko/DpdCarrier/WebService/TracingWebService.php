@@ -4,6 +4,7 @@ namespace Gam6itko\DpdCarrier\WebService;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
+use Gam6itko\DpdCarrier\Type\Tracing\StateParcel;
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 
 class TracingWebService extends AbstractWebService
@@ -30,13 +31,13 @@ class TracingWebService extends AbstractWebService
     protected function getClassmap()
     {
         return [
-            'extraService'           => ExtraService::class,
-            'parcel'                 => Parcel::class,
-            'parameter'              => Parameter::class,
-            'stateParcels'           => StateParcels::class,
+            'extraService' => ExtraService::class,
+            'parcel'       => Parcel::class,
+            'parameter'    => Parameter::class,
+            'stateParcels' => StateParcels::class,
+            'stateParcel'  => StateParcel::class,
         ];
     }
-
 
     /**
      * @return StateParcels
