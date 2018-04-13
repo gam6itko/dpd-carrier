@@ -22,7 +22,7 @@ abstract class AbstractWebService
      * @param $testMode
      * @internal param string $wsdlHost
      */
-    public function __construct($clientNumber, $clientKey, $testMode = true)
+    public function __construct($clientNumber, $clientKey, $testMode = false)
     {
         $this->clientNumber = $clientNumber;
         $this->clientKey = $clientKey;
