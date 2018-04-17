@@ -13,7 +13,7 @@ class DeliveryOptions
     /** @var bool */
     protected $selfDelivery;
 
-    /** @var float */
+    /** @var float Kg*/
     protected $weight;
 
     /** @var float */
@@ -85,7 +85,7 @@ class DeliveryOptions
     }
 
     /**
-     * @param float $weight
+     * @param float $weight Kg
      * @return DeliveryOptions
      */
     public function setWeight($weight)
