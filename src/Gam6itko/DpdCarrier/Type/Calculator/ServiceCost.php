@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Calculator;
 
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
 class ServiceCost
 {
+    use ToArrayTrait;
+    
     /** @var string */
     protected $serviceCode;
 
