@@ -116,6 +116,9 @@ class OrderTest extends TestCase
 
     protected function getDpdWebService()
     {
+        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
+            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
+        }
         return new OrderWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
     }
 }

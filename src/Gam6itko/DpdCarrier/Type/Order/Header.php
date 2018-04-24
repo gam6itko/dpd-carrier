@@ -1,8 +1,12 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Order;
 
-class Header
+use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+
+class Header implements \JsonSerializable
 {
+    use ToArrayTrait;
+
     /** @var string */
     protected $datePickup;
 
@@ -17,6 +21,14 @@ class Header
 
     /** @var string */
     protected $regularNum;
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 
     /**
      * @return string

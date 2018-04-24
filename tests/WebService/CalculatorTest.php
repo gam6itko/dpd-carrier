@@ -32,7 +32,7 @@ class CalculatorTest extends TestCase
             ->setWeight(7.88)
             ->setVolume(0.04092)
             ->setDeclaredValue(34999);
-        $parcel = new Parcel(5, 20, 20, 20, 20);
+        $parcel = new Parcel(5, 20, 20, 20);
 
         $result = $this->getDpdWebService()->getServiceCostByParcels2($pickup, $delivery, $options, [$parcel]);
 
@@ -42,6 +42,9 @@ class CalculatorTest extends TestCase
 
     protected function getDpdWebService()
     {
+        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
+            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
+        }
         return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
     }
 }

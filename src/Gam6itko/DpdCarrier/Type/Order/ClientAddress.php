@@ -3,7 +3,7 @@ namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-class ClientAddress
+class ClientAddress implements \JsonSerializable
 {
     use ToArrayTrait;
 
@@ -84,6 +84,14 @@ class ClientAddress
 
     /** @var string */
     protected $needPass;
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 
     /**
      * @return string
