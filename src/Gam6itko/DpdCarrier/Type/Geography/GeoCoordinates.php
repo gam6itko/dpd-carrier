@@ -1,7 +1,9 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
-class GeoCoordinates
+use Gam6itko\DpdCarrier\Type\ArrayLike;
+
+class GeoCoordinates extends ArrayLike
 {
     /** @var float */
     protected $latitude;

@@ -1,12 +1,10 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Order;
 
-use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+use Gam6itko\DpdCarrier\Type\ArrayLike;
 
-class OrderStatus
+class OrderStatus extends ArrayLike
 {
-    use ToArrayTrait;
-
     /** @var string */
     protected $orderNumberInternal;
 

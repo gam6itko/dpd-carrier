@@ -1,7 +1,9 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
-class Services
+use Gam6itko\DpdCarrier\Type\ArrayLike;
+
+class Services extends ArrayLike
 {
     /** @var string[] */
     protected $serviceCode;

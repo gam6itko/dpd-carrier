@@ -13,6 +13,11 @@ use Gam6itko\DpdCarrier\Type\Order\OrderStatus;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class OrderTest
+ * @package WebService
+ * @covers OrderWebService
+ */
 class OrderTest extends TestCase
 {
     /** @var OrderStatus */

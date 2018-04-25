@@ -1,12 +1,8 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
-use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
-
-class Parcel
+class Parcel extends ArrayLike
 {
-    use ToArrayTrait;
-
     /** KG */
     const MAX_WEIGHT = 1000;
 

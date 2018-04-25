@@ -1,12 +1,10 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Order;
 
-use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+use Gam6itko\DpdCarrier\Type\ArrayLike;
 
-class ClientAddress implements \JsonSerializable
+class ClientAddress extends ArrayLike
 {
-    use ToArrayTrait;
-
     /** @var string */
     protected $code;
 
@@ -84,14 +82,6 @@ class ClientAddress implements \JsonSerializable
 
     /** @var string */
     protected $needPass;
-
-    /**
-     * @inheritdoc
-     */
-    public function jsonSerialize()
-    {
-        return $this->toArray();
-    }
 
     /**
      * @return string

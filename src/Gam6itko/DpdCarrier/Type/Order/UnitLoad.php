@@ -1,7 +1,9 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Order;
 
-class UnitLoad
+use Gam6itko\DpdCarrier\Type\ArrayLike;
+
+class UnitLoad extends ArrayLike
 {
     /** @var string */
     protected $article;

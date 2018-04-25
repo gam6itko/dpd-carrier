@@ -1,7 +1,7 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type;
 
-class ExtraService
+class ExtraService extends ArrayLike
 {
     /** @var string */
     protected $esCode;

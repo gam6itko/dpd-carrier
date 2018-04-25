@@ -44,7 +44,6 @@ class GeographyTest extends TestCase
         $this->assertInstanceOf(Services::class, $result[0]->getServices());
     }
 
-
     public function testGetStoragePeriod()
     {
         $result = $this->getDpdWebService()->getStoragePeriod('OEL', ServiceCode::PCL);

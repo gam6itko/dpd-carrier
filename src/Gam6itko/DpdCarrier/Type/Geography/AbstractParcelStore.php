@@ -1,9 +1,10 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
+use Gam6itko\DpdCarrier\Type\ArrayLike;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 
-abstract class AbstractParcelStore
+abstract class AbstractParcelStore extends ArrayLike
 {
     /** @var Address */
     protected $address;

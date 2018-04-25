@@ -1,12 +1,10 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Calculator;
 
-use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
+use Gam6itko\DpdCarrier\Type\ArrayLike;
 
-class ServiceCost implements \JsonSerializable
+class ServiceCost extends ArrayLike
 {
-    use ToArrayTrait;
-    
     /** @var string */
     protected $serviceCode;
 
@@ -24,14 +22,6 @@ class ServiceCost implements \JsonSerializable
 
     /** @var float */
     protected $volume;
-
-    /**
-     * @inheritdoc
-     */
-    public function jsonSerialize()
-    {
-        return $this->toArray();
-    }
 
     /**
      * @return string

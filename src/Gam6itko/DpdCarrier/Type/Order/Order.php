@@ -1,15 +1,14 @@
 <?php
 namespace Gam6itko\DpdCarrier\Type\Order;
 
+use Gam6itko\DpdCarrier\Type\ArrayLike;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-class Order implements \JsonSerializable
+class Order extends ArrayLike
 {
-    use ToArrayTrait;
-
     /** @var string */
     protected $orderNumberInternal;
 
@@ -60,14 +59,6 @@ class Order implements \JsonSerializable
 
     /** @var UnitLoad */
     protected $unitLoad;
-
-    /**
-     * @inheritdoc
-     */
-    public function jsonSerialize()
-    {
-        return $this->toArray();
-    }
 
     /**
      * @return string
