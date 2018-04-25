@@ -18,7 +18,7 @@ use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Order\OrderStatus;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
 
-$svc = new OrderWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', false); //switch 3rd argument to TRUE on production
+$svc = new OrderWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', true); //switch 3rd argument to FALSE on production
 
 // create order
 $senderAddress = (new ClientAddress())
@@ -76,7 +76,7 @@ use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\WebService\CalculatorWebService;
 
 // service cost calculation
-$svc = new CalculatorWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', false); //switch 3rd argument to TRUE on production
+$svc = new CalculatorWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', true); //switch 3rd argument to FALSE on production
 $pickup = new DeliveryPoint(49694102);
 $delivery = new DeliveryPoint(195664561);
 $options = (new DeliveryOptions(true, true))
@@ -102,7 +102,7 @@ use Gam6itko\DpdCarrier\Enum\ServiceCode;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\WebService\GeographyWebService;
 
-$svc = new GeographyWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', false); //switch 3rd argument to TRUE on production
+$svc = new GeographyWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', true); //switch 3rd argument to FALSE on production
 
 //getCitiesCashPay
 $arrayOfCity = $svc->getCitiesCashPay('RU'); //about 16868 elements
