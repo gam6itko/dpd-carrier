@@ -1,6 +1,6 @@
 # DPD API library   
     
-    [Documentation page](https://www.dpd.ru/dpd/integration/integration.do2)
+[Documentation page](https://www.dpd.ru/dpd/integration/integration.do2)
     
 # Usage
 
@@ -91,7 +91,13 @@ print json_encode($serviceCostObject, JSON_PRETTY_PRINT);
 ```
 
 ```text
-{"serviceCode":"MAX","serviceName":"DPD MAX domestic","cost":531,"days":2}
+ServiceCost structure:
+{
+    "serviceCode":"MAX",
+    "serviceName":"DPD MAX domestic",
+    "cost":531,
+    "days":2
+}
 ```
 
 
