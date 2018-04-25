@@ -3,7 +3,7 @@ namespace Gam6itko\DpdCarrier\Type;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-class DeliveryOptions
+class DeliveryOptions implements \JsonSerializable
 {
     use ToArrayTrait;
 
@@ -38,6 +38,14 @@ class DeliveryOptions
     {
         $this->selfPickup = $selfPickup;
         $this->selfDelivery = $selfDelivery;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     /**

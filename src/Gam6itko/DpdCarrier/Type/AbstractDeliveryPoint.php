@@ -3,7 +3,7 @@ namespace Gam6itko\DpdCarrier\Type;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-abstract class AbstractDeliveryPoint
+abstract class AbstractDeliveryPoint implements \JsonSerializable
 {
     use ToArrayTrait;
 
@@ -21,6 +21,14 @@ abstract class AbstractDeliveryPoint
 
     /** @var string */
     protected $cityName;
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 
     /**
      * @return string

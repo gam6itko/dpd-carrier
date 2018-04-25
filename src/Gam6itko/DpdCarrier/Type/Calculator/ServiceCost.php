@@ -3,7 +3,7 @@ namespace Gam6itko\DpdCarrier\Type\Calculator;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
-class ServiceCost
+class ServiceCost implements \JsonSerializable
 {
     use ToArrayTrait;
     
@@ -24,6 +24,14 @@ class ServiceCost
 
     /** @var float */
     protected $volume;
+
+    /**
+     * @inheritdoc
+     */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
 
     /**
      * @return string
