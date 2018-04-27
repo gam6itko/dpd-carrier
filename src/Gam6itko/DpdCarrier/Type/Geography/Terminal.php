@@ -9,6 +9,11 @@ class Terminal extends AbstractParcelStore
     /** @var string */
     protected $terminalName;
 
+    public function getCode()
+    {
+        return $this->getTerminalCode();
+    }
+
     /**
      * @return string
      */

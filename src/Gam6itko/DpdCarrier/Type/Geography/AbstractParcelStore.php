@@ -21,6 +21,8 @@ abstract class AbstractParcelStore extends ArrayLike
     /** @var Services */
     protected $services;
 
+    abstract public function getCode();
+
     /**
      * @return Address
      */
