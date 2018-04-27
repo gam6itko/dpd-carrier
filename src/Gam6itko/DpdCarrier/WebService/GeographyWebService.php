@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
@@ -11,6 +12,7 @@ use Gam6itko\DpdCarrier\Type\Geography\ParcelShop;
 use Gam6itko\DpdCarrier\Type\Geography\Schedule;
 use Gam6itko\DpdCarrier\Type\Geography\Services;
 use Gam6itko\DpdCarrier\Type\Geography\Terminal;
+use Gam6itko\DpdCarrier\Type\Geography\TimeTable;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 
@@ -52,6 +54,7 @@ class GeographyWebService extends AbstractWebService
             'schedule'               => Schedule::class,
             'services'               => Services::class,
             'storagePeriod'          => Services::class,
+            'timetable'              => TimeTable::class,
         ];
     }
 

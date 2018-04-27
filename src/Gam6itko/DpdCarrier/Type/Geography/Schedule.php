@@ -10,4 +10,40 @@ class Schedule extends ArrayLike
 
     /** @var TimeTable */
     protected $timetable;
+
+    /**
+     * @return string
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    /**
+     * @param string $operation
+     * @return Schedule
+     */
+    public function setOperation($operation)
+    {
+        $this->operation = $operation;
+        return $this;
+    }
+
+    /**
+     * @return TimeTable
+     */
+    public function getTimetable()
+    {
+        return $this->timetable;
+    }
+
+    /**
+     * @param TimeTable $timetable
+     * @return Schedule
+     */
+    public function setTimetable($timetable)
+    {
+        $this->timetable = $timetable;
+        return $this;
+    }
 }
