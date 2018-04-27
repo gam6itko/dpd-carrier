@@ -8,7 +8,7 @@ class Schedule extends ArrayLike
     /** @var string */
     protected $operation;
 
-    /** @var TimeTable */
+    /** @var TimeTable[] */
     protected $timetable;
 
     /**
@@ -30,7 +30,7 @@ class Schedule extends ArrayLike
     }
 
     /**
-     * @return TimeTable
+     * @return TimeTable[]
      */
     public function getTimetable()
     {
