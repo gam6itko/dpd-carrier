@@ -38,10 +38,10 @@ class Schedule extends ArrayLike
     }
 
     /**
-     * @param TimeTable $timetable
+     * @param TimeTable[] $timetable
      * @return Schedule
      */
-    public function setTimetable($timetable)
+    public function setTimetable(array $timetable)
     {
         $this->timetable = $timetable;
         return $this;
