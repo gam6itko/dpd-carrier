@@ -2,6 +2,7 @@
     "name": "gam6itko/dpd-carrier",
     "description": "DPD carrier api library",
     "minimum-stability": "stable",
+    "type": "library",
     "keywords": ["dpd", "carrier", "delivery", "russia"],
     "license": "MIT",
     "authors": [
