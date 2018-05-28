@@ -32,6 +32,6 @@ class NLTest extends TestCase
         if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
             throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
         }
-        return new NLWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
+        return new NLWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'));
     }
 }
