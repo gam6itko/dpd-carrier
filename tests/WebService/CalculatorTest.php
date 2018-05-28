@@ -7,6 +7,9 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\CalculatorWebService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers CalculatorWebService
+ */
 class CalculatorTest extends TestCase
 {
     public function testGetServiceCost2()

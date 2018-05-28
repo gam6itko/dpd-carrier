@@ -13,6 +13,9 @@ use Gam6itko\DpdCarrier\Type\Geography\Terminal;
 use Gam6itko\DpdCarrier\WebService\GeographyWebService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers GeographyWebService
+ */
 class GeographyTest extends TestCase
 {
     public function testGetCitiesCashPay()

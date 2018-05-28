@@ -5,6 +5,9 @@ use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 use Gam6itko\DpdCarrier\WebService\TracingWebService;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers TracingWebService
+ */
 class TracingTest extends TestCase
 {
     /** @var StateParcels */
