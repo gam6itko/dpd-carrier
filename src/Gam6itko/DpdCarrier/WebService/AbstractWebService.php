@@ -11,7 +11,7 @@ abstract class AbstractWebService
     protected $clientKey;
 
     /** @var \SoapClient */
-    protected $soapClient;
+    private $soapClient;
 
     /** @var bool */
     protected $testMode;
@@ -28,13 +28,19 @@ abstract class AbstractWebService
         $this->clientNumber = $clientNumber;
         $this->clientKey = $clientKey;
         $this->testMode = $testMode;
-
-        $this->soapClient = $this->buildSoapClient();
     }
 
     abstract protected function getWsdlTest();
 
     abstract protected function getWsdlProd();
+
+    protected function getSoapClient()
+    {
+        if ($this->soapClient) {
+            return $this->soapClient;
+        }
+        return $this->soapClient = $this->buildSoapClient();
+    }
 
     /**
      * @param $methodName
@@ -50,7 +56,7 @@ abstract class AbstractWebService
                 $wrapin => $soapRequest
             ];
         }
-        $soapResult = $this->soapClient->__soapCall($methodName, [$soapRequest]);
+        $soapResult = $this->getSoapClient()->__soapCall($methodName, [$soapRequest]);
 
         return $soapResult->return;
     }
