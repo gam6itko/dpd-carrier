@@ -4,10 +4,10 @@ namespace Gam6itko\DpdCarrier\Type;
 class DeliveryOptions extends ArrayLike
 {
     /** @var bool */
-    protected $selfPickup;
+    protected $selfPickup = false;
 
     /** @var bool */
-    protected $selfDelivery;
+    protected $selfDelivery = true;
 
     /** @var float Kg*/
     protected $weight;
