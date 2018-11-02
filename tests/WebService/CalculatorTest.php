@@ -43,11 +43,57 @@ class CalculatorTest extends TestCase
         $this->assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
+    /**
+     * @expectedException \SoapFault
+     * @expectedExceptionMessage Неоднозначно задан населенный пункт
+     */
+    public function testExceptionGetServiceCostCityName()
+    {
+        $pickup = new DeliveryPoint();
+        $pickup
+            ->setCityName('Москва');
+        $delivery = new DeliveryPoint();
+        $delivery
+            ->setCityName('Челябинск');
+        $options = (new DeliveryOptions(true, true))
+            ->setWeight(7.88)
+            ->setVolume(0.04092)
+            ->setDeclaredValue(34999);
+
+        $result = $this->getDpdWebService()->getServiceCost2($pickup, $delivery, $options);
+
+        $this->assertNotEmpty($result);
+        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+    }
+
+    public function testGetServiceCostCityName()
+    {
+        $pickup = new DeliveryPoint();
+        $pickup
+            ->setCountryCode('RU')
+            ->setRegionCode(77)
+            ->setCityName('Москва');
+        $delivery = new DeliveryPoint();
+        $delivery
+            ->setCountryCode('RU')
+            ->setRegionCode(74)
+            ->setCityName('Челябинск');
+        $options = (new DeliveryOptions(true, true))
+            ->setWeight(7.88)
+            ->setVolume(0.04092)
+            ->setDeclaredValue(34999);
+
+        $result = $this->getDpdWebService()->getServiceCost2($pickup, $delivery, $options);
+
+        $this->assertNotEmpty($result);
+        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+    }
+
     protected function getDpdWebService()
     {
         if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
             throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
         }
-        return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
+        return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'));
     }
 }

@@ -1,7 +1,7 @@
 <phpunit bootstrap="vendor/autoload.php">
     <php>
-        <ini name="DPD_CLIENT_NUMBER" value=""/>
-        <ini name="DPD_CLIENT_KEY" value=""/>
+        <env name="DPD_CLIENT_NUMBER" value=""/>
+        <env name="DPD_CLIENT_KEY" value=""/>
     </php>
 
     <testsuites>

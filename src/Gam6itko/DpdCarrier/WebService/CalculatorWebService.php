@@ -39,7 +39,6 @@ class CalculatorWebService extends AbstractWebService
         ];
     }
 
-
     /**
      * @param DeliveryPoint $pickup
      * @param DeliveryPoint $delivery
@@ -48,6 +47,17 @@ class CalculatorWebService extends AbstractWebService
      */
     public function getServiceCost2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
     {
+        $fnIsEmpty = function (DeliveryPoint $dp) {
+            return empty($dp->getCityId()) && empty($dp->getCityName());
+        };
+
+        if ($fnIsEmpty($pickup)){
+            throw new \LogicException('Pickup point must contains cityId or cityName');
+        }
+        if ($fnIsEmpty($delivery)){
+            throw new \LogicException('Pickup point must contains cityId or cityName');
+        }
+        
         return $this->doRequest(__FUNCTION__, array_merge([
             'pickup'   => $pickup,
             'delivery' => $delivery
