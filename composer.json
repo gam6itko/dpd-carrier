@@ -21,11 +21,14 @@
         "ext-soap": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7 | ^6.5"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
+    },
+    "archive": {
+        "exclude": ["/tests"]
     }
 }
