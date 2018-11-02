@@ -7,6 +7,8 @@
 
 ## OrderWebService
 
+Создание заказов на доставку
+
 ```php
 use Gam6itko\DpdCarrier\Enum\OrderStatusName;
 use Gam6itko\DpdCarrier\Enum\PaymentType;
@@ -68,7 +70,7 @@ OrderStatus structure:
 
 ## CalculatorWebService
 
-
+Расчет стоимости доставки
 
 ```php
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
@@ -77,8 +79,8 @@ use Gam6itko\DpdCarrier\WebService\CalculatorWebService;
 
 // service cost calculation
 $svc = new CalculatorWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY', true); //switch 3rd argument to FALSE on production
-$pickup = new DeliveryPoint(49694102);
-$delivery = new DeliveryPoint(195664561);
+$pickup = new DeliveryPoint(49694102); // Москва
+$delivery = new DeliveryPoint(195664561); //Рязань
 $options = (new DeliveryOptions(true, true))
     ->setWeight(7.88)
     ->setVolume(0.04092)
@@ -102,6 +104,8 @@ ServiceCost structure:
 
 
 ## GeographyWebService
+
+Получение списка Городов, Терминалов, Партнерских точек
 
 ```php
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
@@ -355,4 +359,30 @@ Terminal structure:
         ]
     }
 }
+```
+
+
+#TracingWebService
+
+Получение статусов отправленных посылок
+
+```php
+
+$tracingSvc = new TracingWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY'); // only prod
+
+do {
+    $stateParcels = $tracingSvc->getStatesByClient();
+
+    if ($stateParcels->getDocId() === 0 || null === $stateParcels->getStates()) {
+        return;
+    }
+
+    // processing $stateParcels
+
+    // говорим DPD, что обработали эти статусы
+    $tracingSvc->confirm($stateParcels->getDocId());
+
+    //Показывает, выбраны ли в текущем запросе все новые состояния по клиенту (значение true),
+    // или был достигнут лимит записей в одном запросе и для продолжения необходим ещё один запрос (значение false)
+} while (empty($stateParcels->isResultComplete()));
 ```
