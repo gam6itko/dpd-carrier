@@ -94,6 +94,6 @@ class CalculatorTest extends TestCase
         if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
             throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
         }
-        return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'));
+        return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
     }
 }
