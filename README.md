@@ -367,7 +367,6 @@ Terminal structure:
 Получение статусов отправленных посылок
 
 ```php
-
 $tracingSvc = new TracingWebService('DPD_CLIENT_NUMBER', 'DPD_CLIENT_KEY'); // only prod
 
 do {
