@@ -10,6 +10,7 @@ use Gam6itko\DpdCarrier\Type\Order\ClientAddressStatus;
 use Gam6itko\DpdCarrier\Type\Order\Header;
 use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Order\OrderStatus;
+use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
 use PHPUnit\Framework\TestCase;
 
@@ -40,6 +41,9 @@ class OrderTest extends TestCase
 
         $pickupDate = new \DateTime('next month monday');
 
+        $parcel = (new Parcel(1, 1, 1, 1))
+            ->setNumber('101088'); // используется в LabelPrintService::createParcelLabel
+
         $header = (new Header())
             ->setDatePickup($pickupDate->format('Y-m-d'))
             ->setSenderAddress($senderAddress);
@@ -53,7 +57,8 @@ class OrderTest extends TestCase
             ->setCargoRegistered(true)
             ->setCargoCategory('something special')
             ->setPaymentType(PaymentType::Receiver)
-            ->setReceiverAddress($receiverAddress);
+            ->setReceiverAddress($receiverAddress)
+            ->addParcel($parcel);
 
         $result = $this->getDpdWebService()->createOrder($header, $order);
 
@@ -102,6 +107,9 @@ class OrderTest extends TestCase
         file_put_contents($filename, $result);
     }
 
+    /**
+     * @depends testCreateOrder
+     */
     public function testGetRegisterFile()
     {
         $pickupDate = new \DateTime('next month monday');
@@ -121,7 +129,7 @@ class OrderTest extends TestCase
 
     protected function getDpdWebService()
     {
-        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
+        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])) {
             throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
         }
         return new OrderWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);

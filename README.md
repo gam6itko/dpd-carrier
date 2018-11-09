@@ -1,9 +1,17 @@
 # DPD API library   
     
 [Documentation page](https://www.dpd.ru/dpd/integration/integration.do2)
+  
+    
+## Тестовые данные
+
+```yaml
+DPD_CLIENT_NUMBER: 1001027795
+DPD_CLIENT_KEY:    182A17BD6FC5557D1FCA30FA1D56593EB21AEF88
+```
+  
     
 # Usage
-
 
 ## OrderWebService
 

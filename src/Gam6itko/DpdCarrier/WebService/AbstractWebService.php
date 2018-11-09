@@ -58,7 +58,11 @@ abstract class AbstractWebService
         }
         $soapResult = $this->getSoapClient()->__soapCall($methodName, [$soapRequest]);
 
-        return $soapResult->return;
+        if (isset($soapResult->return)) {
+            return $soapResult->return;
+        }
+
+        return $soapResult;
     }
 
     /**

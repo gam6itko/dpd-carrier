@@ -22,12 +22,11 @@ class TracingTest extends TestCase
         self::$states = $result;
     }
 
-//    public function testConfirm()
-//    {
-//        $result = $this->getDpdWebService()->confirm(self::$states->getDocId());
-//
-//        $this->assertNotEmpty($result);
-//    }
+    public function testGetStatesByDPDOrder()
+    {
+        $result = $this->getDpdWebService()->getStatesByDPDOrder('RU010658425');
+        self::assertNotEmpty($result);
+    }
 
     protected function getDpdWebService()
     {

@@ -27,7 +27,7 @@ class NLWebService extends AbstractWebService
             'dateTo'   => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
-        return $result[0];
+        return $result; //todo if empty
     }
 
     /**
@@ -43,7 +43,7 @@ class NLWebService extends AbstractWebService
             'dateTo'   => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
-        return $result[0];
+        return $result; //todo if empty
     }
 
     /**
@@ -63,6 +63,6 @@ class NLWebService extends AbstractWebService
             'year'     => $year,
         ], 'getWaybill');
 
-        return $result[0];
+        return $result;
     }
 }

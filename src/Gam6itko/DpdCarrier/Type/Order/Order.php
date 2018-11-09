@@ -54,7 +54,7 @@ class Order extends ArrayLike
     /** @var ExtraService */
     protected $extraService;
 
-    /** @var Parcel */
+    /** @var Parcel[] */
     protected $parcel;
 
     /** @var UnitLoad */
@@ -331,18 +331,20 @@ class Order extends ArrayLike
     }
 
     /**
-     * @return Parcel
+     * @param Parcel $parcel
+     * @return self
      */
-    public function getParcel()
+    public function addParcel(Parcel $parcel)
     {
-        return $this->parcel;
+        $this->parcel[] = $parcel;
+        return $this;
     }
 
     /**
-     * @param Parcel $parcel
+     * @param Parcel[] $parcel
      * @return Order
      */
-    public function setParcel($parcel)
+    public function setParcel(array $parcel)
     {
         $this->parcel = $parcel;
         return $this;

@@ -34,7 +34,7 @@ class Parcel extends ArrayLike
     /** @var float */
     protected $width;
 
-    /** @var float */
+    /** @var int */
     protected $number_for_print;
 
     /** @var float */
@@ -174,7 +174,7 @@ class Parcel extends ArrayLike
     }
 
     /**
-     * @return float
+     * @return int|null
      */
     public function getNumberForPrint()
     {
@@ -182,7 +182,7 @@ class Parcel extends ArrayLike
     }
 
     /**
-     * @param float $number_for_print
+     * @param int $number_for_print
      * @return Parcel
      */
     public function setNumberForPrint($number_for_print)
