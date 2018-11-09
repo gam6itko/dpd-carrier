@@ -6,4 +6,5 @@ final class ServiceVariant
     const TerminalToTerminal = 'ТТ';
     const TerminalToHouse = 'ТД';
     const HouseToHouse = 'ДД';
+    const HouseToTerminal = 'ДТ';
 }
