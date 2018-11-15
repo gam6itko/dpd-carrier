@@ -1,5 +1,9 @@
 # Change Log
 
-## [v0.1.1](https://github.com/gam6itko/dpd-carrier/archive/v0.1.1.zip)
+## v0.1.2
+
+- [add] Реализован сервис LabelPrintService, который создает наклейки на посылку.
+
+## v0.1.1
 
 - [add] TracingExtWebService - предоставляет расширенную информацию о смене статусов.
