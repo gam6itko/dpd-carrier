@@ -56,7 +56,7 @@ class OrderTest extends TestCase
             ->setCargoValue(0.45)
             ->setCargoRegistered(true)
             ->setCargoCategory('something special')
-            ->setPaymentType(PaymentType::Receiver)
+            ->setPaymentType(PaymentType::ReceiverCash)
             ->setReceiverAddress($receiverAddress)
             ->addParcel($parcel);
 
