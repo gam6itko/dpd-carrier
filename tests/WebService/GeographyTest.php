@@ -22,8 +22,8 @@ class GeographyTest extends TestCase
     {
         $result = $this->getDpdWebService()->getCitiesCashPay();
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(City::class, $result[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(City::class, $result[0]);
     }
 
     public function testGetParcelShops()
@@ -32,27 +32,27 @@ class GeographyTest extends TestCase
             ->setCountryCode('RU')
             ->setRegionCode(77);
         $result = $this->getDpdWebService()->getParcelShops($point);
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ParcelShop::class, $result[0]);
-        $this->assertInstanceOf(Limits::class, $result[0]->getLimits());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ParcelShop::class, $result[0]);
+        self::assertInstanceOf(Limits::class, $result[0]->getLimits());
     }
 
     public function testGetTerminalsSelfDelivery2()
     {
         $result = $this->getDpdWebService()->getTerminalsSelfDelivery2();
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(Terminal::class, $result[0]);
-        $this->assertInstanceOf(Address::class, $result[0]->getAddress());
-        $this->assertInstanceOf(GeoCoordinates::class, $result[0]->getGeoCoordinates());
-        $this->assertInstanceOf(Services::class, $result[0]->getServices());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(Terminal::class, $result[0]);
+        self::assertInstanceOf(Address::class, $result[0]->getAddress());
+        self::assertInstanceOf(GeoCoordinates::class, $result[0]->getGeoCoordinates());
+        self::assertInstanceOf(Services::class, $result[0]->getServices());
     }
 
     public function testGetStoragePeriod()
     {
         $result = $this->getDpdWebService()->getStoragePeriod('OEL', ServiceCode::PCL);
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(Terminal::class, $result);
-        $this->assertInstanceOf(Services::class, $result->getServices()[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(Terminal::class, $result);
+        self::assertInstanceOf(Services::class, $result->getServices()[0]);
     }
 
     protected function getDpdWebService()

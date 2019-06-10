@@ -62,9 +62,9 @@ class OrderTest extends TestCase
 
         $result = $this->getDpdWebService()->createOrder($header, $order);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(OrderStatus::class, $result);
-        $this->assertEquals(OrderStatusName::OK, $result->getStatus());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(OrderStatus::class, $result);
+        self::assertEquals(OrderStatusName::OK, $result->getStatus());
 
         self::$orderStatus = $result;
     }
@@ -73,9 +73,9 @@ class OrderTest extends TestCase
     {
         $result = $this->getDpdWebService()->getOrderStatus(self::$orderStatus->getOrderNumberInternal());
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(OrderStatus::class, $result);
-        $this->assertEquals(OrderStatusName::OK, $result->getStatus());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(OrderStatus::class, $result);
+        self::assertEquals(OrderStatusName::OK, $result->getStatus());
     }
 
     public function testCreateAddress()
@@ -92,16 +92,16 @@ class OrderTest extends TestCase
 
         $result = $this->getDpdWebService()->createAddress($address);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ClientAddressStatus::class, $result);
-        $this->assertEquals('address-error', $result->getStatus());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ClientAddressStatus::class, $result);
+        self::assertEquals('address-error', $result->getStatus());
     }
 
     public function testGetInvoiceFile()
     {
         $result = $this->getDpdWebService()->getInvoiceFile(self::$orderStatus->getOrderNum());
 
-        $this->assertNotEmpty($result);
+        self::assertNotEmpty($result);
 
         $filename = sys_get_temp_dir() . DIRECTORY_SEPARATOR . self::$orderStatus->getOrderNum() . '_invoice.pdf';
         file_put_contents($filename, $result);
@@ -115,16 +115,16 @@ class OrderTest extends TestCase
         $pickupDate = new \DateTime('next month monday');
         $result = $this->getDpdWebService()->getRegisterFile($pickupDate->format('Y-m-d'));
 
-        $this->assertNotEmpty($result);
+        self::assertNotEmpty($result);
     }
 
     public function testCancelOrder()
     {
         $result = $this->getDpdWebService()->cancelOrder(self::$orderStatus);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(OrderStatus::class, $result);
-        $this->assertEquals(OrderStatusName::Canceled, $result->getStatus());
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(OrderStatus::class, $result);
+        self::assertEquals(OrderStatusName::Canceled, $result->getStatus());
     }
 
     protected function getDpdWebService()

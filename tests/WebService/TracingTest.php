@@ -17,7 +17,7 @@ class TracingTest extends TestCase
     {
         $result = $this->getDpdWebService()->getStatesByClient();
 
-        $this->assertNotEmpty($result);
+        self::assertNotEmpty($result);
 
         self::$states = $result;
     }

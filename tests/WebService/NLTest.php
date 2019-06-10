@@ -17,14 +17,14 @@ class NLTest extends TestCase
     {
         $result = $this->getDpdWebService()->getNLAmount(new \DateTime('2018-01-01'), new \DateTime());
 
-        $this->assertNotEmpty($result);
+        self::assertNotEmpty($result);
     }
 
     public function testNLInvoice()
     {
         $result = $this->getDpdWebService()->getNLInvoice(new \DateTime('2018-01-01'), new \DateTime());
 
-        $this->assertNotEmpty($result);
+        self::assertNotEmpty($result);
     }
 
     protected function getDpdWebService()

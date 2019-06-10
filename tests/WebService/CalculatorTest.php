@@ -23,8 +23,8 @@ class CalculatorTest extends TestCase
 
         $result = $this->getDpdWebService()->getServiceCost2($pickup, $delivery, $options);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
     public function testGetServiceCostByParcels2()
@@ -39,8 +39,8 @@ class CalculatorTest extends TestCase
 
         $result = $this->getDpdWebService()->getServiceCostByParcels2($pickup, $delivery, $options, [$parcel]);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
     /**
@@ -62,8 +62,8 @@ class CalculatorTest extends TestCase
 
         $result = $this->getDpdWebService()->getServiceCost2($pickup, $delivery, $options);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
     public function testGetServiceCostCityName()
@@ -85,8 +85,8 @@ class CalculatorTest extends TestCase
 
         $result = $this->getDpdWebService()->getServiceCost2($pickup, $delivery, $options);
 
-        $this->assertNotEmpty($result);
-        $this->assertInstanceOf(ServiceCost::class, $result[0]);
+        self::assertNotEmpty($result);
+        self::assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
     protected function getDpdWebService()
