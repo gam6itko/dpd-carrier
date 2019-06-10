@@ -3,25 +3,25 @@ namespace Gam6itko\DpdCarrier\Enum;
 
 final class ServiceCode
 {
-    /** DPD 18:00 */
+    /** @var string DPD 18:00 */
     const BZP = 'BZP';
-    /** DPD ECONOMY */
+    /** @var string DPD ECONOMY */
     const ECN = 'ECN';
-    /** DPD CLASSIC */
+    /** @var string DPD CLASSIC */
     const CUR = 'CUR';
-    /** DPD EXPRESS */
+    /** @var string DPD EXPRESS */
     const NDY = 'NDY';
-    /** DPD Online Express */
+    /** @var string DPD Online Express */
     const CSM = 'CSM';
-    /** DPD Online Classic */
+    /** @var string DPD Online Classic */
     const PCL = 'PCL';
-    /** DPD CLASSIC international IMPORT */
+    /** @var string DPD CLASSIC international IMPORT */
     const DPI = 'DPI';
-    /** DPD CLASSIC international EXPORT */
+    /** @var string DPD CLASSIC international EXPORT */
     const DPE = 'DPE';
-    /** DPD MAX domestic */
+    /** @var string DPD MAX domestic */
     const MAX = 'MAX';
-    /** DPD Shop to Shop */
+    /** @var string DPD Shop to Shop */
 //    const PUP = 'PUP';
 
     /**

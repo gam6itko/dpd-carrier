@@ -16,6 +16,9 @@
             "Gam6itko\\DpdCarrier\\": "src/Gam6itko/DpdCarrier"
         }
     },
+    "autoload-dev": {
+        "classmap": ["tests/"]
+    },
     "require": {
         "php": ">=5.6",
         "ext-soap": "*"

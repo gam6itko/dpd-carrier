@@ -71,6 +71,9 @@ class OrderTest extends AbstractDpdServiceTestCase
         self::$orderStatus = $result;
     }
 
+    /**
+     * @depends testCreateOrder
+     */
     public function testGetOrderStatus()
     {
         $result = $this->getDpdWebService()->getOrderStatus(self::$orderStatus->getOrderNumberInternal());
@@ -99,6 +102,9 @@ class OrderTest extends AbstractDpdServiceTestCase
         self::assertEquals('address-error', $result->getStatus());
     }
 
+    /**
+     * @depends testCreateOrder
+     */
     public function testGetInvoiceFile()
     {
         $result = $this->getDpdWebService()->getInvoiceFile(self::$orderStatus->getOrderNum());
@@ -120,6 +126,9 @@ class OrderTest extends AbstractDpdServiceTestCase
         self::assertNotEmpty($result);
     }
 
+    /**
+     * @depends testCreateOrder
+     */
     public function testCancelOrder()
     {
         $result = $this->getDpdWebService()->cancelOrder(self::$orderStatus);
