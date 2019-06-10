@@ -10,6 +10,17 @@ class Parameter extends ArrayLike
     protected $value;
 
     /**
+     * Parameter constructor.
+     * @param string $name
+     * @param string $value
+     */
+    public function __construct($name, $value)
+    {
+        $this->name = $name;
+        $this->value = $value;
+    }
+
+    /**
      * @return string
      */
     public function getName()

@@ -1,5 +1,4 @@
 <?php
-namespace WebService;
 
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
@@ -11,12 +10,11 @@ use Gam6itko\DpdCarrier\Type\Geography\ParcelShop;
 use Gam6itko\DpdCarrier\Type\Geography\Services;
 use Gam6itko\DpdCarrier\Type\Geography\Terminal;
 use Gam6itko\DpdCarrier\WebService\GeographyWebService;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @covers GeographyWebService
  */
-class GeographyTest extends TestCase
+class GeographyTest extends AbstractDpdServiceTestCase
 {
     public function testGetCitiesCashPay()
     {
@@ -55,11 +53,11 @@ class GeographyTest extends TestCase
         self::assertInstanceOf(Services::class, $result->getServices()[0]);
     }
 
+    /**
+     * @return GeographyWebService
+     */
     protected function getDpdWebService()
     {
-        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
-            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
-        }
-        return new GeographyWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
+        return $this->createService(GeographyWebService::class);
     }
 }

@@ -1,25 +1,26 @@
 <?php
-namespace WebService;
 
+use Gam6itko\DpdCarrier\Enum\ExtraServiceCode;
 use Gam6itko\DpdCarrier\Enum\OrderStatusName;
 use Gam6itko\DpdCarrier\Enum\PaymentType;
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
 use Gam6itko\DpdCarrier\Enum\ServiceVariant;
+use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Order\ClientAddress;
 use Gam6itko\DpdCarrier\Type\Order\ClientAddressStatus;
 use Gam6itko\DpdCarrier\Type\Order\Header;
 use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Order\OrderStatus;
+use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Class OrderTest
  * @package WebService
  * @covers OrderWebService
  */
-class OrderTest extends TestCase
+class OrderTest extends AbstractDpdServiceTestCase
 {
     /** @var OrderStatus */
     protected static $orderStatus;
@@ -58,7 +59,8 @@ class OrderTest extends TestCase
             ->setCargoCategory('something special')
             ->setPaymentType(PaymentType::ReceiverCash)
             ->setReceiverAddress($receiverAddress)
-            ->addParcel($parcel);
+            ->addParcel($parcel)
+            ->addExtraService(new ExtraService(ExtraServiceCode::SMS, new Parameter('phone', '+79991112233')));
 
         $result = $this->getDpdWebService()->createOrder($header, $order);
 
@@ -127,11 +129,11 @@ class OrderTest extends TestCase
         self::assertEquals(OrderStatusName::Canceled, $result->getStatus());
     }
 
+    /**
+     * @return OrderWebService
+     */
     protected function getDpdWebService()
     {
-        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])) {
-            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
-        }
-        return new OrderWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
+        return $this->createService(OrderWebService::class);
     }
 }

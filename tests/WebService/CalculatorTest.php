@@ -5,12 +5,11 @@ use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\CalculatorWebService;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @covers CalculatorWebService
  */
-class CalculatorTest extends TestCase
+class CalculatorTest extends AbstractDpdServiceTestCase
 {
     public function testGetServiceCost2()
     {
@@ -89,11 +88,11 @@ class CalculatorTest extends TestCase
         self::assertInstanceOf(ServiceCost::class, $result[0]);
     }
 
+    /**
+     * @return CalculatorWebService
+     */
     protected function getDpdWebService()
     {
-        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
-            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
-        }
-        return new CalculatorWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'), true);
+        return $this->createService(CalculatorWebService::class);
     }
 }

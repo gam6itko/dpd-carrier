@@ -1,14 +1,12 @@
 <?php
-namespace WebService;
 
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 use Gam6itko\DpdCarrier\WebService\NLWebService;
-use PHPUnit\Framework\TestCase;
 
 /**
  * @covers NLWebService
  */
-class NLTest extends TestCase
+class NLTest extends AbstractDpdServiceTestCase
 {
     /** @var StateParcels */
     protected static $states;
@@ -27,11 +25,11 @@ class NLTest extends TestCase
         self::assertNotEmpty($result);
     }
 
+    /**
+     * @return NLWebService
+     */
     protected function getDpdWebService()
     {
-        if (empty($_SERVER['DPD_CLIENT_NUMBER']) || empty($_SERVER['DPD_CLIENT_KEY'])){
-            throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
-        }
-        return new NLWebService(getenv('DPD_CLIENT_NUMBER'), getenv('DPD_CLIENT_KEY'));
+        return $this->createService(NLWebService::class);
     }
 }
