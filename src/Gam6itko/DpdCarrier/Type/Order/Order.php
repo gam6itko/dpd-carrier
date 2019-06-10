@@ -5,7 +5,6 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
-use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
 
 class Order extends ArrayLike
 {
@@ -51,7 +50,7 @@ class Order extends ArrayLike
     /** @var ClientAddress */
     protected $receiverAddress;
 
-    /** @var ExtraService */
+    /** @var ExtraService[] */
     protected $extraService;
 
     /** @var Parcel[] */
@@ -313,7 +312,7 @@ class Order extends ArrayLike
     }
 
     /**
-     * @return ExtraService
+     * @return ExtraService[]
      */
     public function getExtraService()
     {
@@ -321,12 +320,22 @@ class Order extends ArrayLike
     }
 
     /**
+     * @param ExtraService[] $extraServices
+     * @return Order
+     */
+    public function setExtraService(array $extraServices)
+    {
+        $this->extraService = $extraServices;
+        return $this;
+    }
+
+    /**
      * @param ExtraService $extraService
      * @return Order
      */
-    public function setExtraService($extraService)
+    public function addExtraService(ExtraService $extraService)
     {
-        $this->extraService = $extraService;
+        $this->extraService[] = $extraService;
         return $this;
     }
 
