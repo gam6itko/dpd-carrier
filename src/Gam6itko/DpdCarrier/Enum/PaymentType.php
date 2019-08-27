@@ -6,7 +6,7 @@ final class PaymentType
     /** @var string Наличными отправителем */
     const SenderCash = 'ОУО';
 
-    /** @var null Оплата тправителя по безналичному расчёту. */
+    /** @var null Оплата отправителя по безналичному расчёту. */
     const SenderCashless = null;
 
     /** @var string Наличными получателем */
