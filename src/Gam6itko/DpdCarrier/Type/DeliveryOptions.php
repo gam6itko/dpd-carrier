@@ -9,7 +9,7 @@ class DeliveryOptions extends ArrayLike
     /** @var bool */
     protected $selfDelivery = true;
 
-    /** @var float Kg*/
+    /** @var float Kg */
     protected $weight;
 
     /** @var float */
@@ -117,12 +117,18 @@ class DeliveryOptions extends ArrayLike
     }
 
     /**
-     * @param string $serviceCode
+     * @param string|array $serviceCode
      * @return DeliveryOptions
      */
     public function setServiceCode($serviceCode)
     {
-        $this->serviceCode = $serviceCode;
+        if (is_array($serviceCode)) {
+            $this->serviceCode = implode(',', $serviceCode);
+        } else {
+            $this->serviceCode = implode(',', array_map(function ($val) {
+                return strtoupper(trim($val));
+            }, array_filter(explode(',', str_replace(' ', ',', $serviceCode)))));
+        }
         return $this;
     }
 
