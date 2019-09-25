@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -17,7 +18,7 @@ class Order extends ArrayLike
     /** @var string */
     protected $serviceVariant;
 
-    /** @var integer */
+    /** @var int */
     protected $cargoNumPack;
 
     /** @var float */
@@ -69,11 +70,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $orderNumberInternal
+     *
      * @return Order
      */
     public function setOrderNumberInternal($orderNumberInternal)
     {
         $this->orderNumberInternal = $orderNumberInternal;
+
         return $this;
     }
 
@@ -87,11 +90,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $serviceCode
+     *
      * @return Order
      */
     public function setServiceCode($serviceCode)
     {
         $this->serviceCode = $serviceCode;
+
         return $this;
     }
 
@@ -105,11 +110,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $serviceVariant
+     *
      * @return Order
      */
     public function setServiceVariant($serviceVariant)
     {
         $this->serviceVariant = $serviceVariant;
+
         return $this;
     }
 
@@ -123,11 +130,13 @@ class Order extends ArrayLike
 
     /**
      * @param int $cargoNumPack
+     *
      * @return Order
      */
     public function setCargoNumPack($cargoNumPack)
     {
         $this->cargoNumPack = $cargoNumPack;
+
         return $this;
     }
 
@@ -141,11 +150,13 @@ class Order extends ArrayLike
 
     /**
      * @param float $cargoWeight
+     *
      * @return Order
      */
     public function setCargoWeight($cargoWeight)
     {
         $this->cargoWeight = $cargoWeight;
+
         return $this;
     }
 
@@ -159,11 +170,13 @@ class Order extends ArrayLike
 
     /**
      * @param float $cargoVolume
+     *
      * @return Order
      */
     public function setCargoVolume($cargoVolume)
     {
         $this->cargoVolume = $cargoVolume;
+
         return $this;
     }
 
@@ -177,11 +190,13 @@ class Order extends ArrayLike
 
     /**
      * @param bool $cargoRegistered
+     *
      * @return Order
      */
     public function setCargoRegistered($cargoRegistered)
     {
         $this->cargoRegistered = $cargoRegistered;
+
         return $this;
     }
 
@@ -195,11 +210,13 @@ class Order extends ArrayLike
 
     /**
      * @param float $cargoValue
+     *
      * @return Order
      */
     public function setCargoValue($cargoValue)
     {
         $this->cargoValue = $cargoValue;
+
         return $this;
     }
 
@@ -213,11 +230,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $cargoCategory
+     *
      * @return Order
      */
     public function setCargoCategory($cargoCategory)
     {
         $this->cargoCategory = $cargoCategory;
+
         return $this;
     }
 
@@ -231,11 +250,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $deliveryTimePeriod
+     *
      * @return Order
      */
     public function setDeliveryTimePeriod($deliveryTimePeriod)
     {
         $this->deliveryTimePeriod = $deliveryTimePeriod;
+
         return $this;
     }
 
@@ -249,11 +270,13 @@ class Order extends ArrayLike
 
     /**
      * @param string $paymentType
+     *
      * @return Order
      */
     public function setPaymentType($paymentType)
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
@@ -267,11 +290,13 @@ class Order extends ArrayLike
 
     /**
      * @param Parameter $extraParam
+     *
      * @return Order
      */
     public function setExtraParam($extraParam)
     {
         $this->extraParam = $extraParam;
+
         return $this;
     }
 
@@ -285,11 +310,13 @@ class Order extends ArrayLike
 
     /**
      * @param DataInternational $dataInt
+     *
      * @return Order
      */
     public function setDataInt($dataInt)
     {
         $this->dataInt = $dataInt;
+
         return $this;
     }
 
@@ -303,11 +330,13 @@ class Order extends ArrayLike
 
     /**
      * @param ClientAddress $receiverAddress
+     *
      * @return Order
      */
     public function setReceiverAddress($receiverAddress)
     {
         $this->receiverAddress = $receiverAddress;
+
         return $this;
     }
 
@@ -321,41 +350,49 @@ class Order extends ArrayLike
 
     /**
      * @param ExtraService[] $extraServices
+     *
      * @return Order
      */
     public function setExtraService(array $extraServices)
     {
         $this->extraService = $extraServices;
+
         return $this;
     }
 
     /**
      * @param ExtraService $extraService
+     *
      * @return Order
      */
     public function addExtraService(ExtraService $extraService)
     {
         $this->extraService[] = $extraService;
+
         return $this;
     }
 
     /**
      * @param Parcel $parcel
+     *
      * @return self
      */
     public function addParcel(Parcel $parcel)
     {
         $this->parcel[] = $parcel;
+
         return $this;
     }
 
     /**
      * @param Parcel[] $parcel
+     *
      * @return Order
      */
     public function setParcel(array $parcel)
     {
         $this->parcel = $parcel;
+
         return $this;
     }
 
@@ -369,11 +406,13 @@ class Order extends ArrayLike
 
     /**
      * @param UnitLoad $unitLoad
+     *
      * @return Order
      */
     public function setUnitLoad($unitLoad)
     {
         $this->unitLoad = $unitLoad;
+
         return $this;
     }
 }

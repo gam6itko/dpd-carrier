@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Calculator;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -14,7 +15,7 @@ class ServiceCost extends ArrayLike
     /** @var float */
     protected $cost;
 
-    /** @var integer */
+    /** @var int */
     protected $days;
 
     /** @var float */
@@ -33,11 +34,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param string $serviceCode
+     *
      * @return ServiceCost
      */
     public function setServiceCode($serviceCode)
     {
         $this->serviceCode = $serviceCode;
+
         return $this;
     }
 
@@ -51,11 +54,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param string $serviceName
+     *
      * @return ServiceCost
      */
     public function setServiceName($serviceName)
     {
         $this->serviceName = $serviceName;
+
         return $this;
     }
 
@@ -69,11 +74,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param float $cost
+     *
      * @return ServiceCost
      */
     public function setCost($cost)
     {
         $this->cost = $cost;
+
         return $this;
     }
 
@@ -87,11 +94,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param int $days
+     *
      * @return ServiceCost
      */
     public function setDays($days)
     {
         $this->days = $days;
+
         return $this;
     }
 
@@ -105,11 +114,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param float $weight
+     *
      * @return ServiceCost
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -123,11 +134,13 @@ class ServiceCost extends ArrayLike
 
     /**
      * @param float $volume
+     *
      * @return ServiceCost
      */
     public function setVolume($volume)
     {
         $this->volume = $volume;
+
         return $this;
     }
 }

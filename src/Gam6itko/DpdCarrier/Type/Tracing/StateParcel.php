@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Tracing;
 
 use Gam6itko\DpdCarrier\Type\Traits\ToArrayTrait;
@@ -100,11 +101,13 @@ class StateParcel
 
     /**
      * @param string $clientOrderNr
+     *
      * @return StateParcel
      */
     public function setClientOrderNr($clientOrderNr)
     {
         $this->clientOrderNr = $clientOrderNr;
+
         return $this;
     }
 
@@ -118,11 +121,13 @@ class StateParcel
 
     /**
      * @param string $clientParcelNr
+     *
      * @return StateParcel
      */
     public function setClientParcelNr($clientParcelNr)
     {
         $this->clientParcelNr = $clientParcelNr;
+
         return $this;
     }
 
@@ -136,11 +141,13 @@ class StateParcel
 
     /**
      * @param string $dpdOrderNr
+     *
      * @return StateParcel
      */
     public function setDpdOrderNr($dpdOrderNr)
     {
         $this->dpdOrderNr = $dpdOrderNr;
+
         return $this;
     }
 
@@ -154,11 +161,13 @@ class StateParcel
 
     /**
      * @param string $dpdParcelNr
+     *
      * @return StateParcel
      */
     public function setDpdParcelNr($dpdParcelNr)
     {
         $this->dpdParcelNr = $dpdParcelNr;
+
         return $this;
     }
 
@@ -172,11 +181,13 @@ class StateParcel
 
     /**
      * @param string $pickupDate
+     *
      * @return StateParcel
      */
     public function setPickupDate($pickupDate)
     {
         $this->pickupDate = $pickupDate;
+
         return $this;
     }
 
@@ -190,11 +201,13 @@ class StateParcel
 
     /**
      * @param string $dpdOrderReNr
+     *
      * @return StateParcel
      */
     public function setDpdOrderReNr($dpdOrderReNr)
     {
         $this->dpdOrderReNr = $dpdOrderReNr;
+
         return $this;
     }
 
@@ -208,11 +221,13 @@ class StateParcel
 
     /**
      * @param string $dpdParcelReNr
+     *
      * @return StateParcel
      */
     public function setDpdParcelReNr($dpdParcelReNr)
     {
         $this->dpdParcelReNr = $dpdParcelReNr;
+
         return $this;
     }
 
@@ -226,11 +241,13 @@ class StateParcel
 
     /**
      * @param bool $isReturn
+     *
      * @return StateParcel
      */
     public function setIsReturn($isReturn)
     {
         $this->isReturn = $isReturn;
+
         return $this;
     }
 
@@ -244,11 +261,13 @@ class StateParcel
 
     /**
      * @param string $planDeliveryDate
+     *
      * @return StateParcel
      */
     public function setPlanDeliveryDate($planDeliveryDate)
     {
         $this->planDeliveryDate = $planDeliveryDate;
+
         return $this;
     }
 
@@ -262,11 +281,13 @@ class StateParcel
 
     /**
      * @param float $orderPhysicalWeight
+     *
      * @return StateParcel
      */
     public function setOrderPhysicalWeight($orderPhysicalWeight)
     {
         $this->orderPhysicalWeight = $orderPhysicalWeight;
+
         return $this;
     }
 
@@ -280,11 +301,13 @@ class StateParcel
 
     /**
      * @param float $orderVolume
+     *
      * @return StateParcel
      */
     public function setOrderVolume($orderVolume)
     {
         $this->orderVolume = $orderVolume;
+
         return $this;
     }
 
@@ -298,11 +321,13 @@ class StateParcel
 
     /**
      * @param float $orderVolumeWeight
+     *
      * @return StateParcel
      */
     public function setOrderVolumeWeight($orderVolumeWeight)
     {
         $this->orderVolumeWeight = $orderVolumeWeight;
+
         return $this;
     }
 
@@ -316,11 +341,13 @@ class StateParcel
 
     /**
      * @param float $orderPayWeight
+     *
      * @return StateParcel
      */
     public function setOrderPayWeight($orderPayWeight)
     {
         $this->orderPayWeight = $orderPayWeight;
+
         return $this;
     }
 
@@ -334,11 +361,13 @@ class StateParcel
 
     /**
      * @param float $orderCost
+     *
      * @return StateParcel
      */
     public function setOrderCost($orderCost)
     {
         $this->orderCost = $orderCost;
+
         return $this;
     }
 
@@ -352,11 +381,13 @@ class StateParcel
 
     /**
      * @param float $parcelPhysicalWeight
+     *
      * @return StateParcel
      */
     public function setParcelPhysicalWeight($parcelPhysicalWeight)
     {
         $this->parcelPhysicalWeight = $parcelPhysicalWeight;
+
         return $this;
     }
 
@@ -370,11 +401,13 @@ class StateParcel
 
     /**
      * @param float $parcelVolume
+     *
      * @return StateParcel
      */
     public function setParcelVolume($parcelVolume)
     {
         $this->parcelVolume = $parcelVolume;
+
         return $this;
     }
 
@@ -388,11 +421,13 @@ class StateParcel
 
     /**
      * @param float $parcelVolumeWeight
+     *
      * @return StateParcel
      */
     public function setParcelVolumeWeight($parcelVolumeWeight)
     {
         $this->parcelVolumeWeight = $parcelVolumeWeight;
+
         return $this;
     }
 
@@ -406,11 +441,13 @@ class StateParcel
 
     /**
      * @param float $parcelPayWeight
+     *
      * @return StateParcel
      */
     public function setParcelPayWeight($parcelPayWeight)
     {
         $this->parcelPayWeight = $parcelPayWeight;
+
         return $this;
     }
 
@@ -424,11 +461,13 @@ class StateParcel
 
     /**
      * @param float $parcelLength
+     *
      * @return StateParcel
      */
     public function setParcelLength($parcelLength)
     {
         $this->parcelLength = $parcelLength;
+
         return $this;
     }
 
@@ -442,11 +481,13 @@ class StateParcel
 
     /**
      * @param float $parcelWidth
+     *
      * @return StateParcel
      */
     public function setParcelWidth($parcelWidth)
     {
         $this->parcelWidth = $parcelWidth;
+
         return $this;
     }
 
@@ -460,11 +501,13 @@ class StateParcel
 
     /**
      * @param float $parcelHeight
+     *
      * @return StateParcel
      */
     public function setParcelHeight($parcelHeight)
     {
         $this->parcelHeight = $parcelHeight;
+
         return $this;
     }
 
@@ -478,11 +521,13 @@ class StateParcel
 
     /**
      * @param string $newState
+     *
      * @return StateParcel
      */
     public function setNewState($newState)
     {
         $this->newState = $newState;
+
         return $this;
     }
 
@@ -496,11 +541,13 @@ class StateParcel
 
     /**
      * @param string $transitionTime
+     *
      * @return StateParcel
      */
     public function setTransitionTime($transitionTime)
     {
         $this->transitionTime = $transitionTime;
+
         return $this;
     }
 
@@ -514,11 +561,13 @@ class StateParcel
 
     /**
      * @param string $terminalCode
+     *
      * @return StateParcel
      */
     public function setTerminalCode($terminalCode)
     {
         $this->terminalCode = $terminalCode;
+
         return $this;
     }
 
@@ -532,11 +581,13 @@ class StateParcel
 
     /**
      * @param string $terminalCity
+     *
      * @return StateParcel
      */
     public function setTerminalCity($terminalCity)
     {
         $this->terminalCity = $terminalCity;
+
         return $this;
     }
 
@@ -550,11 +601,13 @@ class StateParcel
 
     /**
      * @param string $incidentCode
+     *
      * @return StateParcel
      */
     public function setIncidentCode($incidentCode)
     {
         $this->incidentCode = $incidentCode;
+
         return $this;
     }
 
@@ -568,11 +621,13 @@ class StateParcel
 
     /**
      * @param string $incidentName
+     *
      * @return StateParcel
      */
     public function setIncidentName($incidentName)
     {
         $this->incidentName = $incidentName;
+
         return $this;
     }
 
@@ -586,11 +641,13 @@ class StateParcel
 
     /**
      * @param string $consignee
+     *
      * @return StateParcel
      */
     public function setConsignee($consignee)
     {
         $this->consignee = $consignee;
+
         return $this;
     }
 }

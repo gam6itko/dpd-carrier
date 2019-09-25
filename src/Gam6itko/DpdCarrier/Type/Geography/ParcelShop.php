@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class ParcelShop extends AbstractParcelStore
@@ -31,11 +32,13 @@ class ParcelShop extends AbstractParcelStore
 
     /**
      * @param string $code
+     *
      * @return ParcelShop
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -49,11 +52,13 @@ class ParcelShop extends AbstractParcelStore
 
     /**
      * @param string $parcelShopType
+     *
      * @return ParcelShop
      */
     public function setParcelShopType($parcelShopType)
     {
         $this->parcelShopType = $parcelShopType;
+
         return $this;
     }
 
@@ -67,11 +72,13 @@ class ParcelShop extends AbstractParcelStore
 
     /**
      * @param string $state
+     *
      * @return ParcelShop
      */
     public function setState($state)
     {
         $this->state = $state;
+
         return $this;
     }
 
@@ -85,11 +92,13 @@ class ParcelShop extends AbstractParcelStore
 
     /**
      * @param Limits $limits
+     *
      * @return ParcelShop
      */
     public function setLimits($limits)
     {
         $this->limits = $limits;
+
         return $this;
     }
 
@@ -103,11 +112,13 @@ class ParcelShop extends AbstractParcelStore
 
     /**
      * @param mixed $brand
+     *
      * @return ParcelShop
      */
     public function setBrand($brand)
     {
         $this->brand = $brand;
+
         return $this;
     }
 }

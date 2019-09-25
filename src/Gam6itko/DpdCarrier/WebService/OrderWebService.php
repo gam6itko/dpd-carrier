@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\ExtraService;
@@ -34,26 +35,26 @@ class OrderWebService extends AbstractWebService
     protected function getClassmap()
     {
         return [
-            'extraService'           => ExtraService::class,
-            'parcel'                 => Parcel::class,
-            'parameter'              => Parameter::class,
-            'dpdOrderStatus'         => OrderStatus::class,
-            'address'                => ClientAddress::class,
+            'extraService' => ExtraService::class,
+            'parcel' => Parcel::class,
+            'parameter' => Parameter::class,
+            'dpdOrderStatus' => OrderStatus::class,
+            'address' => ClientAddress::class,
             'dpdClientAddressStatus' => ClientAddressStatus::class,
         ];
     }
 
-
     /**
      * @param Header $header
-     * @param Order $order
+     * @param Order  $order
+     *
      * @return OrderStatus
      */
     public function createOrder(Header $header, Order $order)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'header' => $header,
-            'order'  => $order
+            'order' => $order,
         ], 'orders');
 
         return $result[0];
@@ -61,12 +62,13 @@ class OrderWebService extends AbstractWebService
 
     /**
      * @param OrderStatus $orderState
+     *
      * @return OrderStatus
      */
     public function cancelOrder(OrderStatus $orderState)
     {
         $result = $this->doRequest(__FUNCTION__, [
-            'cancel' => $orderState->toArray()
+            'cancel' => $orderState->toArray(),
         ], 'orders');
 
         return $result[0];
@@ -75,6 +77,7 @@ class OrderWebService extends AbstractWebService
     /**
      * @param $orderNumberInternal
      * @param null $datePickup
+     *
      * @return OrderStatus
      */
     public function getOrderStatus($orderNumberInternal, $datePickup = null)
@@ -82,8 +85,8 @@ class OrderWebService extends AbstractWebService
         $result = $this->doRequest(__FUNCTION__, [
             'order' => [
                 'orderNumberInternal' => $orderNumberInternal,
-                'datePickup'          => $datePickup,
-            ]
+                'datePickup' => $datePickup,
+            ],
         ], 'orderStatus');
 
         return $result[0];
@@ -91,23 +94,25 @@ class OrderWebService extends AbstractWebService
 
     /**
      * @param ClientAddress $address
+     *
      * @return ClientAddressStatus
      */
     public function createAddress(ClientAddress $address)
     {
         return $this->doRequest(__FUNCTION__, [
-            'clientAddress' => $address->toArray()
+            'clientAddress' => $address->toArray(),
         ], 'address');
     }
 
     /**
      * @param ClientAddress $address
+     *
      * @return ClientAddressStatus
      */
     public function updateAddress(ClientAddress $address)
     {
         return $this->doRequest(__FUNCTION__, [
-            'clientAddress' => $address->toArray()
+            'clientAddress' => $address->toArray(),
         ], 'address');
     }
 
@@ -115,14 +120,15 @@ class OrderWebService extends AbstractWebService
      * @param $orderNum
      * @param null $parcelCount
      * @param null $cargoValue
+     *
      * @return string - pdf content
      */
     public function getInvoiceFile($orderNum, $parcelCount = null, $cargoValue = null)
     {
         $result = $this->doRequest(__FUNCTION__, array_filter([
-            'orderNum'    => $orderNum,
+            'orderNum' => $orderNum,
             'parcelCount' => $parcelCount,
-            'cargoValue'  => $cargoValue,
+            'cargoValue' => $cargoValue,
         ]), 'request');
 
         return $result->file;
@@ -133,15 +139,16 @@ class OrderWebService extends AbstractWebService
      * @param null $regularNum
      * @param null $cityPickupId
      * @param null $addressCode
+     *
      * @return array
      */
     public function getRegisterFile($datePickup, $regularNum = null, $cityPickupId = null, $addressCode = null)
     {
         $result = $this->doRequest(__FUNCTION__, array_filter([
-            'datePickup'   => $datePickup,
-            'regularNum'   => $regularNum,
+            'datePickup' => $datePickup,
+            'regularNum' => $regularNum,
             'cityPickupId' => $cityPickupId,
-            'addressCode'  => $addressCode,
+            'addressCode' => $addressCode,
         ]), 'request');
 
         return $result->file;

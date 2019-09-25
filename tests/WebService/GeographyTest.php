@@ -12,7 +12,7 @@ use Gam6itko\DpdCarrier\Type\Geography\Terminal;
 use Gam6itko\DpdCarrier\WebService\GeographyWebService;
 
 /**
- * @covers GeographyWebService
+ * @covers \GeographyWebService
  */
 class GeographyTest extends AbstractDpdServiceTestCase
 {

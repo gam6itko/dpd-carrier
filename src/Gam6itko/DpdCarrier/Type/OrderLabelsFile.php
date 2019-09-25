@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 use Gam6itko\DpdCarrier\Type\Order\OrderStatus;

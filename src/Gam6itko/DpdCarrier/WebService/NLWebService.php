@@ -16,15 +16,17 @@ class NLWebService extends AbstractWebService
 
     /**
      * Отчет о предварительной стоимости перевозки за указный период.
+     *
      * @param \DateTime $dateFrom
      * @param \DateTime $dateTo
+     *
      * @return mixed
      */
     public function getNLAmount(\DateTime $dateFrom, \DateTime $dateTo)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),
-            'dateTo'   => $dateTo->format('Y-m-d'),
+            'dateTo' => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
         return $result; //todo if empty
@@ -32,24 +34,28 @@ class NLWebService extends AbstractWebService
 
     /**
      * Отчет об окончательной стоимости перевозки за указный период.
+     *
      * @param \DateTime $dateFrom
      * @param \DateTime $dateTo
+     *
      * @return mixed
      */
     public function getNLInvoice(\DateTime $dateFrom, \DateTime $dateTo)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),
-            'dateTo'   => $dateTo->format('Y-m-d'),
+            'dateTo' => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
         return $result; //todo if empty
     }
 
     /**
-     * Получение сканобраза подписанной получателем накладной
+     * Получение сканобраза подписанной получателем накладной.
+     *
      * @param $orderNum
      * @param null $year
+     *
      * @return mixed
      */
     public function getWaybill($orderNum, $year = null)
@@ -60,7 +66,7 @@ class NLWebService extends AbstractWebService
 
         $result = $this->doRequest(__FUNCTION__, [
             'orderNum' => $orderNum,
-            'year'     => $year,
+            'year' => $year,
         ], 'getWaybill');
 
         return $result;

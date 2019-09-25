@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class TimeTable
@@ -19,11 +20,13 @@ class TimeTable
 
     /**
      * @param string $weekDays
+     *
      * @return TimeTable
      */
     public function setWeekDays($weekDays)
     {
         $this->weekDays = $weekDays;
+
         return $this;
     }
 
@@ -37,11 +40,13 @@ class TimeTable
 
     /**
      * @param string $workTime
+     *
      * @return TimeTable
      */
     public function setWorkTime($workTime)
     {
         $this->workTime = $workTime;
+
         return $this;
     }
 }

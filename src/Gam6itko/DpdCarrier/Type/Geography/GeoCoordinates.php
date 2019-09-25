@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -13,6 +14,7 @@ class GeoCoordinates extends ArrayLike
 
     /**
      * GeoCoordinates constructor.
+     *
      * @param float $latitude
      * @param float $longitude
      */
@@ -32,11 +34,13 @@ class GeoCoordinates extends ArrayLike
 
     /**
      * @param float $latitude
+     *
      * @return GeoCoordinates
      */
     public function setLatitude($latitude)
     {
         $this->latitude = $latitude;
+
         return $this;
     }
 
@@ -50,11 +54,13 @@ class GeoCoordinates extends ArrayLike
 
     /**
      * @param float $longitude
+     *
      * @return GeoCoordinates
      */
     public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
+
         return $this;
     }
 }

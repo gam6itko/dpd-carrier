@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -21,11 +22,13 @@ class Schedule extends ArrayLike
 
     /**
      * @param string $operation
+     *
      * @return Schedule
      */
     public function setOperation($operation)
     {
         $this->operation = $operation;
+
         return $this;
     }
 
@@ -39,11 +42,13 @@ class Schedule extends ArrayLike
 
     /**
      * @param TimeTable[] $timetable
+     *
      * @return Schedule
      */
     public function setTimetable(array $timetable)
     {
         $this->timetable = $timetable;
+
         return $this;
     }
 }

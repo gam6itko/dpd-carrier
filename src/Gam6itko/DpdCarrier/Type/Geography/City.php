@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 use Gam6itko\DpdCarrier\Type\AbstractDeliveryPoint;
@@ -30,11 +31,13 @@ class City extends AbstractDeliveryPoint
 
     /**
      * @param string $countryName
+     *
      * @return City
      */
     public function setCountryName($countryName)
     {
         $this->countryName = $countryName;
+
         return $this;
     }
 
@@ -48,11 +51,13 @@ class City extends AbstractDeliveryPoint
 
     /**
      * @param string $regionName
+     *
      * @return City
      */
     public function setRegionName($regionName)
     {
         $this->regionName = $regionName;
+
         return $this;
     }
 
@@ -66,11 +71,13 @@ class City extends AbstractDeliveryPoint
 
     /**
      * @param string $abbreviation
+     *
      * @return City
      */
     public function setAbbreviation($abbreviation)
     {
         $this->abbreviation = $abbreviation;
+
         return $this;
     }
 
@@ -84,11 +91,13 @@ class City extends AbstractDeliveryPoint
 
     /**
      * @param string $indexMin
+     *
      * @return City
      */
     public function setIndexMin($indexMin)
     {
         $this->indexMin = $indexMin;
+
         return $this;
     }
 
@@ -102,11 +111,13 @@ class City extends AbstractDeliveryPoint
 
     /**
      * @param string $indexMax
+     *
      * @return City
      */
     public function setIndexMax($indexMax)
     {
         $this->indexMax = $indexMax;
+
         return $this;
     }
 }

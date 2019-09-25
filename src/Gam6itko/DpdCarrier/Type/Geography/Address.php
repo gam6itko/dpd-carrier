@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 use Gam6itko\DpdCarrier\Type\AbstractDeliveryPoint;
@@ -42,11 +43,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $regionName
+     *
      * @return Address
      */
     public function setRegionName($regionName)
     {
         $this->regionName = $regionName;
+
         return $this;
     }
 
@@ -60,11 +63,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $street
+     *
      * @return Address
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
@@ -78,11 +83,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $streetAbbr
+     *
      * @return Address
      */
     public function setStreetAbbr($streetAbbr)
     {
         $this->streetAbbr = $streetAbbr;
+
         return $this;
     }
 
@@ -96,11 +103,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $houseNo
+     *
      * @return Address
      */
     public function setHouseNo($houseNo)
     {
         $this->houseNo = $houseNo;
+
         return $this;
     }
 
@@ -114,11 +123,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $building
+     *
      * @return Address
      */
     public function setBuilding($building)
     {
         $this->building = $building;
+
         return $this;
     }
 
@@ -132,11 +143,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $structure
+     *
      * @return Address
      */
     public function setStructure($structure)
     {
         $this->structure = $structure;
+
         return $this;
     }
 
@@ -150,11 +163,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $ownership
+     *
      * @return Address
      */
     public function setOwnership($ownership)
     {
         $this->ownership = $ownership;
+
         return $this;
     }
 
@@ -168,11 +183,13 @@ class Address extends AbstractDeliveryPoint
 
     /**
      * @param string $descript
+     *
      * @return Address
      */
     public function setDescript($descript)
     {
         $this->descript = $descript;
+
         return $this;
     }
 

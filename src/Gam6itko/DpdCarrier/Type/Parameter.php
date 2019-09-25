@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 class Parameter extends ArrayLike
@@ -11,6 +12,7 @@ class Parameter extends ArrayLike
 
     /**
      * Parameter constructor.
+     *
      * @param string $name
      * @param string $value
      */
@@ -30,11 +32,13 @@ class Parameter extends ArrayLike
 
     /**
      * @param string $name
+     *
      * @return Parameter
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -48,11 +52,13 @@ class Parameter extends ArrayLike
 
     /**
      * @param string $value
+     *
      * @return Parameter
      */
     public function setValue($value)
     {
         $this->value = $value;
+
         return $this;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Enum;
 
 final class LabelFileFormat

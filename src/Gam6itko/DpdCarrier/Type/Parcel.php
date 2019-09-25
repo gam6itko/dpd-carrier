@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 class Parcel extends ArrayLike
@@ -15,11 +16,10 @@ class Parcel extends ArrayLike
     /** meter */
     const MAX_HEIGHT = 0.18;
 
-
     /** @var string */
     protected $number;
 
-    /** @var integer */
+    /** @var int */
     protected $box_needed;
 
     /** @var float */
@@ -51,6 +51,7 @@ class Parcel extends ArrayLike
 
     /**
      * Parcel constructor.
+     *
      * @param float|int $weight
      * @param float|int $length
      * @param float|int $height
@@ -64,7 +65,6 @@ class Parcel extends ArrayLike
         $this->width = $width;
     }
 
-
     /**
      * @return string
      */
@@ -75,11 +75,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param string $number
+     *
      * @return Parcel
      */
     public function setNumber($number)
     {
         $this->number = $number;
+
         return $this;
     }
 
@@ -93,11 +95,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param int $box_needed
+     *
      * @return Parcel
      */
     public function setBoxNeeded($box_needed)
     {
         $this->box_needed = $box_needed;
+
         return $this;
     }
 
@@ -111,11 +115,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $weight
+     *
      * @return Parcel
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -129,11 +135,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $length
+     *
      * @return Parcel
      */
     public function setLength($length)
     {
         $this->length = $length;
+
         return $this;
     }
 
@@ -147,11 +155,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $height
+     *
      * @return Parcel
      */
     public function setHeight($height)
     {
         $this->height = $height;
+
         return $this;
     }
 
@@ -165,11 +175,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $width
+     *
      * @return Parcel
      */
     public function setWidth($width)
     {
         $this->width = $width;
+
         return $this;
     }
 
@@ -183,11 +195,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param int $number_for_print
+     *
      * @return Parcel
      */
     public function setNumberForPrint($number_for_print)
     {
         $this->number_for_print = $number_for_print;
+
         return $this;
     }
 
@@ -201,11 +215,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $insuranceCost
+     *
      * @return Parcel
      */
     public function setInsuranceCost($insuranceCost)
     {
         $this->insuranceCost = $insuranceCost;
+
         return $this;
     }
 
@@ -219,11 +235,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $insuranceCostVat
+     *
      * @return Parcel
      */
     public function setInsuranceCostVat($insuranceCostVat)
     {
         $this->insuranceCostVat = $insuranceCostVat;
+
         return $this;
     }
 
@@ -237,11 +255,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $codAmount
+     *
      * @return Parcel
      */
     public function setCodAmount($codAmount)
     {
         $this->codAmount = $codAmount;
+
         return $this;
     }
 
@@ -255,11 +275,13 @@ class Parcel extends ArrayLike
 
     /**
      * @param float $quantity
+     *
      * @return Parcel
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 class ClientAddressStatus
@@ -22,11 +23,13 @@ class ClientAddressStatus
 
     /**
      * @param string $code
+     *
      * @return ClientAddressStatus
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -40,11 +43,13 @@ class ClientAddressStatus
 
     /**
      * @param string $status
+     *
      * @return ClientAddressStatus
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -58,11 +63,13 @@ class ClientAddressStatus
 
     /**
      * @param string $errorMessage
+     *
      * @return ClientAddressStatus
      */
     public function setErrorMessage($errorMessage)
     {
         $this->errorMessage = $errorMessage;
+
         return $this;
     }
 }

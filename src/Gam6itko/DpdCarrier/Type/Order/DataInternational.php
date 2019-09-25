@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 class DataInternational
@@ -19,11 +20,13 @@ class DataInternational
 
     /**
      * @param string $currency
+     *
      * @return DataInternational
      */
     public function setCurrency($currency)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
@@ -37,11 +40,13 @@ class DataInternational
 
     /**
      * @param string $currencyDeclaredValue
+     *
      * @return DataInternational
      */
     public function setCurrencyDeclaredValue($currencyDeclaredValue)
     {
         $this->currencyDeclaredValue = $currencyDeclaredValue;
+
         return $this;
     }
 }

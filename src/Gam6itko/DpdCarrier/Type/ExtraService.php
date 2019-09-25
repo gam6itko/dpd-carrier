@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 class ExtraService extends ArrayLike
@@ -11,7 +12,8 @@ class ExtraService extends ArrayLike
 
     /**
      * ExtraService constructor.
-     * @param string $esCode
+     *
+     * @param string    $esCode
      * @param Parameter $param
      */
     public function __construct($esCode = null, Parameter $param = null)

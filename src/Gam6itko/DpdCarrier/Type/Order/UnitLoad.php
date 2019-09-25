@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -39,11 +40,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param string $article
+     *
      * @return UnitLoad
      */
     public function setArticle($article)
     {
         $this->article = $article;
+
         return $this;
     }
 
@@ -57,11 +60,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param string $descript
+     *
      * @return UnitLoad
      */
     public function setDescript($descript)
     {
         $this->descript = $descript;
+
         return $this;
     }
 
@@ -75,11 +80,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param float $declared_value
+     *
      * @return UnitLoad
      */
     public function setDeclaredValue($declared_value)
     {
         $this->declared_value = $declared_value;
+
         return $this;
     }
 
@@ -93,11 +100,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param string $parcel_num
+     *
      * @return UnitLoad
      */
     public function setParcelNum($parcel_num)
     {
         $this->parcel_num = $parcel_num;
+
         return $this;
     }
 
@@ -111,11 +120,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param float $npp_amount
+     *
      * @return UnitLoad
      */
     public function setNppAmount($npp_amount)
     {
         $this->npp_amount = $npp_amount;
+
         return $this;
     }
 
@@ -129,11 +140,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param float $vat_percent
+     *
      * @return UnitLoad
      */
     public function setVatPercent($vat_percent)
     {
         $this->vat_percent = $vat_percent;
+
         return $this;
     }
 
@@ -147,11 +160,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param float $without_vat
+     *
      * @return UnitLoad
      */
     public function setWithoutVat($without_vat)
     {
         $this->without_vat = $without_vat;
+
         return $this;
     }
 
@@ -165,11 +180,13 @@ class UnitLoad extends ArrayLike
 
     /**
      * @param float $count
+     *
      * @return UnitLoad
      */
     public function setCount($count)
     {
         $this->count = $count;
+
         return $this;
     }
 }

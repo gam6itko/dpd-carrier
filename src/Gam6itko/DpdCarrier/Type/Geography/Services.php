@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -8,7 +9,7 @@ class Services extends ArrayLike
     /** @var string[] */
     protected $serviceCode;
 
-    /** @var integer */
+    /** @var int */
     protected $days;
 
     /**
@@ -21,11 +22,13 @@ class Services extends ArrayLike
 
     /**
      * @param \string[] $serviceCode
+     *
      * @return Services
      */
     public function setServiceCode($serviceCode)
     {
         $this->serviceCode = $serviceCode;
+
         return $this;
     }
 
@@ -39,11 +42,13 @@ class Services extends ArrayLike
 
     /**
      * @param int $days
+     *
      * @return Services
      */
     public function setDays($days)
     {
         $this->days = $days;
+
         return $this;
     }
 }

@@ -12,6 +12,7 @@ abstract class AbstractDpdServiceTestCase extends TestCase
             throw new \LogicException('Env not set DPD_CLIENT_NUMBER or DPD_CLIENT_KEY');
         }
         $refClass = new \ReflectionClass($className);
+
         return $refClass->newInstance($number, $key, true);
     }
 }

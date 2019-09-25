@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 class DeliveryPoint extends AbstractDeliveryPoint
@@ -24,11 +25,13 @@ class DeliveryPoint extends AbstractDeliveryPoint
 
     /**
      * @param string $index
+     *
      * @return DeliveryPoint
      */
     public function setIndex($index)
     {
         $this->index = $index;
+
         return $this;
     }
 
@@ -42,11 +45,13 @@ class DeliveryPoint extends AbstractDeliveryPoint
 
     /**
      * @param string $countryName
+     *
      * @return DeliveryPoint
      */
     public function setCountryName($countryName)
     {
         $this->countryName = $countryName;
+
         return $this;
     }
 }

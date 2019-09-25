@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class Limits
@@ -31,11 +32,13 @@ class Limits
 
     /**
      * @param float $maxShipmentWeight
+     *
      * @return Limits
      */
     public function setMaxShipmentWeight($maxShipmentWeight)
     {
         $this->maxShipmentWeight = $maxShipmentWeight;
+
         return $this;
     }
 
@@ -49,11 +52,13 @@ class Limits
 
     /**
      * @param float $maxWeight
+     *
      * @return Limits
      */
     public function setMaxWeight($maxWeight)
     {
         $this->maxWeight = $maxWeight;
+
         return $this;
     }
 
@@ -67,11 +72,13 @@ class Limits
 
     /**
      * @param float $maxLength
+     *
      * @return Limits
      */
     public function setMaxLength($maxLength)
     {
         $this->maxLength = $maxLength;
+
         return $this;
     }
 
@@ -85,11 +92,13 @@ class Limits
 
     /**
      * @param float $maxWidth
+     *
      * @return Limits
      */
     public function setMaxWidth($maxWidth)
     {
         $this->maxWidth = $maxWidth;
+
         return $this;
     }
 
@@ -103,11 +112,13 @@ class Limits
 
     /**
      * @param float $maxHeight
+     *
      * @return Limits
      */
     public function setMaxHeight($maxHeight)
     {
         $this->maxHeight = $maxHeight;
+
         return $this;
     }
 
@@ -121,11 +132,13 @@ class Limits
 
     /**
      * @param float $dimensionSum
+     *
      * @return Limits
      */
     public function setDimensionSum($dimensionSum)
     {
         $this->dimensionSum = $dimensionSum;
+
         return $this;
     }
 }

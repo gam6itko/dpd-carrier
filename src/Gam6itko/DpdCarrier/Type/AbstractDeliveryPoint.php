@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 abstract class AbstractDeliveryPoint extends ArrayLike
@@ -9,7 +10,7 @@ abstract class AbstractDeliveryPoint extends ArrayLike
     /** @var string */
     protected $regionCode;
 
-    /** @var integer */
+    /** @var int */
     protected $cityId;
 
     /** @var string */
@@ -28,11 +29,13 @@ abstract class AbstractDeliveryPoint extends ArrayLike
 
     /**
      * @param string $countryCode
+     *
      * @return AbstractDeliveryPoint
      */
     public function setCountryCode($countryCode)
     {
         $this->countryCode = $countryCode;
+
         return $this;
     }
 
@@ -46,11 +49,13 @@ abstract class AbstractDeliveryPoint extends ArrayLike
 
     /**
      * @param string $regionCode
+     *
      * @return AbstractDeliveryPoint
      */
     public function setRegionCode($regionCode)
     {
         $this->regionCode = $regionCode;
+
         return $this;
     }
 
@@ -64,11 +69,13 @@ abstract class AbstractDeliveryPoint extends ArrayLike
 
     /**
      * @param int $cityId
+     *
      * @return AbstractDeliveryPoint
      */
     public function setCityId($cityId)
     {
         $this->cityId = $cityId;
+
         return $this;
     }
 
@@ -82,11 +89,13 @@ abstract class AbstractDeliveryPoint extends ArrayLike
 
     /**
      * @param string $cityCode
+     *
      * @return AbstractDeliveryPoint
      */
     public function setCityCode($cityCode)
     {
         $this->cityCode = $cityCode;
+
         return $this;
     }
 
@@ -100,11 +109,13 @@ abstract class AbstractDeliveryPoint extends ArrayLike
 
     /**
      * @param string $cityName
+     *
      * @return AbstractDeliveryPoint
      */
     public function setCityName($cityName)
     {
         $this->cityName = $cityName;
+
         return $this;
     }
 }

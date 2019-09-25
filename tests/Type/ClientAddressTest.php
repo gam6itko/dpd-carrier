@@ -67,7 +67,6 @@ class ClientAddressTest extends TestCase
 }
 JSON;
 
-
         self::assertJsonStringEqualsJsonString(json_encode($ca), $expectedJson);
     }
 }

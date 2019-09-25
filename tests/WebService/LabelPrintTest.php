@@ -7,7 +7,7 @@ use Gam6itko\DpdCarrier\Type\OrderLabelsFile;
 use Gam6itko\DpdCarrier\WebService\LabelPrintService;
 
 /**
- * @covers LabelPrintService
+ * @covers \LabelPrintService
  */
 class LabelPrintTest extends AbstractDpdServiceTestCase
 {

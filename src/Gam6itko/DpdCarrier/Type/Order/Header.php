@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -30,11 +31,13 @@ class Header extends ArrayLike
 
     /**
      * @param string $datePickup
+     *
      * @return Header
      */
     public function setDatePickup($datePickup)
     {
         $this->datePickup = $datePickup;
+
         return $this;
     }
 
@@ -48,11 +51,13 @@ class Header extends ArrayLike
 
     /**
      * @param float $payer
+     *
      * @return Header
      */
     public function setPayer($payer)
     {
         $this->payer = $payer;
+
         return $this;
     }
 
@@ -66,11 +71,13 @@ class Header extends ArrayLike
 
     /**
      * @param ClientAddress $senderAddress
+     *
      * @return Header
      */
     public function setSenderAddress($senderAddress)
     {
         $this->senderAddress = $senderAddress;
+
         return $this;
     }
 
@@ -84,11 +91,13 @@ class Header extends ArrayLike
 
     /**
      * @param string $pickupTimePeriod
+     *
      * @return Header
      */
     public function setPickupTimePeriod($pickupTimePeriod)
     {
         $this->pickupTimePeriod = $pickupTimePeriod;
+
         return $this;
     }
 
@@ -102,11 +111,13 @@ class Header extends ArrayLike
 
     /**
      * @param string $regularNum
+     *
      * @return Header
      */
     public function setRegularNum($regularNum)
     {
         $this->regularNum = $regularNum;
+
         return $this;
     }
 }

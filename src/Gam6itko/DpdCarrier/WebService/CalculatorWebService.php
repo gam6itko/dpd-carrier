@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\Calculator\ServiceCost;
@@ -33,16 +34,17 @@ class CalculatorWebService extends AbstractWebService
     {
         return [
             'extraService' => ExtraService::class,
-            'parcel'       => Parcel::class,
-            'parameter'    => Parameter::class,
-            'serviceCost'  => ServiceCost::class,
+            'parcel' => Parcel::class,
+            'parameter' => Parameter::class,
+            'serviceCost' => ServiceCost::class,
         ];
     }
 
     /**
-     * @param DeliveryPoint $pickup
-     * @param DeliveryPoint $delivery
+     * @param DeliveryPoint   $pickup
+     * @param DeliveryPoint   $delivery
      * @param DeliveryOptions $options
+     *
      * @return ServiceCost[]
      */
     public function getServiceCost2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
@@ -51,50 +53,54 @@ class CalculatorWebService extends AbstractWebService
             return empty($dp->getCityId()) && empty($dp->getCityName());
         };
 
-        if ($fnIsEmpty($pickup)){
+        if ($fnIsEmpty($pickup)) {
             throw new \LogicException('Pickup point must contains cityId or cityName');
         }
-        if ($fnIsEmpty($delivery)){
+        if ($fnIsEmpty($delivery)) {
             throw new \LogicException('Pickup point must contains cityId or cityName');
         }
-        
+
         return $this->doRequest(__FUNCTION__, array_merge([
-            'pickup'   => $pickup,
-            'delivery' => $delivery
+            'pickup' => $pickup,
+            'delivery' => $delivery,
         ], $options->toArray()), 'request');
     }
 
     /**
-     * @param DeliveryPoint $pickup
-     * @param DeliveryPoint $delivery
+     * @param DeliveryPoint   $pickup
+     * @param DeliveryPoint   $delivery
      * @param DeliveryOptions $options
-     * @param Parcel[] $parcels
+     * @param Parcel[]        $parcels
+     *
      * @return Parcel[]
      */
     public function getServiceCostByParcels2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, array $parcels)
     {
         $options = array_merge($options->toArray(), ['parcel' => $parcels]);
+
         return $this->doRequest(__FUNCTION__, array_merge([
-            'pickup'   => $pickup,
-            'delivery' => $delivery
+            'pickup' => $pickup,
+            'delivery' => $delivery,
         ], $options), 'request');
     }
 
     /**
-     * @param DeliveryPoint $pickup
-     * @param DeliveryPoint $delivery
+     * @param DeliveryPoint   $pickup
+     * @param DeliveryPoint   $delivery
      * @param DeliveryOptions $options
-     * @param Parcel $parcel
-     * @param bool $insurance
+     * @param Parcel          $parcel
+     * @param bool            $insurance
+     *
      * @return array
      */
     public function getServiceCostInternational(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options, Parcel $parcel, $insurance = false)
     {
         $optionsArr = array_merge($options->toArray(), $parcel->toArray());
+
         return $this->doRequest(__FUNCTION__, array_merge([
-            'pickup'    => $pickup,
-            'delivery'  => $delivery,
-            'insurance' => $insurance
+            'pickup' => $pickup,
+            'delivery' => $delivery,
+            'insurance' => $insurance,
         ], $optionsArr), 'request');
     }
 }

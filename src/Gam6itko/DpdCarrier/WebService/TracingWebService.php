@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\ExtraService;
@@ -32,10 +33,10 @@ class TracingWebService extends AbstractWebService
     {
         return [
             'extraService' => ExtraService::class,
-            'parcel'       => Parcel::class,
-            'parameter'    => Parameter::class,
+            'parcel' => Parcel::class,
+            'parameter' => Parameter::class,
             'stateParcels' => StateParcels::class,
-            'stateParcel'  => StateParcel::class,
+            'stateParcel' => StateParcel::class,
         ];
     }
 
@@ -49,6 +50,7 @@ class TracingWebService extends AbstractWebService
 
     /**
      * @param $docId
+     *
      * @return array|mixed|\stdClass
      */
     public function confirm($docId)
@@ -59,32 +61,35 @@ class TracingWebService extends AbstractWebService
     /**
      * @param $clientOrderNr
      * @param null $pickupDate
+     *
      * @return StateParcels
      */
     public function getStatesByClientOrder($clientOrderNr, $pickupDate = null)
     {
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
-            'pickupDate'    => $pickupDate,
+            'pickupDate' => $pickupDate,
         ], 'request');
     }
 
     /**
      * @param $clientOrderNr
      * @param null $pickupDate
+     *
      * @return StateParcels
      */
     public function getStatesByClientParcel($clientOrderNr, $pickupDate = null)
     {
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
-            'pickupDate'    => $pickupDate,
+            'pickupDate' => $pickupDate,
         ], 'request');
     }
 
     /**
      * @param $dpdOrderNr
      * @param null $pickupYear
+     *
      * @return StateParcels
      */
     public function getStatesByDPDOrder($dpdOrderNr, $pickupYear = null)

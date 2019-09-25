@@ -16,9 +16,9 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
 
 /**
- * Class OrderTest
- * @package WebService
- * @covers OrderWebService
+ * Class OrderTest.
+ *
+ * @covers \OrderWebService
  */
 class OrderTest extends AbstractDpdServiceTestCase
 {
@@ -49,7 +49,7 @@ class OrderTest extends AbstractDpdServiceTestCase
             ->setDatePickup($pickupDate->format('Y-m-d'))
             ->setSenderAddress($senderAddress);
         $order = (new Order())
-            ->setOrderNumberInternal('gam6itko/dpd-carrier/' . uniqid())
+            ->setOrderNumberInternal('gam6itko/dpd-carrier/'.uniqid())
             ->setServiceCode(ServiceCode::PCL)
             ->setServiceVariant(ServiceVariant::TerminalToTerminal)
             ->setCargoNumPack(1)
@@ -111,7 +111,7 @@ class OrderTest extends AbstractDpdServiceTestCase
 
         self::assertNotEmpty($result);
 
-        $filename = sys_get_temp_dir() . DIRECTORY_SEPARATOR . self::$orderStatus->getOrderNum() . '_invoice.pdf';
+        $filename = sys_get_temp_dir().DIRECTORY_SEPARATOR.self::$orderStatus->getOrderNum().'_invoice.pdf';
         file_put_contents($filename, $result);
     }
 

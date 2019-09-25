@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class Terminal extends AbstractParcelStore
@@ -24,11 +25,13 @@ class Terminal extends AbstractParcelStore
 
     /**
      * @param string $terminalCode
+     *
      * @return Terminal
      */
     public function setTerminalCode($terminalCode)
     {
         $this->terminalCode = $terminalCode;
+
         return $this;
     }
 
@@ -42,11 +45,13 @@ class Terminal extends AbstractParcelStore
 
     /**
      * @param string $terminalName
+     *
      * @return Terminal
      */
     public function setTerminalName($terminalName)
     {
         $this->terminalName = $terminalName;
+
         return $this;
     }
 }

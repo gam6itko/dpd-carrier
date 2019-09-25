@@ -18,9 +18,11 @@ abstract class AbstractWebService
 
     /**
      * CseService constructor.
+     *
      * @param $clientNumber
      * @param $clientKey
      * @param $testMode
+     *
      * @internal param string $wsdlHost
      */
     public function __construct($clientNumber, $clientKey, $testMode = false)
@@ -39,13 +41,15 @@ abstract class AbstractWebService
         if ($this->soapClient) {
             return $this->soapClient;
         }
+
         return $this->soapClient = $this->buildSoapClient();
     }
 
     /**
      * @param $methodName
-     * @param array $array
+     * @param array  $array
      * @param string $wrapin
+     *
      * @return array|mixed|\stdClass
      */
     protected function doRequest($methodName, array $array = [], $wrapin)
@@ -53,7 +57,7 @@ abstract class AbstractWebService
         $soapRequest = $this->buildRequest($array);
         if ($wrapin) {
             $soapRequest = [
-                $wrapin => $soapRequest
+                $wrapin => $soapRequest,
             ];
         }
         $soapResult = $this->getSoapClient()->__soapCall($methodName, [$soapRequest]);
@@ -67,6 +71,7 @@ abstract class AbstractWebService
 
     /**
      * @param $array
+     *
      * @return array
      */
     protected function buildRequest($array)
@@ -74,8 +79,8 @@ abstract class AbstractWebService
         return array_merge([
             'auth' => [
                 'clientNumber' => $this->clientNumber,
-                'clientKey'    => $this->clientKey,
-            ]
+                'clientKey' => $this->clientKey,
+            ],
         ], $array);
     }
 
@@ -93,11 +98,12 @@ abstract class AbstractWebService
     protected function buildSoapClient()
     {
         $wsdl = $this->testMode ? $this->getWsdlTest() : $this->getWsdlProd();
+
         return new \SoapClient($wsdl, [
-            'trace'              => $this->testMode,
-            'features'           => SOAP_SINGLE_ELEMENT_ARRAYS,
-            'classmap'           => $this->getClassmap(),
-            'connection_timeout' => 5
+            'trace' => $this->testMode,
+            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+            'classmap' => $this->getClassmap(),
+            'connection_timeout' => 5,
         ]);
     }
 }

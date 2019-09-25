@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -93,11 +94,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $code
+     *
      * @return ClientAddress
      */
     public function setCode($code)
     {
         $this->code = $code;
+
         return $this;
     }
 
@@ -111,11 +114,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $name
+     *
      * @return ClientAddress
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -129,11 +134,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $terminalCode
+     *
      * @return ClientAddress
      */
     public function setTerminalCode($terminalCode)
     {
         $this->terminalCode = $terminalCode;
+
         return $this;
     }
 
@@ -147,11 +154,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $addressString
+     *
      * @return ClientAddress
      */
     public function setAddressString($addressString)
     {
         $this->addressString = $addressString;
+
         return $this;
     }
 
@@ -165,11 +174,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $countryName
+     *
      * @return ClientAddress
      */
     public function setCountryName($countryName)
     {
         $this->countryName = $countryName;
+
         return $this;
     }
 
@@ -183,11 +194,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $index
+     *
      * @return ClientAddress
      */
     public function setIndex($index)
     {
         $this->index = $index;
+
         return $this;
     }
 
@@ -201,11 +214,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $region
+     *
      * @return ClientAddress
      */
     public function setRegion($region)
     {
         $this->region = $region;
+
         return $this;
     }
 
@@ -219,11 +234,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $city
+     *
      * @return ClientAddress
      */
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
@@ -237,11 +254,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $street
+     *
      * @return ClientAddress
      */
     public function setStreet($street)
     {
         $this->street = $street;
+
         return $this;
     }
 
@@ -255,11 +274,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $streetAbbr
+     *
      * @return ClientAddress
      */
     public function setStreetAbbr($streetAbbr)
     {
         $this->streetAbbr = $streetAbbr;
+
         return $this;
     }
 
@@ -273,11 +294,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $house
+     *
      * @return ClientAddress
      */
     public function setHouse($house)
     {
         $this->house = $house;
+
         return $this;
     }
 
@@ -291,11 +314,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $houseKorpus
+     *
      * @return ClientAddress
      */
     public function setHouseKorpus($houseKorpus)
     {
         $this->houseKorpus = $houseKorpus;
+
         return $this;
     }
 
@@ -309,11 +334,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $str
+     *
      * @return ClientAddress
      */
     public function setStr($str)
     {
         $this->str = $str;
+
         return $this;
     }
 
@@ -327,11 +354,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $vlad
+     *
      * @return ClientAddress
      */
     public function setVlad($vlad)
     {
         $this->vlad = $vlad;
+
         return $this;
     }
 
@@ -345,11 +374,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $extraInfo
+     *
      * @return ClientAddress
      */
     public function setExtraInfo($extraInfo)
     {
         $this->extraInfo = $extraInfo;
+
         return $this;
     }
 
@@ -363,11 +394,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $office
+     *
      * @return ClientAddress
      */
     public function setOffice($office)
     {
         $this->office = $office;
+
         return $this;
     }
 
@@ -381,11 +414,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $flat
+     *
      * @return ClientAddress
      */
     public function setFlat($flat)
     {
         $this->flat = $flat;
+
         return $this;
     }
 
@@ -399,11 +434,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $workTimeFrom
+     *
      * @return ClientAddress
      */
     public function setWorkTimeFrom($workTimeFrom)
     {
         $this->workTimeFrom = $workTimeFrom;
+
         return $this;
     }
 
@@ -417,11 +454,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $workTimeTo
+     *
      * @return ClientAddress
      */
     public function setWorkTimeTo($workTimeTo)
     {
         $this->workTimeTo = $workTimeTo;
+
         return $this;
     }
 
@@ -435,11 +474,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $dinnerTimeFrom
+     *
      * @return ClientAddress
      */
     public function setDinnerTimeFrom($dinnerTimeFrom)
     {
         $this->dinnerTimeFrom = $dinnerTimeFrom;
+
         return $this;
     }
 
@@ -453,11 +494,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $dinnerTimeTo
+     *
      * @return ClientAddress
      */
     public function setDinnerTimeTo($dinnerTimeTo)
     {
         $this->dinnerTimeTo = $dinnerTimeTo;
+
         return $this;
     }
 
@@ -471,11 +514,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $contactFio
+     *
      * @return ClientAddress
      */
     public function setContactFio($contactFio)
     {
         $this->contactFio = $contactFio;
+
         return $this;
     }
 
@@ -489,11 +534,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $contactPhone
+     *
      * @return ClientAddress
      */
     public function setContactPhone($contactPhone)
     {
         $this->contactPhone = $contactPhone;
+
         return $this;
     }
 
@@ -507,11 +554,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $contactEmail
+     *
      * @return ClientAddress
      */
     public function setContactEmail($contactEmail)
     {
         $this->contactEmail = $contactEmail;
+
         return $this;
     }
 
@@ -525,11 +574,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $instructions
+     *
      * @return ClientAddress
      */
     public function setInstructions($instructions)
     {
         $this->instructions = $instructions;
+
         return $this;
     }
 
@@ -543,11 +594,13 @@ class ClientAddress extends ArrayLike
 
     /**
      * @param string $needPass
+     *
      * @return ClientAddress
      */
     public function setNeedPass($needPass)
     {
         $this->needPass = $needPass;
+
         return $this;
     }
 }

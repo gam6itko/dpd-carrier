@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Order;
 
 use Gam6itko\DpdCarrier\Type\ArrayLike;
@@ -27,11 +28,13 @@ class OrderStatus extends ArrayLike
 
     /**
      * @param string $orderNumberInternal
+     *
      * @return OrderStatus
      */
     public function setOrderNumberInternal($orderNumberInternal)
     {
         $this->orderNumberInternal = $orderNumberInternal;
+
         return $this;
     }
 
@@ -45,11 +48,13 @@ class OrderStatus extends ArrayLike
 
     /**
      * @param string $orderNum
+     *
      * @return OrderStatus
      */
     public function setOrderNum($orderNum)
     {
         $this->orderNum = $orderNum;
+
         return $this;
     }
 
@@ -63,11 +68,13 @@ class OrderStatus extends ArrayLike
 
     /**
      * @param string $status
+     *
      * @return OrderStatus
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -81,11 +88,13 @@ class OrderStatus extends ArrayLike
 
     /**
      * @param string $errorMessage
+     *
      * @return OrderStatus
      */
     public function setErrorMessage($errorMessage)
     {
         $this->errorMessage = $errorMessage;
+
         return $this;
     }
 }

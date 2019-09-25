@@ -1,9 +1,10 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type\Tracing;
 
 class StateParcels
 {
-    /** @var integer */
+    /** @var int */
     protected $docId;
 
     /** @var string - date */
@@ -28,11 +29,13 @@ class StateParcels
 
     /**
      * @param int $docId
+     *
      * @return StateParcels
      */
     public function setDocId($docId)
     {
         $this->docId = $docId;
+
         return $this;
     }
 
@@ -46,11 +49,13 @@ class StateParcels
 
     /**
      * @param string $docDate
+     *
      * @return StateParcels
      */
     public function setDocDate($docDate)
     {
         $this->docDate = $docDate;
+
         return $this;
     }
 
@@ -64,11 +69,13 @@ class StateParcels
 
     /**
      * @param float $clientNumber
+     *
      * @return StateParcels
      */
     public function setClientNumber($clientNumber)
     {
         $this->clientNumber = $clientNumber;
+
         return $this;
     }
 
@@ -82,11 +89,13 @@ class StateParcels
 
     /**
      * @param bool $resultComplete
+     *
      * @return StateParcels
      */
     public function setResultComplete($resultComplete)
     {
         $this->resultComplete = $resultComplete;
+
         return $this;
     }
 
@@ -100,11 +109,13 @@ class StateParcels
 
     /**
      * @param StateParcel[] $states
+     *
      * @return StateParcels
      */
     public function setStates($states)
     {
         $this->states = $states;
+
         return $this;
     }
 }

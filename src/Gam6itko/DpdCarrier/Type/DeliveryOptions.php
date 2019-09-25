@@ -1,4 +1,5 @@
 <?php
+
 namespace Gam6itko\DpdCarrier\Type;
 
 class DeliveryOptions extends ArrayLike
@@ -21,7 +22,7 @@ class DeliveryOptions extends ArrayLike
     /** @var string */
     protected $pickupDate;
 
-    /** @var integer */
+    /** @var int */
     protected $maxDays;
 
     /** @var float */
@@ -46,11 +47,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param bool $selfPickup
+     *
      * @return DeliveryOptions
      */
     public function setSelfPickup($selfPickup)
     {
         $this->selfPickup = $selfPickup;
+
         return $this;
     }
 
@@ -64,11 +67,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param bool $selfDelivery
+     *
      * @return DeliveryOptions
      */
     public function setSelfDelivery($selfDelivery)
     {
         $this->selfDelivery = $selfDelivery;
+
         return $this;
     }
 
@@ -82,11 +87,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param float $weight Kg
+     *
      * @return DeliveryOptions
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -100,11 +107,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param float $volume
+     *
      * @return DeliveryOptions
      */
     public function setVolume($volume)
     {
         $this->volume = $volume;
+
         return $this;
     }
 
@@ -118,6 +127,7 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param string|array $serviceCode
+     *
      * @return DeliveryOptions
      */
     public function setServiceCode($serviceCode)
@@ -129,6 +139,7 @@ class DeliveryOptions extends ArrayLike
                 return strtoupper(trim($val));
             }, array_filter(explode(',', str_replace(' ', ',', $serviceCode)))));
         }
+
         return $this;
     }
 
@@ -142,11 +153,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param string $pickupDate
+     *
      * @return DeliveryOptions
      */
     public function setPickupDate($pickupDate)
     {
         $this->pickupDate = $pickupDate;
+
         return $this;
     }
 
@@ -160,11 +173,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param int $maxDays
+     *
      * @return DeliveryOptions
      */
     public function setMaxDays($maxDays)
     {
         $this->maxDays = $maxDays;
+
         return $this;
     }
 
@@ -178,11 +193,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param float $maxCost
+     *
      * @return DeliveryOptions
      */
     public function setMaxCost($maxCost)
     {
         $this->maxCost = $maxCost;
+
         return $this;
     }
 
@@ -196,11 +213,13 @@ class DeliveryOptions extends ArrayLike
 
     /**
      * @param float $declaredValue
+     *
      * @return DeliveryOptions
      */
     public function setDeclaredValue($declaredValue)
     {
         $this->declaredValue = $declaredValue;
+
         return $this;
     }
 }
