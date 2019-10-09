@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use Gam6itko\DpdCarrier\Enum\LabelFileFormat;
 use Gam6itko\DpdCarrier\Enum\LabelPageSize;
 use Gam6itko\DpdCarrier\Type\OrderLabels;

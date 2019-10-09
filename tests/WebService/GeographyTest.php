@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\Geography\Address;

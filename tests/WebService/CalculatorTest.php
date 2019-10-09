@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use Gam6itko\DpdCarrier\Type\Calculator\ServiceCost;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;

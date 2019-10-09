@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractDpdServiceTestCase extends TestCase

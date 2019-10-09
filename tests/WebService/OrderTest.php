@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use Gam6itko\DpdCarrier\Enum\ExtraServiceCode;
 use Gam6itko\DpdCarrier\Enum\OrderStatusName;
 use Gam6itko\DpdCarrier\Enum\PaymentType;

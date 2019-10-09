@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\Type;
+
 use Gam6itko\DpdCarrier\Type\Order\ClientAddress;
 use PHPUnit\Framework\TestCase;
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Gam6itko\DpdCarrier\Tests\WebService;
+
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 use Gam6itko\DpdCarrier\WebService\TracingWebService;
 
