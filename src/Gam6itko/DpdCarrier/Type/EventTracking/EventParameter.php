@@ -98,5 +98,4 @@ class EventParameter
 
         return $this;
     }
-
 }

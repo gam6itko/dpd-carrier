@@ -8,6 +8,7 @@ use Gam6itko\DpdCarrier\Type\EventTracking\EventsPool;
 
 /**
  * @author Alexander Strizhak <gam6itko@gmail.com>
+ *
  * @todo getTrakingOrderLink
  */
 class EventTrackingWebService extends AbstractWebService

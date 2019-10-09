@@ -121,6 +121,4 @@ class EventsPool
 
         return $this;
     }
-
-
 }
