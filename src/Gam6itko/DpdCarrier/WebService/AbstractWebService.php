@@ -80,7 +80,7 @@ abstract class AbstractWebService
             [
                 'auth' => [
                     'clientNumber' => $this->clientNumber,
-                    'clientKey'    => $this->clientKey,
+                    'clientKey' => $this->clientKey,
                 ],
             ],
             $array
@@ -103,9 +103,9 @@ abstract class AbstractWebService
         $wsdl = $this->testMode ? $this->getWsdlTest() : $this->getWsdlProd();
 
         return new \SoapClient($wsdl, [
-            'trace'              => $this->testMode,
-            'features'           => SOAP_SINGLE_ELEMENT_ARRAYS,
-            'classmap'           => $this->getClassmap(),
+            'trace' => $this->testMode,
+            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+            'classmap' => $this->getClassmap(),
             'connection_timeout' => 5,
         ]);
     }

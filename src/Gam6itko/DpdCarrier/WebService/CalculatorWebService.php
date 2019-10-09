@@ -34,9 +34,9 @@ class CalculatorWebService extends AbstractWebService
     {
         return [
             'extraService' => ExtraService::class,
-            'parcel'       => Parcel::class,
-            'parameter'    => Parameter::class,
-            'serviceCost'  => ServiceCost::class,
+            'parcel' => Parcel::class,
+            'parameter' => Parameter::class,
+            'serviceCost' => ServiceCost::class,
         ];
     }
 
@@ -62,7 +62,7 @@ class CalculatorWebService extends AbstractWebService
 
         return $this->doRequest(__FUNCTION__, array_merge(
             [
-                'pickup'   => $pickup,
+                'pickup' => $pickup,
                 'delivery' => $delivery,
             ],
             $options->toArray()
@@ -82,7 +82,7 @@ class CalculatorWebService extends AbstractWebService
         $options = array_merge($options->toArray(), ['parcel' => $parcels]);
 
         return $this->doRequest(__FUNCTION__, array_merge([
-            'pickup'   => $pickup,
+            'pickup' => $pickup,
             'delivery' => $delivery,
         ], $options));
     }
@@ -101,8 +101,8 @@ class CalculatorWebService extends AbstractWebService
         $optionsArr = array_merge($options->toArray(), $parcel->toArray());
 
         return $this->doRequest(__FUNCTION__, array_merge([
-            'pickup'    => $pickup,
-            'delivery'  => $delivery,
+            'pickup' => $pickup,
+            'delivery' => $delivery,
             'insurance' => $insurance,
         ], $optionsArr));
     }

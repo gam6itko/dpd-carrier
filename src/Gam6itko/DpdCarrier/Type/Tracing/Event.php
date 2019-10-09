@@ -16,6 +16,6 @@ class Event
     /** @var int */
     protected $clientNumber;
 
-    /** @var boolean */
+    /** @var bool */
     protected $resultComplete;
 }

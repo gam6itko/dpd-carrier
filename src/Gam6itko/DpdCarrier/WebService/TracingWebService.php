@@ -3,7 +3,6 @@
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\ExtraService;
-use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcel;
