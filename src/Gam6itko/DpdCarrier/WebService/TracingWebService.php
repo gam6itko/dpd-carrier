@@ -3,6 +3,7 @@
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\ExtraService;
+use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcel;
@@ -45,7 +46,7 @@ class TracingWebService extends AbstractWebService
      */
     public function getStatesByClient()
     {
-        return $this->doRequest(__FUNCTION__, [], 'request');
+        return $this->doRequest(__FUNCTION__);
     }
 
     /**
@@ -55,7 +56,7 @@ class TracingWebService extends AbstractWebService
      */
     public function confirm($docId)
     {
-        return $this->doRequest(__FUNCTION__, ['docId' => $docId], 'request');
+        return $this->doRequest(__FUNCTION__, ['docId' => $docId]);
     }
 
     /**
@@ -69,7 +70,23 @@ class TracingWebService extends AbstractWebService
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
             'pickupDate' => $pickupDate,
-        ], 'request');
+        ]);
+    }
+
+    /**
+     * @param \DateTimeInterface $dateFrom
+     * @param \DateTimeInterface $dateTo
+     * @param int                $maxRowCount
+     *
+     * @return array|mixed|\stdClass
+     */
+    public function getEvents(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo, $maxRowCount = 50)
+    {
+        return $this->doRequest(__FUNCTION__, [
+            'dateFrom' => $dateFrom,
+            'dateTo' => $dateTo,
+            'maxRowCount' => $maxRowCount,
+        ]);
     }
 
     /**
@@ -83,7 +100,7 @@ class TracingWebService extends AbstractWebService
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
             'pickupDate' => $pickupDate,
-        ], 'request');
+        ]);
     }
 
     /**
@@ -97,6 +114,11 @@ class TracingWebService extends AbstractWebService
         return $this->doRequest(__FUNCTION__, [
             'dpdOrderNr' => $dpdOrderNr,
             'pickupYear' => $pickupYear,
-        ], 'request');
+        ]);
+    }
+
+    public function getTrakingOrderLink()
+    {
+        //todo
     }
 }

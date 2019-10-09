@@ -17,12 +17,12 @@ class NLWebService extends AbstractWebService
     /**
      * Отчет о предварительной стоимости перевозки за указный период.
      *
-     * @param \DateTime $dateFrom
-     * @param \DateTime $dateTo
+     * @param \DateTimeInterface $dateFrom
+     * @param \DateTimeInterface $dateTo
      *
      * @return mixed
      */
-    public function getNLAmount(\DateTime $dateFrom, \DateTime $dateTo)
+    public function getNLAmount(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),
@@ -35,12 +35,12 @@ class NLWebService extends AbstractWebService
     /**
      * Отчет об окончательной стоимости перевозки за указный период.
      *
-     * @param \DateTime $dateFrom
-     * @param \DateTime $dateTo
+     * @param \DateTimeInterface $dateFrom
+     * @param \DateTimeInterface $dateTo
      *
      * @return mixed
      */
-    public function getNLInvoice(\DateTime $dateFrom, \DateTime $dateTo)
+    public function getNLInvoice(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),

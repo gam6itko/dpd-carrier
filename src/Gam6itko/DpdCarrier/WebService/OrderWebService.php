@@ -129,7 +129,7 @@ class OrderWebService extends AbstractWebService
             'orderNum' => $orderNum,
             'parcelCount' => $parcelCount,
             'cargoValue' => $cargoValue,
-        ]), 'request');
+        ]));
 
         return $result->file;
     }
@@ -149,7 +149,7 @@ class OrderWebService extends AbstractWebService
             'regularNum' => $regularNum,
             'cityPickupId' => $cityPickupId,
             'addressCode' => $addressCode,
-        ]), 'request');
+        ]));
 
         return $result->file;
     }

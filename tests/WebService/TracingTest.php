@@ -13,6 +13,9 @@ class TracingTest extends AbstractDpdServiceTestCase
     /** @var StateParcels */
     protected static $states;
 
+    /**
+     * @covers ::getStatesByClient
+     */
     public function testGetStatesByClient()
     {
         $result = $this->getDpdWebService()->getStatesByClient();
@@ -22,6 +25,15 @@ class TracingTest extends AbstractDpdServiceTestCase
         self::$states = $result;
     }
 
+    public function testGetEvents()
+    {
+        $result = $this->getDpdWebService()->getEvents(new \DateTime('2019-08-10'), new \DateTime('2019-08-13'));
+        self::assertNotEmpty($result);
+    }
+
+    /**
+     * @covers ::getStatesByDPDOrder
+     */
     public function testGetStatesByDPDOrder()
     {
         $result = $this->getDpdWebService()->getStatesByDPDOrder('RU010658425');

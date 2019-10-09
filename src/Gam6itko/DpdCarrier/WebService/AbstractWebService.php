@@ -46,18 +46,18 @@ abstract class AbstractWebService
     }
 
     /**
-     * @param $methodName
+     * @param        $methodName
      * @param array  $array
-     * @param string $wrapin
+     * @param string $wrapIn
      *
      * @return array|mixed|\stdClass
      */
-    protected function doRequest($methodName, array $array = [], $wrapin)
+    protected function doRequest($methodName, array $array = [], $wrapIn = 'request')
     {
         $soapRequest = $this->buildRequest($array);
-        if ($wrapin) {
+        if ($wrapIn) {
             $soapRequest = [
-                $wrapin => $soapRequest,
+                $wrapIn => $soapRequest,
             ];
         }
         $soapResult = $this->getSoapClient()->__soapCall($methodName, [$soapRequest]);
@@ -76,12 +76,15 @@ abstract class AbstractWebService
      */
     protected function buildRequest($array)
     {
-        return array_merge([
-            'auth' => [
-                'clientNumber' => $this->clientNumber,
-                'clientKey' => $this->clientKey,
+        return array_merge(
+            [
+                'auth' => [
+                    'clientNumber' => $this->clientNumber,
+                    'clientKey'    => $this->clientKey,
+                ],
             ],
-        ], $array);
+            $array
+        );
     }
 
     /**
@@ -100,9 +103,9 @@ abstract class AbstractWebService
         $wsdl = $this->testMode ? $this->getWsdlTest() : $this->getWsdlProd();
 
         return new \SoapClient($wsdl, [
-            'trace' => $this->testMode,
-            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
-            'classmap' => $this->getClassmap(),
+            'trace'              => $this->testMode,
+            'features'           => SOAP_SINGLE_ELEMENT_ARRAYS,
+            'classmap'           => $this->getClassmap(),
             'connection_timeout' => 5,
         ]);
     }

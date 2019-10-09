@@ -65,7 +65,7 @@ class GeographyWebService extends AbstractWebService
      */
     public function getCitiesCashPay($countryCode = 'RU')
     {
-        return $this->doRequest(__FUNCTION__, ['countryCode' => $countryCode], 'request');
+        return $this->doRequest(__FUNCTION__, ['countryCode' => $countryCode]);
     }
 
     /**
@@ -85,7 +85,7 @@ class GeographyWebService extends AbstractWebService
      */
     public function getParcelShops(DeliveryPoint $point = null)
     {
-        $result = $this->doRequest(__FUNCTION__, ($point ? $point->toArray() : []), 'request');
+        $result = $this->doRequest(__FUNCTION__, ($point ? $point->toArray() : []));
 
         return $result->parcelShop;
     }
@@ -101,7 +101,7 @@ class GeographyWebService extends AbstractWebService
         $result = $this->doRequest(__FUNCTION__, [
             'terminalCode' => $terminalCode,
             'serviceCode' => $serviceCode,
-        ], 'request');
+        ]);
 
         return $result->terminal[0];
     }
