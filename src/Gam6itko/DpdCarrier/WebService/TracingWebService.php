@@ -3,7 +3,6 @@
 namespace Gam6itko\DpdCarrier\WebService;
 
 use Gam6itko\DpdCarrier\Type\ExtraService;
-use Gam6itko\DpdCarrier\Type\Order\Order;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\Type\Tracing\StateParcel;
@@ -34,10 +33,10 @@ class TracingWebService extends AbstractWebService
     {
         return [
             'extraService' => ExtraService::class,
-            'parcel' => Parcel::class,
-            'parameter' => Parameter::class,
+            'parcel'       => Parcel::class,
+            'parameter'    => Parameter::class,
             'stateParcels' => StateParcels::class,
-            'stateParcel' => StateParcel::class,
+            'stateParcel'  => StateParcel::class,
         ];
     }
 
@@ -69,23 +68,7 @@ class TracingWebService extends AbstractWebService
     {
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
-            'pickupDate' => $pickupDate,
-        ]);
-    }
-
-    /**
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
-     * @param int                $maxRowCount
-     *
-     * @return array|mixed|\stdClass
-     */
-    public function getEvents(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo, $maxRowCount = 50)
-    {
-        return $this->doRequest(__FUNCTION__, [
-            'dateFrom' => $dateFrom,
-            'dateTo' => $dateTo,
-            'maxRowCount' => $maxRowCount,
+            'pickupDate'    => $pickupDate,
         ]);
     }
 
@@ -99,7 +82,7 @@ class TracingWebService extends AbstractWebService
     {
         return $this->doRequest(__FUNCTION__, [
             'clientOrderNr' => $clientOrderNr,
-            'pickupDate' => $pickupDate,
+            'pickupDate'    => $pickupDate,
         ]);
     }
 
@@ -115,10 +98,5 @@ class TracingWebService extends AbstractWebService
             'dpdOrderNr' => $dpdOrderNr,
             'pickupYear' => $pickupYear,
         ]);
-    }
-
-    public function getTrakingOrderLink()
-    {
-        //todo
     }
 }

@@ -25,12 +25,6 @@ class TracingTest extends AbstractDpdServiceTestCase
         self::$states = $result;
     }
 
-    public function testGetEvents()
-    {
-        $result = $this->getDpdWebService()->getEvents(new \DateTime('2019-08-10'), new \DateTime('2019-08-13'));
-        self::assertNotEmpty($result);
-    }
-
     /**
      * @covers ::getStatesByDPDOrder
      */

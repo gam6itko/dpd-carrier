@@ -30,8 +30,8 @@ class LabelPrintService extends AbstractWebService
     {
         return [
             'dpdOrderLabelsFile' => OrderLabelsFile::class,
-            'orderStatus' => OrderStatus::class,
-            'dpdOrderLabels' => OrderLabels::class,
+            'orderStatus'        => OrderStatus::class,
+            'dpdOrderLabels'     => OrderLabels::class,
         ];
     }
 
@@ -49,16 +49,16 @@ class LabelPrintService extends AbstractWebService
         $trueOrders = [];
         foreach ($orders as $orderNum => $parcelsNumber) {
             $trueOrders[] = [
-                'orderNum' => $orderNum,
+                'orderNum'      => $orderNum,
                 'parcelsNumber' => $parcelsNumber,
             ];
         }
         unset($orderNum, $parcelsNumber);
 
         $result = $this->doRequest(__FUNCTION__, [
-            'order' => $trueOrders,
+            'order'      => $trueOrders,
             'fileFormat' => $fileFormat,
-            'pageSize' => $pageSize,
+            'pageSize'   => $pageSize,
         ], 'getLabelFile');
 
         return $result;
@@ -76,7 +76,7 @@ class LabelPrintService extends AbstractWebService
     {
         $result = $this->doRequest(__FUNCTION__, [
             'parcel' => [
-                'orderNum' => $orderNum,
+                'orderNum'  => $orderNum,
                 'parcelNum' => $parcelNum,
             ],
         ], 'getLabel');

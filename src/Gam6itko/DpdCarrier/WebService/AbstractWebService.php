@@ -97,6 +97,8 @@ abstract class AbstractWebService
 
     /**
      * @return \SoapClient
+     *
+     * @throws \SoapFault
      */
     protected function buildSoapClient()
     {

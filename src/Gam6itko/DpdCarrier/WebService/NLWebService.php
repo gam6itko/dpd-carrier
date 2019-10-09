@@ -26,7 +26,7 @@ class NLWebService extends AbstractWebService
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),
-            'dateTo' => $dateTo->format('Y-m-d'),
+            'dateTo'   => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
         return $result; //todo if empty
@@ -44,7 +44,7 @@ class NLWebService extends AbstractWebService
     {
         $result = $this->doRequest(__FUNCTION__, [
             'dateFrom' => $dateFrom->format('Y-m-d'),
-            'dateTo' => $dateTo->format('Y-m-d'),
+            'dateTo'   => $dateTo->format('Y-m-d'),
         ], 'arg0');
 
         return $result; //todo if empty
@@ -66,7 +66,7 @@ class NLWebService extends AbstractWebService
 
         $result = $this->doRequest(__FUNCTION__, [
             'orderNum' => $orderNum,
-            'year' => $year,
+            'year'     => $year,
         ], 'getWaybill');
 
         return $result;

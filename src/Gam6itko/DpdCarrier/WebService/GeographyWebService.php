@@ -40,21 +40,21 @@ class GeographyWebService extends AbstractWebService
     protected function getClassmap()
     {
         return [
-            'extraService' => ExtraService::class,
-            'parcel' => Parcel::class,
-            'parameter' => Parameter::class,
-            'address' => Address::class,
-            'limits' => Limits::class,
-            'city' => City::class,
-            'geoCoordinates' => GeoCoordinates::class,
-            'extraServiceParam' => Parameter::class,
-            'parcelShop' => ParcelShop::class,
-            'terminalSelf' => Terminal::class,
+            'extraService'           => ExtraService::class,
+            'parcel'                 => Parcel::class,
+            'parameter'              => Parameter::class,
+            'address'                => Address::class,
+            'limits'                 => Limits::class,
+            'city'                   => City::class,
+            'geoCoordinates'         => GeoCoordinates::class,
+            'extraServiceParam'      => Parameter::class,
+            'parcelShop'             => ParcelShop::class,
+            'terminalSelf'           => Terminal::class,
             'terminalStoragePeriods' => Terminal::class,
-            'schedule' => Schedule::class,
-            'services' => Services::class,
-            'storagePeriod' => Services::class,
-            'timetable' => TimeTable::class,
+            'schedule'               => Schedule::class,
+            'services'               => Services::class,
+            'storagePeriod'          => Services::class,
+            'timetable'              => TimeTable::class,
         ];
     }
 
@@ -100,7 +100,7 @@ class GeographyWebService extends AbstractWebService
     {
         $result = $this->doRequest(__FUNCTION__, [
             'terminalCode' => $terminalCode,
-            'serviceCode' => $serviceCode,
+            'serviceCode'  => $serviceCode,
         ]);
 
         return $result->terminal[0];
