@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 abstract class AbstractDpdServiceTestCase extends TestCase
 {
-    protected function createService(string $className)
+    protected function createService($className)
     {
         $number = getenv('DPD_CLIENT_NUMBER');
         $key = getenv('DPD_CLIENT_KEY');

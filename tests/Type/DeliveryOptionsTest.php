@@ -5,6 +5,9 @@ namespace Gam6itko\DpdCarrier\Tests\Type;
 use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversDefaultClass \Gam6itko\DpdCarrier\Type\DeliveryOptions
+ */
 class DeliveryOptionsTest extends TestCase
 {
     /**

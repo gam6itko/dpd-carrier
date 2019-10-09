@@ -6,7 +6,7 @@ use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 use Gam6itko\DpdCarrier\WebService\TracingWebService;
 
 /**
- * @covers \TracingWebService
+ * @coversDefaultClass \Gam6itko\DpdCarrier\WebService\TracingWebService
  */
 class TracingTest extends AbstractDpdServiceTestCase
 {

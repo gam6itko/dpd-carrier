@@ -18,9 +18,7 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\OrderWebService;
 
 /**
- * Class OrderTest.
- *
- * @covers \OrderWebService
+ * @coversDefaultClass \Gam6itko\DpdCarrier\WebService\OrderWebService
  */
 class OrderTest extends AbstractDpdServiceTestCase
 {

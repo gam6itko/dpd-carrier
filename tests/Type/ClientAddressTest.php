@@ -5,6 +5,9 @@ namespace Gam6itko\DpdCarrier\Tests\Type;
 use Gam6itko\DpdCarrier\Type\Order\ClientAddress;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversDefaultClass \Gam6itko\DpdCarrier\Type\Order\ClientAddress
+ */
 class ClientAddressTest extends TestCase
 {
     public function testJson()

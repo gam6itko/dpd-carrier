@@ -9,7 +9,7 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 use Gam6itko\DpdCarrier\WebService\CalculatorWebService;
 
 /**
- * @covers \CalculatorWebService
+ * @coversDefaultClass  \Gam6itko\DpdCarrier\WebService\CalculatorWebService
  */
 class CalculatorTest extends AbstractDpdServiceTestCase
 {

@@ -9,7 +9,7 @@ use Gam6itko\DpdCarrier\Type\OrderLabelsFile;
 use Gam6itko\DpdCarrier\WebService\LabelPrintService;
 
 /**
- * @covers \LabelPrintService
+ * @coversDefaultClass \Gam6itko\DpdCarrier\WebService\LabelPrintService
  */
 class LabelPrintTest extends AbstractDpdServiceTestCase
 {
