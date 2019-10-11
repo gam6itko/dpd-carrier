@@ -10,4 +10,5 @@ final class OrderStatusName
     const OrderError = 'OrderError';
     const Canceled = 'Canceled';
     const CanceledPreviously = 'CanceledPreviously';
+    const NotFound = 'NotFound';
 }
