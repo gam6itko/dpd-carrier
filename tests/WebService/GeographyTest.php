@@ -3,6 +3,7 @@
 namespace Gam6itko\DpdCarrier\Tests\WebService;
 
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
+use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\Geography\Address;
 use Gam6itko\DpdCarrier\Type\Geography\City;
@@ -18,6 +19,14 @@ use Gam6itko\DpdCarrier\WebService\GeographyWebService;
  */
 class GeographyTest extends AbstractDpdServiceTestCase
 {
+    /**
+     * @return GeographyWebService
+     */
+    protected function getDpdWebService()
+    {
+        return $this->createService(GeographyWebService::class);
+    }
+
     public function testGetCitiesCashPay()
     {
         $result = $this->getDpdWebService()->getCitiesCashPay();
@@ -55,11 +64,13 @@ class GeographyTest extends AbstractDpdServiceTestCase
         self::assertInstanceOf(Services::class, $result->getServices()[0]);
     }
 
-    /**
-     * @return GeographyWebService
-     */
-    protected function getDpdWebService()
+    public function testGetPossibleExtraService()
     {
-        return $this->createService(GeographyWebService::class);
+        $pickup = new DeliveryPoint(49694102);
+        $delivery = new DeliveryPoint(195664561);
+        $options = (new DeliveryOptions(false, false))
+            ->setServiceCode('PCL');
+        $result = $this->getDpdWebService()->getPossibleExtraService($pickup, $delivery, $options);
+        self::assertNotEmpty($result);
     }
 }
