@@ -5,16 +5,21 @@ namespace Gam6itko\DpdCarrier\Enum;
 final class PaymentType
 {
     /** @var string Наличными отправителем */
-    const SenderCash = 'ОУО';
-
+    const SENDER_CASH = 'ОУО';
     /** @var null Оплата отправителя по безналичному расчёту. */
-    const SenderCashless = null;
-
+    const SENDER_CASHLESS = null;
     /** @var string Наличными получателем */
-    const ReceiverCash = 'ОУП';
+    const RECEIVER_CASH = 'ОУП';
 
-    /** @deprecated v0.2.0 Use SenderCash */
+    /** @deprecated v0.2.0 Use SENDER_CASH */
     const Sender = 'ОУО';
-    /** @deprecated v0.2.0 Use ReceiverCash */
+    /** @deprecated v0.2.0 Use RECEIVER_CASH */
     const Receiver = 'ОУП';
+
+    /** @deprecated v0.2.0 Use SENDER_CASH */
+    const SenderCash = 'ОУО';
+    /** @deprecated v0.2.0 Use SENDER_CASHLESS */
+    const SenderCashless = null;
+    /** @deprecated v0.2.0 Use RECEIVER_CASH */
+    const ReceiverCash = 'ОУП';
 }
