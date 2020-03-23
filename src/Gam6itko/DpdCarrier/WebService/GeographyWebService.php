@@ -2,6 +2,7 @@
 
 namespace Gam6itko\DpdCarrier\WebService;
 
+use Gam6itko\DpdCarrier\Type\DeliveryOptions;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Geography\Address;
@@ -99,5 +100,13 @@ class GeographyWebService extends AbstractWebService
         ]);
 
         return $result->terminal[0];
+    }
+
+    public function getPossibleExtraService(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
+    {
+        return $this->doRequest(__FUNCTION__, array_merge([
+            'pickup'   => $pickup,
+            'delivery' => $delivery,
+        ], $options->toArray()));
     }
 }

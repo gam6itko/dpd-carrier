@@ -2,6 +2,7 @@
 
 namespace Gam6itko\DpdCarrier\WebService;
 
+use Gam6itko\DpdCarrier\Type\EventTracking\EventsPool;
 use Gam6itko\DpdCarrier\Type\ExtraService;
 use Gam6itko\DpdCarrier\Type\Parameter;
 use Gam6itko\DpdCarrier\Type\Parcel;
@@ -102,6 +103,18 @@ class TracingWebService extends AbstractWebService
         return $this->doRequest(__FUNCTION__, [
             'dpdOrderNr' => $dpdOrderNr,
             'pickupYear' => $pickupYear,
+        ]);
+    }
+
+    /**
+     * @return EventsPool
+     */
+    public function getEvents(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo, int $maxRowCount = 50)
+    {
+        return $this->doRequest(__FUNCTION__, [
+            'dateFrom'    => $dateFrom->format(DATE_W3C),
+            'dateTo'      => $dateTo->format(DATE_W3C),
+            'maxRowCount' => $maxRowCount,
         ]);
     }
 }
