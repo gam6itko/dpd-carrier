@@ -65,213 +65,135 @@ class Parcel extends ArrayLike
         $this->width = $width;
     }
 
-    /**
-     * @return string
-     */
     public function getNumber(): string
     {
         return $this->number;
     }
 
-    /**
-     * @param string $number
-     *
-     * @return Parcel
-     */
     public function setNumber(string $number): Parcel
     {
         $this->number = $number;
+
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getBoxNeeded(): int
     {
         return $this->box_needed;
     }
 
-    /**
-     * @param int $box_needed
-     *
-     * @return Parcel
-     */
     public function setBoxNeeded(int $box_needed): Parcel
     {
         $this->box_needed = $box_needed;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getWeight(): float
     {
         return $this->weight;
     }
 
-    /**
-     * @param float $weight
-     *
-     * @return Parcel
-     */
     public function setWeight(float $weight): Parcel
     {
         $this->weight = $weight;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getLength(): float
     {
         return $this->length;
     }
 
-    /**
-     * @param float $length
-     *
-     * @return Parcel
-     */
     public function setLength(float $length): Parcel
     {
         $this->length = $length;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getHeight(): float
     {
         return $this->height;
     }
 
-    /**
-     * @param float $height
-     *
-     * @return Parcel
-     */
     public function setHeight(float $height): Parcel
     {
         $this->height = $height;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getWidth(): float
     {
         return $this->width;
     }
 
-    /**
-     * @param float $width
-     *
-     * @return Parcel
-     */
     public function setWidth(float $width): Parcel
     {
         $this->width = $width;
+
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getNumberForPrint(): int
     {
         return $this->number_for_print;
     }
 
-    /**
-     * @param int $number_for_print
-     *
-     * @return Parcel
-     */
     public function setNumberForPrint(int $number_for_print): Parcel
     {
         $this->number_for_print = $number_for_print;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getInsuranceCost(): float
     {
         return $this->insuranceCost;
     }
 
-    /**
-     * @param float $insuranceCost
-     *
-     * @return Parcel
-     */
     public function setInsuranceCost(float $insuranceCost): Parcel
     {
         $this->insuranceCost = $insuranceCost;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getInsuranceCostVat(): float
     {
         return $this->insuranceCostVat;
     }
 
-    /**
-     * @param float $insuranceCostVat
-     *
-     * @return Parcel
-     */
     public function setInsuranceCostVat(float $insuranceCostVat): Parcel
     {
         $this->insuranceCostVat = $insuranceCostVat;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getCodAmount(): float
     {
         return $this->codAmount;
     }
 
-    /**
-     * @param float $codAmount
-     *
-     * @return Parcel
-     */
     public function setCodAmount(float $codAmount): Parcel
     {
         $this->codAmount = $codAmount;
+
         return $this;
     }
 
-    /**
-     * @return float
-     */
     public function getQuantity(): float
     {
         return $this->quantity;
     }
 
-    /**
-     * @param float $quantity
-     *
-     * @return Parcel
-     */
     public function setQuantity(float $quantity): Parcel
     {
         $this->quantity = $quantity;
+
         return $this;
     }
-
 }

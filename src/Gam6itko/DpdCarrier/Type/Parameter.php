@@ -12,9 +12,6 @@ class Parameter extends ArrayLike
 
     /**
      * Parameter constructor.
-     *
-     * @param string $name
-     * @param string $value
      */
     public function __construct(string $name, string $value)
     {
@@ -22,41 +19,27 @@ class Parameter extends ArrayLike
         $this->value = $value;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return Parameter
-     */
     public function setName(string $name): Parameter
     {
         $this->name = $name;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getValue(): string
     {
         return $this->value;
     }
 
-    /**
-     * @param string $value
-     *
-     * @return Parameter
-     */
     public function setValue(string $value): Parameter
     {
         $this->value = $value;
+
         return $this;
     }
 }

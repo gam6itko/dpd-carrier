@@ -22,42 +22,27 @@ class ExtraService extends ArrayLike
         $this->param = $param;
     }
 
-    /**
-     * @return string
-     */
     public function getEsCode(): string
     {
         return $this->esCode;
     }
 
-    /**
-     * @param string $esCode
-     *
-     * @return ExtraService
-     */
     public function setEsCode(string $esCode): ExtraService
     {
         $this->esCode = $esCode;
+
         return $this;
     }
 
-    /**
-     * @return Parameter
-     */
     public function getParam(): Parameter
     {
         return $this->param;
     }
 
-    /**
-     * @param Parameter $param
-     *
-     * @return ExtraService
-     */
     public function setParam(Parameter $param): ExtraService
     {
         $this->param = $param;
+
         return $this;
     }
-
 }
