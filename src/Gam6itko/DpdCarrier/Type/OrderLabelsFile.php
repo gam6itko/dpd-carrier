@@ -12,22 +12,15 @@ class OrderLabelsFile
     /** @var OrderStatus[] */
     private $order;
 
-    /**
-     * @return string
-     */
     public function getFile(): string
     {
         return $this->file;
     }
 
-    /**
-     * @param string $file
-     *
-     * @return OrderLabelsFile
-     */
     public function setFile(string $file): OrderLabelsFile
     {
         $this->file = $file;
+
         return $this;
     }
 
@@ -41,13 +34,11 @@ class OrderLabelsFile
 
     /**
      * @param OrderStatus[] $order
-     *
-     * @return OrderLabelsFile
      */
     public function setOrder(array $order): OrderLabelsFile
     {
         $this->order = $order;
+
         return $this;
     }
-
 }

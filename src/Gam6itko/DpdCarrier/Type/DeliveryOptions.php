@@ -55,23 +55,15 @@ class DeliveryOptions extends ArrayLike
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isSelfPickup(): bool
     {
         return $this->selfPickup;
     }
 
-    /**
-     * @param bool $selfPickup
-     *
-     * @return DeliveryOptions
-     */
     public function setSelfPickup(bool $selfPickup): DeliveryOptions
     {
         $this->selfPickup = $selfPickup;
+
         return $this;
     }
-
 }
