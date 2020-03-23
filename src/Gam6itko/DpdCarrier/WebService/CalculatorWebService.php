@@ -41,10 +41,6 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     *
      * @return ServiceCost[]
      */
     public function getServiceCost2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
@@ -70,10 +66,7 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     * @param Parcel[]        $parcels
+     * @param Parcel[] $parcels
      *
      * @return Parcel[]
      */
@@ -88,11 +81,7 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     * @param Parcel          $parcel
-     * @param bool            $insurance
+     * @param bool $insurance
      *
      * @return array
      */

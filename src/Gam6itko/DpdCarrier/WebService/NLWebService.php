@@ -17,9 +17,6 @@ class NLWebService extends AbstractWebService
     /**
      * Отчет о предварительной стоимости перевозки за указный период.
      *
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
-     *
      * @return mixed
      */
     public function getNLAmount(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo)
@@ -34,9 +31,6 @@ class NLWebService extends AbstractWebService
 
     /**
      * Отчет об окончательной стоимости перевозки за указный период.
-     *
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
      *
      * @return mixed
      */

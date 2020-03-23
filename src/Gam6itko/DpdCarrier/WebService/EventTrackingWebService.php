@@ -39,9 +39,7 @@ class EventTrackingWebService extends AbstractWebService
     }
 
     /**
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
-     * @param int                $maxRowCount
+     * @param int $maxRowCount
      *
      * @return EventsPool
      */

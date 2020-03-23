@@ -47,7 +47,6 @@ abstract class AbstractWebService
 
     /**
      * @param        $methodName
-     * @param array  $array
      * @param string $wrapIn
      *
      * @return array|mixed|\stdClass

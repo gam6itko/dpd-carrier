@@ -45,9 +45,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param Header $header
-     * @param Order  $order
-     *
      * @return OrderStatus
      */
     public function createOrder(Header $header, Order $order)
@@ -61,8 +58,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param OrderStatus $orderState
-     *
      * @return OrderStatus
      */
     public function cancelOrder(OrderStatus $orderState)
@@ -93,8 +88,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param ClientAddress $address
-     *
      * @return ClientAddressStatus
      */
     public function createAddress(ClientAddress $address)
@@ -105,8 +98,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param ClientAddress $address
-     *
      * @return ClientAddressStatus
      */
     public function updateAddress(ClientAddress $address)
