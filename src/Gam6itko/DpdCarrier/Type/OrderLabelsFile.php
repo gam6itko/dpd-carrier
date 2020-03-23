@@ -13,15 +13,41 @@ class OrderLabelsFile
     private $order;
 
     /**
+     * @return string
+     */
+    public function getFile(): string
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param string $file
+     *
+     * @return OrderLabelsFile
+     */
+    public function setFile(string $file): OrderLabelsFile
+    {
+        $this->file = $file;
+        return $this;
+    }
+
+    /**
      * @return OrderStatus[]
      */
-    public function getOrderStatuses()
+    public function getOrder(): array
     {
         return $this->order;
     }
 
-    public function getFileData()
+    /**
+     * @param OrderStatus[] $order
+     *
+     * @return OrderLabelsFile
+     */
+    public function setOrder(array $order): OrderLabelsFile
     {
-        return $this->file;
+        $this->order = $order;
+        return $this;
     }
+
 }

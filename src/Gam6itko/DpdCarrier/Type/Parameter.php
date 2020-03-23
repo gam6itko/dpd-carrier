@@ -16,7 +16,7 @@ class Parameter extends ArrayLike
      * @param string $name
      * @param string $value
      */
-    public function __construct($name, $value)
+    public function __construct(string $name, string $value)
     {
         $this->name = $name;
         $this->value = $value;
@@ -25,7 +25,7 @@ class Parameter extends ArrayLike
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -35,17 +35,16 @@ class Parameter extends ArrayLike
      *
      * @return Parameter
      */
-    public function setName($name)
+    public function setName(string $name): Parameter
     {
         $this->name = $name;
-
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -55,10 +54,9 @@ class Parameter extends ArrayLike
      *
      * @return Parameter
      */
-    public function setValue($value)
+    public function setValue(string $value): Parameter
     {
         $this->value = $value;
-
         return $this;
     }
 }

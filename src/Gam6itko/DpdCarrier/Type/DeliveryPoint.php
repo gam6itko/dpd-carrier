@@ -10,7 +10,7 @@ class DeliveryPoint extends AbstractDeliveryPoint
     /** @var string */
     protected $countryName;
 
-    public function __construct($cityId = null)
+    public function __construct(?int $cityId = null)
     {
         $this->cityId = $cityId;
     }
@@ -18,40 +18,32 @@ class DeliveryPoint extends AbstractDeliveryPoint
     /**
      * @return string
      */
-    public function getIndex()
+    public function getIndex(): string
     {
         return $this->index;
     }
 
     /**
      * @param string $index
-     *
-     * @return DeliveryPoint
      */
-    public function setIndex($index)
+    public function setIndex(string $index): void
     {
         $this->index = $index;
-
-        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCountryName()
+    public function getCountryName(): string
     {
         return $this->countryName;
     }
 
     /**
      * @param string $countryName
-     *
-     * @return DeliveryPoint
      */
-    public function setCountryName($countryName)
+    public function setCountryName(string $countryName): void
     {
         $this->countryName = $countryName;
-
-        return $this;
     }
 }

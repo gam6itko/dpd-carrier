@@ -31,98 +31,10 @@ class DeliveryOptions extends ArrayLike
     /** @var float */
     protected $declaredValue;
 
-    public function __construct($selfPickup = false, $selfDelivery = true)
+    public function __construct(bool $selfPickup = false, bool $selfDelivery = true)
     {
         $this->selfPickup = $selfPickup;
         $this->selfDelivery = $selfDelivery;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isSelfPickup()
-    {
-        return $this->selfPickup;
-    }
-
-    /**
-     * @param bool $selfPickup
-     *
-     * @return DeliveryOptions
-     */
-    public function setSelfPickup($selfPickup)
-    {
-        $this->selfPickup = $selfPickup;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isSelfDelivery()
-    {
-        return $this->selfDelivery;
-    }
-
-    /**
-     * @param bool $selfDelivery
-     *
-     * @return DeliveryOptions
-     */
-    public function setSelfDelivery($selfDelivery)
-    {
-        $this->selfDelivery = $selfDelivery;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * @param float $weight Kg
-     *
-     * @return DeliveryOptions
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getVolume()
-    {
-        return $this->volume;
-    }
-
-    /**
-     * @param float $volume
-     *
-     * @return DeliveryOptions
-     */
-    public function setVolume($volume)
-    {
-        $this->volume = $volume;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getServiceCode()
-    {
-        return $this->serviceCode;
     }
 
     /**
@@ -144,82 +56,22 @@ class DeliveryOptions extends ArrayLike
     }
 
     /**
-     * @return string
+     * @return bool
      */
-    public function getPickupDate()
+    public function isSelfPickup(): bool
     {
-        return $this->pickupDate;
+        return $this->selfPickup;
     }
 
     /**
-     * @param string $pickupDate
+     * @param bool $selfPickup
      *
      * @return DeliveryOptions
      */
-    public function setPickupDate($pickupDate)
+    public function setSelfPickup(bool $selfPickup): DeliveryOptions
     {
-        $this->pickupDate = $pickupDate;
-
+        $this->selfPickup = $selfPickup;
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getMaxDays()
-    {
-        return $this->maxDays;
-    }
-
-    /**
-     * @param int $maxDays
-     *
-     * @return DeliveryOptions
-     */
-    public function setMaxDays($maxDays)
-    {
-        $this->maxDays = $maxDays;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getMaxCost()
-    {
-        return $this->maxCost;
-    }
-
-    /**
-     * @param float $maxCost
-     *
-     * @return DeliveryOptions
-     */
-    public function setMaxCost($maxCost)
-    {
-        $this->maxCost = $maxCost;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getDeclaredValue()
-    {
-        return $this->declaredValue;
-    }
-
-    /**
-     * @param float $declaredValue
-     *
-     * @return DeliveryOptions
-     */
-    public function setDeclaredValue($declaredValue)
-    {
-        $this->declaredValue = $declaredValue;
-
-        return $this;
-    }
 }

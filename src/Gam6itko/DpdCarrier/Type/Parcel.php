@@ -57,7 +57,7 @@ class Parcel extends ArrayLike
      * @param float|int $height
      * @param float|int $width
      */
-    public function __construct($weight = 0, $length = 0, $height = 0, $width = 0)
+    public function __construct(float $weight = 0, float $length = 0, float $height = 0, float $width = 0)
     {
         $this->weight = $weight;
         $this->length = $length;
@@ -68,7 +68,7 @@ class Parcel extends ArrayLike
     /**
      * @return string
      */
-    public function getNumber()
+    public function getNumber(): string
     {
         return $this->number;
     }
@@ -78,17 +78,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setNumber($number)
+    public function setNumber(string $number): Parcel
     {
         $this->number = $number;
-
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getBoxNeeded()
+    public function getBoxNeeded(): int
     {
         return $this->box_needed;
     }
@@ -98,17 +97,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setBoxNeeded($box_needed)
+    public function setBoxNeeded(int $box_needed): Parcel
     {
         $this->box_needed = $box_needed;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getWeight()
+    public function getWeight(): float
     {
         return $this->weight;
     }
@@ -118,17 +116,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setWeight($weight)
+    public function setWeight(float $weight): Parcel
     {
         $this->weight = $weight;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getLength()
+    public function getLength(): float
     {
         return $this->length;
     }
@@ -138,17 +135,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setLength($length)
+    public function setLength(float $length): Parcel
     {
         $this->length = $length;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getHeight()
+    public function getHeight(): float
     {
         return $this->height;
     }
@@ -158,17 +154,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setHeight($height)
+    public function setHeight(float $height): Parcel
     {
         $this->height = $height;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getWidth()
+    public function getWidth(): float
     {
         return $this->width;
     }
@@ -178,17 +173,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setWidth($width)
+    public function setWidth(float $width): Parcel
     {
         $this->width = $width;
-
         return $this;
     }
 
     /**
-     * @return int|null
+     * @return int
      */
-    public function getNumberForPrint()
+    public function getNumberForPrint(): int
     {
         return $this->number_for_print;
     }
@@ -198,17 +192,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setNumberForPrint($number_for_print)
+    public function setNumberForPrint(int $number_for_print): Parcel
     {
         $this->number_for_print = $number_for_print;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getInsuranceCost()
+    public function getInsuranceCost(): float
     {
         return $this->insuranceCost;
     }
@@ -218,17 +211,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setInsuranceCost($insuranceCost)
+    public function setInsuranceCost(float $insuranceCost): Parcel
     {
         $this->insuranceCost = $insuranceCost;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getInsuranceCostVat()
+    public function getInsuranceCostVat(): float
     {
         return $this->insuranceCostVat;
     }
@@ -238,17 +230,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setInsuranceCostVat($insuranceCostVat)
+    public function setInsuranceCostVat(float $insuranceCostVat): Parcel
     {
         $this->insuranceCostVat = $insuranceCostVat;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getCodAmount()
+    public function getCodAmount(): float
     {
         return $this->codAmount;
     }
@@ -258,17 +249,16 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setCodAmount($codAmount)
+    public function setCodAmount(float $codAmount): Parcel
     {
         $this->codAmount = $codAmount;
-
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getQuantity()
+    public function getQuantity(): float
     {
         return $this->quantity;
     }
@@ -278,10 +268,10 @@ class Parcel extends ArrayLike
      *
      * @return Parcel
      */
-    public function setQuantity($quantity)
+    public function setQuantity(float $quantity): Parcel
     {
         $this->quantity = $quantity;
-
         return $this;
     }
+
 }

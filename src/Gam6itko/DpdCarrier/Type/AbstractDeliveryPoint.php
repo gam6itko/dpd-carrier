@@ -22,7 +22,7 @@ abstract class AbstractDeliveryPoint extends ArrayLike
     /**
      * @return string
      */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->countryCode;
     }
@@ -32,17 +32,16 @@ abstract class AbstractDeliveryPoint extends ArrayLike
      *
      * @return AbstractDeliveryPoint
      */
-    public function setCountryCode($countryCode)
+    public function setCountryCode(string $countryCode): AbstractDeliveryPoint
     {
         $this->countryCode = $countryCode;
-
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getRegionCode()
+    public function getRegionCode(): string
     {
         return $this->regionCode;
     }
@@ -52,17 +51,16 @@ abstract class AbstractDeliveryPoint extends ArrayLike
      *
      * @return AbstractDeliveryPoint
      */
-    public function setRegionCode($regionCode)
+    public function setRegionCode(string $regionCode): AbstractDeliveryPoint
     {
         $this->regionCode = $regionCode;
-
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getCityId()
+    public function getCityId(): int
     {
         return $this->cityId;
     }
@@ -72,17 +70,16 @@ abstract class AbstractDeliveryPoint extends ArrayLike
      *
      * @return AbstractDeliveryPoint
      */
-    public function setCityId($cityId)
+    public function setCityId(int $cityId): AbstractDeliveryPoint
     {
         $this->cityId = $cityId;
-
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCityCode()
+    public function getCityCode(): string
     {
         return $this->cityCode;
     }
@@ -92,17 +89,16 @@ abstract class AbstractDeliveryPoint extends ArrayLike
      *
      * @return AbstractDeliveryPoint
      */
-    public function setCityCode($cityCode)
+    public function setCityCode(string $cityCode): AbstractDeliveryPoint
     {
         $this->cityCode = $cityCode;
-
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCityName()
+    public function getCityName(): string
     {
         return $this->cityName;
     }
@@ -112,10 +108,10 @@ abstract class AbstractDeliveryPoint extends ArrayLike
      *
      * @return AbstractDeliveryPoint
      */
-    public function setCityName($cityName)
+    public function setCityName(string $cityName): AbstractDeliveryPoint
     {
         $this->cityName = $cityName;
-
         return $this;
     }
+
 }
