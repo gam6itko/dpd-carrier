@@ -361,8 +361,6 @@ class Order extends ArrayLike
     }
 
     /**
-     * @param ExtraService $extraService
-     *
      * @return Order
      */
     public function addExtraService(ExtraService $extraService)
@@ -373,8 +371,6 @@ class Order extends ArrayLike
     }
 
     /**
-     * @param Parcel $parcel
-     *
      * @return self
      */
     public function addParcel(Parcel $parcel)

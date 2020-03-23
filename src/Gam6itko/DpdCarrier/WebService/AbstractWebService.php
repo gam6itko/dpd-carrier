@@ -25,18 +25,18 @@ abstract class AbstractWebService
      *
      * @internal param string $wsdlHost
      */
-    public function __construct($clientNumber, $clientKey, $testMode = false)
+    public function __construct(int $clientNumber, string $clientKey, bool $testMode = false)
     {
         $this->clientNumber = $clientNumber;
         $this->clientKey = $clientKey;
         $this->testMode = $testMode;
     }
 
-    abstract protected function getWsdlTest();
+    abstract protected function getWsdlTest(): string;
 
-    abstract protected function getWsdlProd();
+    abstract protected function getWsdlProd(): string;
 
-    protected function getSoapClient()
+    protected function getSoapClient(): \SoapClient
     {
         if ($this->soapClient) {
             return $this->soapClient;
@@ -46,13 +46,11 @@ abstract class AbstractWebService
     }
 
     /**
-     * @param        $methodName
-     * @param array  $array
-     * @param string $wrapIn
+     * @param $methodName
      *
      * @return array|mixed|\stdClass
      */
-    protected function doRequest($methodName, array $array = [], $wrapIn = 'request')
+    protected function doRequest(string $methodName, array $array = [], ?string $wrapIn = 'request')
     {
         $soapRequest = $this->buildRequest($array);
         if ($wrapIn) {
@@ -71,10 +69,8 @@ abstract class AbstractWebService
 
     /**
      * @param $array
-     *
-     * @return array
      */
-    protected function buildRequest($array)
+    private function buildRequest(array $array): array
     {
         return array_merge(
             [
@@ -87,20 +83,15 @@ abstract class AbstractWebService
         );
     }
 
-    /**
-     * @return array
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [];
     }
 
     /**
-     * @return \SoapClient
-     *
      * @throws \SoapFault
      */
-    protected function buildSoapClient()
+    private function buildSoapClient(): \SoapClient
     {
         $wsdl = $this->testMode ? $this->getWsdlTest() : $this->getWsdlProd();
 

@@ -13,20 +13,17 @@ use Gam6itko\DpdCarrier\Type\OrderLabelsFile;
  */
 class LabelPrintService extends AbstractWebService
 {
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/label-print?wsdl';
     }
 
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/label-print?wsdl';
     }
 
-    /**
-     * @return array
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [
             'dpdOrderLabelsFile' => OrderLabelsFile::class,
@@ -44,7 +41,7 @@ class LabelPrintService extends AbstractWebService
      *
      * @return OrderLabelsFile
      */
-    public function createLabelFile(array $orders, $fileFormat = LabelFileFormat::PDF, $pageSize = LabelPageSize::A5)
+    public function createLabelFile(array $orders, string $fileFormat = LabelFileFormat::PDF, string $pageSize = LabelPageSize::A5)
     {
         $trueOrders = [];
         foreach ($orders as $orderNum => $parcelsNumber) {
@@ -72,7 +69,7 @@ class LabelPrintService extends AbstractWebService
      *
      * @return OrderLabels
      */
-    public function createParcelLabel($orderNum, $parcelNum = null)
+    public function createParcelLabel(string $orderNum, ?string $parcelNum = null)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'parcel' => [

@@ -16,7 +16,7 @@ class EventTrackingWebService extends AbstractWebService
     /**
      * {@inheritdoc}
      */
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/event-tracking?wsdl';
     }
@@ -24,12 +24,12 @@ class EventTrackingWebService extends AbstractWebService
     /**
      * {@inheritdoc}
      */
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/event-tracking?wsdl';
     }
 
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [
             'eventTackingResponse' => EventsPool::class,
@@ -39,13 +39,9 @@ class EventTrackingWebService extends AbstractWebService
     }
 
     /**
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
-     * @param int                $maxRowCount
-     *
      * @return EventsPool
      */
-    public function getEvents(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo, $maxRowCount = 50)
+    public function getEvents(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo, int $maxRowCount = 50)
     {
         return $this->doRequest(__FUNCTION__, [
             'dateFrom'    => $dateFrom->format(DATE_W3C),
@@ -59,7 +55,7 @@ class EventTrackingWebService extends AbstractWebService
      *
      * @return mixed
      */
-    public function confirm($docId)
+    public function confirm(int $docId)
     {
         return $this->doRequest(__FUNCTION__, ['docId' => $docId]);
     }

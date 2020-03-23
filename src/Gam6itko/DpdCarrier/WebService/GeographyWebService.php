@@ -21,7 +21,7 @@ class GeographyWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/geography2?wsdl';
     }
@@ -29,15 +29,12 @@ class GeographyWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/geography2?wsdl';
     }
 
-    /**
-     * @return array
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [
             'extraService'           => ExtraService::class,
@@ -59,11 +56,9 @@ class GeographyWebService extends AbstractWebService
     }
 
     /**
-     * @param string $countryCode
-     *
      * @return City[]
      */
-    public function getCitiesCashPay($countryCode = 'RU')
+    public function getCitiesCashPay(string $countryCode = 'RU')
     {
         return $this->doRequest(__FUNCTION__, ['countryCode' => $countryCode]);
     }
@@ -73,7 +68,7 @@ class GeographyWebService extends AbstractWebService
      */
     public function getTerminalsSelfDelivery2()
     {
-        $result = $this->doRequest(__FUNCTION__, [], false);
+        $result = $this->doRequest(__FUNCTION__, [], null);
 
         return $result->terminal;
     }
@@ -83,7 +78,7 @@ class GeographyWebService extends AbstractWebService
      *
      * @return ParcelShop[]
      */
-    public function getParcelShops(DeliveryPoint $point = null)
+    public function getParcelShops(?DeliveryPoint $point = null)
     {
         $result = $this->doRequest(__FUNCTION__, ($point ? $point->toArray() : []));
 
@@ -96,7 +91,7 @@ class GeographyWebService extends AbstractWebService
      *
      * @return Terminal
      */
-    public function getStoragePeriod($terminalCode, $serviceCode)
+    public function getStoragePeriod(string $terminalCode, string $serviceCode)
     {
         $result = $this->doRequest(__FUNCTION__, [
             'terminalCode' => $terminalCode,

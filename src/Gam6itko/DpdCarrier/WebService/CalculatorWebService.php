@@ -14,7 +14,7 @@ class CalculatorWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/calculator2?wsdl';
     }
@@ -22,15 +22,12 @@ class CalculatorWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/calculator2?wsdl';
     }
 
-    /**
-     * @return array
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [
             'extraService' => ExtraService::class,
@@ -41,10 +38,6 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     *
      * @return ServiceCost[]
      */
     public function getServiceCost2(DeliveryPoint $pickup, DeliveryPoint $delivery, DeliveryOptions $options)
@@ -70,10 +63,7 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     * @param Parcel[]        $parcels
+     * @param Parcel[] $parcels
      *
      * @return Parcel[]
      */
@@ -88,11 +78,7 @@ class CalculatorWebService extends AbstractWebService
     }
 
     /**
-     * @param DeliveryPoint   $pickup
-     * @param DeliveryPoint   $delivery
-     * @param DeliveryOptions $options
-     * @param Parcel          $parcel
-     * @param bool            $insurance
+     * @param bool $insurance
      *
      * @return array
      */

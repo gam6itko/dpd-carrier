@@ -4,21 +4,18 @@ namespace Gam6itko\DpdCarrier\WebService;
 
 class NLWebService extends AbstractWebService
 {
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/nl?wsdl';
     }
 
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/nl?wsdl';
     }
 
     /**
      * Отчет о предварительной стоимости перевозки за указный период.
-     *
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
      *
      * @return mixed
      */
@@ -35,9 +32,6 @@ class NLWebService extends AbstractWebService
     /**
      * Отчет об окончательной стоимости перевозки за указный период.
      *
-     * @param \DateTimeInterface $dateFrom
-     * @param \DateTimeInterface $dateTo
-     *
      * @return mixed
      */
     public function getNLInvoice(\DateTimeInterface $dateFrom, \DateTimeInterface $dateTo)
@@ -53,15 +47,15 @@ class NLWebService extends AbstractWebService
     /**
      * Получение сканобраза подписанной получателем накладной.
      *
-     * @param $orderNum
+     * @param      $orderNum
      * @param null $year
      *
      * @return mixed
      */
-    public function getWaybill($orderNum, $year = null)
+    public function getWaybill(string $orderNum, ?int $year = null)
     {
         if (empty($year)) {
-            $year = date('YYYY');
+            $year = (int) date('YYYY');
         }
 
         $result = $this->doRequest(__FUNCTION__, [

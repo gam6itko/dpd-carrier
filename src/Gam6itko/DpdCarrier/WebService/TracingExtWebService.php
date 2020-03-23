@@ -7,7 +7,7 @@ class TracingExtWebService extends TracingWebService
     /**
      * @return mixed
      */
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/tracing1-1?wsdl';
     }
@@ -15,7 +15,7 @@ class TracingExtWebService extends TracingWebService
     /**
      * @return mixed
      */
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/tracing1-1?wsdl';
     }

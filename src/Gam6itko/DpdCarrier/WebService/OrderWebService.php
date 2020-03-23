@@ -16,7 +16,7 @@ class OrderWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlTest()
+    protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/order2?wsdl';
     }
@@ -24,15 +24,12 @@ class OrderWebService extends AbstractWebService
     /**
      * @return mixed
      */
-    protected function getWsdlProd()
+    protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/order2?wsdl';
     }
 
-    /**
-     * @return array
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         return [
             'extraService'           => ExtraService::class,
@@ -45,9 +42,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param Header $header
-     * @param Order  $order
-     *
      * @return OrderStatus
      */
     public function createOrder(Header $header, Order $order)
@@ -61,8 +55,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param OrderStatus $orderState
-     *
      * @return OrderStatus
      */
     public function cancelOrder(OrderStatus $orderState)
@@ -75,13 +67,17 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param $orderNumberInternal
-     * @param null $datePickup
+     * @param                           $orderNumberInternal
+     * @param \DateTimeInterface|string $datePickup
      *
      * @return OrderStatus
      */
-    public function getOrderStatus($orderNumberInternal, $datePickup = null)
+    public function getOrderStatus(string $orderNumberInternal, $datePickup = null)
     {
+        if ($datePickup instanceof \DateTimeInterface) {
+            $datePickup = $datePickup->format('Y-m-d');
+        }
+
         $result = $this->doRequest(__FUNCTION__, [
             'order' => [
                 'orderNumberInternal' => $orderNumberInternal,
@@ -93,8 +89,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param ClientAddress $address
-     *
      * @return ClientAddressStatus
      */
     public function createAddress(ClientAddress $address)
@@ -105,8 +99,6 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param ClientAddress $address
-     *
      * @return ClientAddressStatus
      */
     public function updateAddress(ClientAddress $address)
@@ -117,13 +109,13 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param $orderNum
+     * @param      $orderNum
      * @param null $parcelCount
      * @param null $cargoValue
      *
      * @return string - pdf content
      */
-    public function getInvoiceFile($orderNum, $parcelCount = null, $cargoValue = null)
+    public function getInvoiceFile(string $orderNum, ?int $parcelCount = null, ?float $cargoValue = null)
     {
         $result = $this->doRequest(__FUNCTION__, array_filter([
             'orderNum'    => $orderNum,
@@ -135,15 +127,16 @@ class OrderWebService extends AbstractWebService
     }
 
     /**
-     * @param $datePickup
-     * @param null $regularNum
-     * @param null $cityPickupId
-     * @param null $addressCode
+     * @param \DateTimeInterface|string $datePickup
      *
      * @return array
      */
-    public function getRegisterFile($datePickup, $regularNum = null, $cityPickupId = null, $addressCode = null)
+    public function getRegisterFile($datePickup, ?string $regularNum = null, ?string $cityPickupId = null, ?string $addressCode = null)
     {
+        if ($datePickup instanceof \DateTimeInterface) {
+            $datePickup = $datePickup->format('Y-m-d');
+        }
+
         $result = $this->doRequest(__FUNCTION__, array_filter([
             'datePickup'   => $datePickup,
             'regularNum'   => $regularNum,
