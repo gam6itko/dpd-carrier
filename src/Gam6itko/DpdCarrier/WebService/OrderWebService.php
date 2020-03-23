@@ -13,17 +13,11 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 
 class OrderWebService extends AbstractWebService
 {
-    /**
-     * @return mixed
-     */
     protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/order2?wsdl';
     }
 
-    /**
-     * @return mixed
-     */
     protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/order2?wsdl';

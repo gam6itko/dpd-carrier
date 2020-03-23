@@ -11,9 +11,6 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 
 class CalculatorWebService extends AbstractWebService
 {
-    /**
-     * @return mixed
-     */
     protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/calculator2?wsdl';

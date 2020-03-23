@@ -19,17 +19,11 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 
 class GeographyWebService extends AbstractWebService
 {
-    /**
-     * @return mixed
-     */
     protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/geography2?wsdl';
     }
 
-    /**
-     * @return mixed
-     */
     protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/geography2?wsdl';

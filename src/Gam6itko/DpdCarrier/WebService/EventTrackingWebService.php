@@ -13,17 +13,11 @@ use Gam6itko\DpdCarrier\Type\EventTracking\EventsPool;
  */
 class EventTrackingWebService extends AbstractWebService
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/event-tracking?wsdl';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/event-tracking?wsdl';

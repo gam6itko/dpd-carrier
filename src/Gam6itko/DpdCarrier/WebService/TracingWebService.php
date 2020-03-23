@@ -11,17 +11,11 @@ use Gam6itko\DpdCarrier\Type\Tracing\StateParcels;
 
 class TracingWebService extends AbstractWebService
 {
-    /**
-     * @return mixed
-     */
     protected function getWsdlTest(): string
     {
         return 'http://wstest.dpd.ru/services/tracing?wsdl';
     }
 
-    /**
-     * @return mixed
-     */
     protected function getWsdlProd(): string
     {
         return 'http://ws.dpd.ru/services/tracing?wsdl';
