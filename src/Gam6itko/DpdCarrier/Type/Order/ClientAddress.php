@@ -6,601 +6,576 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class ClientAddress extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $code;
 
-    /** @var string */
+    /** @var string|null */
     protected $name;
 
-    /** @var string */
+    /** @var string|null */
     protected $terminalCode;
 
-    /** @var string */
+    /** @var string|null */
     protected $addressString;
 
-    /** @var string */
+    /** @var string|null */
     protected $countryName;
 
-    /** @var string */
+    /** @var string|null */
     protected $index;
 
-    /** @var string */
+    /** @var string|null */
     protected $region;
 
-    /** @var string */
+    /** @var string|null */
     protected $city;
 
-    /** @var string */
+    /** @var string|null */
     protected $street;
 
-    /** @var string */
+    /** @var string|null */
     protected $streetAbbr;
 
-    /** @var string */
+    /** @var string|null */
     protected $house;
 
-    /** @var string */
+    /** @var string|null */
     protected $houseKorpus;
 
-    /** @var string */
+    /** @var string|null */
     protected $str;
 
-    /** @var string */
+    /** @var string|null */
     protected $vlad;
 
-    /** @var string */
+    /** @var string|null */
     protected $extraInfo;
 
-    /** @var string */
+    /** @var string|null */
     protected $office;
 
-    /** @var string */
+    /** @var string|null */
     protected $flat;
 
-    /** @var string */
+    /** @var string|null */
     protected $workTimeFrom;
 
-    /** @var string */
+    /** @var string|null */
     protected $workTimeTo;
 
-    /** @var string */
+    /** @var string|null */
     protected $dinnerTimeFrom;
 
-    /** @var string */
+    /** @var string|null */
     protected $dinnerTimeTo;
 
-    /** @var string */
+    /** @var string|null */
     protected $contactFio;
 
-    /** @var string */
+    /** @var string|null */
     protected $contactPhone;
 
-    /** @var string */
+    /** @var string|null */
     protected $contactEmail;
 
-    /** @var string */
+    /** @var string|null */
     protected $instructions;
 
-    /** @var string */
+    /** @var string|null */
     protected $needPass;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     /**
-     * @param string $code
+     * @param string|null $code
      *
      * @return ClientAddress
      */
-    public function setCode($code)
+    public function setCode(?string $code): ClientAddress
     {
         $this->code = $code;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      *
      * @return ClientAddress
      */
-    public function setName($name)
+    public function setName(?string $name): ClientAddress
     {
         $this->name = $name;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTerminalCode()
+    public function getTerminalCode(): ?string
     {
         return $this->terminalCode;
     }
 
     /**
-     * @param string $terminalCode
+     * @param string|null $terminalCode
      *
      * @return ClientAddress
      */
-    public function setTerminalCode($terminalCode)
+    public function setTerminalCode(?string $terminalCode): ClientAddress
     {
         $this->terminalCode = $terminalCode;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAddressString()
+    public function getAddressString(): ?string
     {
         return $this->addressString;
     }
 
     /**
-     * @param string $addressString
+     * @param string|null $addressString
      *
      * @return ClientAddress
      */
-    public function setAddressString($addressString)
+    public function setAddressString(?string $addressString): ClientAddress
     {
         $this->addressString = $addressString;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCountryName()
+    public function getCountryName(): ?string
     {
         return $this->countryName;
     }
 
     /**
-     * @param string $countryName
+     * @param string|null $countryName
      *
      * @return ClientAddress
      */
-    public function setCountryName($countryName)
+    public function setCountryName(?string $countryName): ClientAddress
     {
         $this->countryName = $countryName;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIndex()
+    public function getIndex(): ?string
     {
         return $this->index;
     }
 
     /**
-     * @param string $index
+     * @param string|null $index
      *
      * @return ClientAddress
      */
-    public function setIndex($index)
+    public function setIndex(?string $index): ClientAddress
     {
         $this->index = $index;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getRegion()
+    public function getRegion(): ?string
     {
         return $this->region;
     }
 
     /**
-     * @param string $region
+     * @param string|null $region
      *
      * @return ClientAddress
      */
-    public function setRegion($region)
+    public function setRegion(?string $region): ClientAddress
     {
         $this->region = $region;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCity()
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
     /**
-     * @param string $city
+     * @param string|null $city
      *
      * @return ClientAddress
      */
-    public function setCity($city)
+    public function setCity(?string $city): ClientAddress
     {
         $this->city = $city;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStreet()
+    public function getStreet(): ?string
     {
         return $this->street;
     }
 
     /**
-     * @param string $street
+     * @param string|null $street
      *
      * @return ClientAddress
      */
-    public function setStreet($street)
+    public function setStreet(?string $street): ClientAddress
     {
         $this->street = $street;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStreetAbbr()
+    public function getStreetAbbr(): ?string
     {
         return $this->streetAbbr;
     }
 
     /**
-     * @param string $streetAbbr
+     * @param string|null $streetAbbr
      *
      * @return ClientAddress
      */
-    public function setStreetAbbr($streetAbbr)
+    public function setStreetAbbr(?string $streetAbbr): ClientAddress
     {
         $this->streetAbbr = $streetAbbr;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getHouse()
+    public function getHouse(): ?string
     {
         return $this->house;
     }
 
     /**
-     * @param string $house
+     * @param string|null $house
      *
      * @return ClientAddress
      */
-    public function setHouse($house)
+    public function setHouse(?string $house): ClientAddress
     {
         $this->house = $house;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getHouseKorpus()
+    public function getHouseKorpus(): ?string
     {
         return $this->houseKorpus;
     }
 
     /**
-     * @param string $houseKorpus
+     * @param string|null $houseKorpus
      *
      * @return ClientAddress
      */
-    public function setHouseKorpus($houseKorpus)
+    public function setHouseKorpus(?string $houseKorpus): ClientAddress
     {
         $this->houseKorpus = $houseKorpus;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStr()
+    public function getStr(): ?string
     {
         return $this->str;
     }
 
     /**
-     * @param string $str
+     * @param string|null $str
      *
      * @return ClientAddress
      */
-    public function setStr($str)
+    public function setStr(?string $str): ClientAddress
     {
         $this->str = $str;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVlad()
+    public function getVlad(): ?string
     {
         return $this->vlad;
     }
 
     /**
-     * @param string $vlad
+     * @param string|null $vlad
      *
      * @return ClientAddress
      */
-    public function setVlad($vlad)
+    public function setVlad(?string $vlad): ClientAddress
     {
         $this->vlad = $vlad;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getExtraInfo()
+    public function getExtraInfo(): ?string
     {
         return $this->extraInfo;
     }
 
     /**
-     * @param string $extraInfo
+     * @param string|null $extraInfo
      *
      * @return ClientAddress
      */
-    public function setExtraInfo($extraInfo)
+    public function setExtraInfo(?string $extraInfo): ClientAddress
     {
         $this->extraInfo = $extraInfo;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOffice()
+    public function getOffice(): ?string
     {
         return $this->office;
     }
 
     /**
-     * @param string $office
+     * @param string|null $office
      *
      * @return ClientAddress
      */
-    public function setOffice($office)
+    public function setOffice(?string $office): ClientAddress
     {
         $this->office = $office;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getFlat()
+    public function getFlat(): ?string
     {
         return $this->flat;
     }
 
     /**
-     * @param string $flat
+     * @param string|null $flat
      *
      * @return ClientAddress
      */
-    public function setFlat($flat)
+    public function setFlat(?string $flat): ClientAddress
     {
         $this->flat = $flat;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWorkTimeFrom()
+    public function getWorkTimeFrom(): ?string
     {
         return $this->workTimeFrom;
     }
 
     /**
-     * @param string $workTimeFrom
+     * @param string|null $workTimeFrom
      *
      * @return ClientAddress
      */
-    public function setWorkTimeFrom($workTimeFrom)
+    public function setWorkTimeFrom(?string $workTimeFrom): ClientAddress
     {
         $this->workTimeFrom = $workTimeFrom;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWorkTimeTo()
+    public function getWorkTimeTo(): ?string
     {
         return $this->workTimeTo;
     }
 
     /**
-     * @param string $workTimeTo
+     * @param string|null $workTimeTo
      *
      * @return ClientAddress
      */
-    public function setWorkTimeTo($workTimeTo)
+    public function setWorkTimeTo(?string $workTimeTo): ClientAddress
     {
         $this->workTimeTo = $workTimeTo;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDinnerTimeFrom()
+    public function getDinnerTimeFrom(): ?string
     {
         return $this->dinnerTimeFrom;
     }
 
     /**
-     * @param string $dinnerTimeFrom
+     * @param string|null $dinnerTimeFrom
      *
      * @return ClientAddress
      */
-    public function setDinnerTimeFrom($dinnerTimeFrom)
+    public function setDinnerTimeFrom(?string $dinnerTimeFrom): ClientAddress
     {
         $this->dinnerTimeFrom = $dinnerTimeFrom;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDinnerTimeTo()
+    public function getDinnerTimeTo(): ?string
     {
         return $this->dinnerTimeTo;
     }
 
     /**
-     * @param string $dinnerTimeTo
+     * @param string|null $dinnerTimeTo
      *
      * @return ClientAddress
      */
-    public function setDinnerTimeTo($dinnerTimeTo)
+    public function setDinnerTimeTo(?string $dinnerTimeTo): ClientAddress
     {
         $this->dinnerTimeTo = $dinnerTimeTo;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getContactFio()
+    public function getContactFio(): ?string
     {
         return $this->contactFio;
     }
 
     /**
-     * @param string $contactFio
+     * @param string|null $contactFio
      *
      * @return ClientAddress
      */
-    public function setContactFio($contactFio)
+    public function setContactFio(?string $contactFio): ClientAddress
     {
         $this->contactFio = $contactFio;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getContactPhone()
+    public function getContactPhone(): ?string
     {
         return $this->contactPhone;
     }
 
     /**
-     * @param string $contactPhone
+     * @param string|null $contactPhone
      *
      * @return ClientAddress
      */
-    public function setContactPhone($contactPhone)
+    public function setContactPhone(?string $contactPhone): ClientAddress
     {
         $this->contactPhone = $contactPhone;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getContactEmail()
+    public function getContactEmail(): ?string
     {
         return $this->contactEmail;
     }
 
     /**
-     * @param string $contactEmail
+     * @param string|null $contactEmail
      *
      * @return ClientAddress
      */
-    public function setContactEmail($contactEmail)
+    public function setContactEmail(?string $contactEmail): ClientAddress
     {
         $this->contactEmail = $contactEmail;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getInstructions()
+    public function getInstructions(): ?string
     {
         return $this->instructions;
     }
 
     /**
-     * @param string $instructions
+     * @param string|null $instructions
      *
      * @return ClientAddress
      */
-    public function setInstructions($instructions)
+    public function setInstructions(?string $instructions): ClientAddress
     {
         $this->instructions = $instructions;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getNeedPass()
+    public function getNeedPass(): ?string
     {
         return $this->needPass;
     }
 
     /**
-     * @param string $needPass
+     * @param string|null $needPass
      *
      * @return ClientAddress
      */
-    public function setNeedPass($needPass)
+    public function setNeedPass(?string $needPass): ClientAddress
     {
         $this->needPass = $needPass;
-
         return $this;
     }
+
 }

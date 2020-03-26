@@ -6,138 +6,90 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class ServiceCost extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $serviceCode;
 
-    /** @var string */
+    /** @var string|null */
     protected $serviceName;
 
-    /** @var float */
+    /** @var float|null */
     protected $cost;
 
-    /** @var int */
+    /** @var int|null */
     protected $days;
 
-    /** @var float */
+    /** @var float|null */
     protected $weight;
 
-    /** @var float */
+    /** @var float|null */
     protected $volume;
 
-    /**
-     * @return string
-     */
-    public function getServiceCode()
+    public function getServiceCode(): ?string
     {
         return $this->serviceCode;
     }
 
-    /**
-     * @param string $serviceCode
-     *
-     * @return ServiceCost
-     */
-    public function setServiceCode($serviceCode)
+    public function setServiceCode(?string $serviceCode): ServiceCost
     {
         $this->serviceCode = $serviceCode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getServiceName()
+    public function getServiceName(): ?string
     {
         return $this->serviceName;
     }
 
-    /**
-     * @param string $serviceName
-     *
-     * @return ServiceCost
-     */
-    public function setServiceName($serviceName)
+    public function setServiceName(?string $serviceName): ServiceCost
     {
         $this->serviceName = $serviceName;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getCost()
+    public function getCost(): ?float
     {
         return $this->cost;
     }
 
-    /**
-     * @param float $cost
-     *
-     * @return ServiceCost
-     */
-    public function setCost($cost)
+    public function setCost(?float $cost): ServiceCost
     {
         $this->cost = $cost;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getDays()
+    public function getDays(): ?int
     {
         return $this->days;
     }
 
-    /**
-     * @param int $days
-     *
-     * @return ServiceCost
-     */
-    public function setDays($days)
+    public function setDays(?int $days): ServiceCost
     {
         $this->days = $days;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getWeight()
+    public function getWeight(): ?float
     {
         return $this->weight;
     }
 
-    /**
-     * @param float $weight
-     *
-     * @return ServiceCost
-     */
-    public function setWeight($weight)
+    public function setWeight(?float $weight): ServiceCost
     {
         $this->weight = $weight;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getVolume()
+    public function getVolume(): ?float
     {
         return $this->volume;
     }
 
-    /**
-     * @param float $volume
-     *
-     * @return ServiceCost
-     */
-    public function setVolume($volume)
+    public function setVolume(?float $volume): ServiceCost
     {
         $this->volume = $volume;
 

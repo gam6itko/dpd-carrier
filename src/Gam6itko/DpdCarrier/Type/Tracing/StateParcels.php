@@ -4,118 +4,114 @@ namespace Gam6itko\DpdCarrier\Type\Tracing;
 
 class StateParcels
 {
-    /** @var int */
+    /** @var int|null */
     protected $docId;
 
-    /** @var string - date */
+    /** @var string|null Date */
     protected $docDate;
 
-    /** @var float */
+    /** @var float|null */
     protected $clientNumber;
 
-    /** @var bool */
+    /** @var bool|null */
     protected $resultComplete;
 
-    /** @var StateParcel[] */
+    /** @var StateParcel[]|null */
     protected $states;
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getDocId()
+    public function getDocId(): ?int
     {
         return $this->docId;
     }
 
     /**
-     * @param int $docId
+     * @param int|null $docId
      *
      * @return StateParcels
      */
-    public function setDocId($docId)
+    public function setDocId(?int $docId): StateParcels
     {
         $this->docId = $docId;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDocDate()
+    public function getDocDate(): ?string
     {
         return $this->docDate;
     }
 
     /**
-     * @param string $docDate
+     * @param string|null $docDate
      *
      * @return StateParcels
      */
-    public function setDocDate($docDate)
+    public function setDocDate(?string $docDate): StateParcels
     {
         $this->docDate = $docDate;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getClientNumber()
+    public function getClientNumber(): ?float
     {
         return $this->clientNumber;
     }
 
     /**
-     * @param float $clientNumber
+     * @param float|null $clientNumber
      *
      * @return StateParcels
      */
-    public function setClientNumber($clientNumber)
+    public function setClientNumber(?float $clientNumber): StateParcels
     {
         $this->clientNumber = $clientNumber;
-
         return $this;
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isResultComplete()
+    public function getResultComplete(): ?bool
     {
         return $this->resultComplete;
     }
 
     /**
-     * @param bool $resultComplete
+     * @param bool|null $resultComplete
      *
      * @return StateParcels
      */
-    public function setResultComplete($resultComplete)
+    public function setResultComplete(?bool $resultComplete): StateParcels
     {
         $this->resultComplete = $resultComplete;
-
         return $this;
     }
 
     /**
-     * @return StateParcel[]
+     * @return StateParcel[]|null
      */
-    public function getStates()
+    public function getStates(): ?array
     {
         return $this->states;
     }
 
     /**
-     * @param StateParcel[] $states
+     * @param StateParcel[]|null $states
      *
      * @return StateParcels
      */
-    public function setStates($states)
+    public function setStates(?array $states): StateParcels
     {
         $this->states = $states;
-
         return $this;
     }
+
 }

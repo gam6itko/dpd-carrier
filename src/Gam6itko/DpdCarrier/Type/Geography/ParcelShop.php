@@ -4,121 +4,122 @@ namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class ParcelShop extends AbstractParcelStore
 {
-    /** @var string */
+    /** @var string|null */
     protected $code;
 
-    /** @var string */
+    /** @var string|null */
     protected $parcelShopType;
 
-    /** @var string */
+    /** @var string|null */
     protected $state;
 
-    /** @var Limits */
+    /** @var Limits|null */
     protected $limits;
 
-    /** @var string */
+    /** @var string|null */
     protected $brand;
 
-    /** @var string */
+    /** @var string|null */
     protected $clientDepartmentNum;
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     /**
-     * @param string $code
-     *
-     * @return ParcelShop
+     * @return string|null
      */
-    public function setCode($code)
-    {
-        $this->code = $code;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getParcelShopType()
+    public function getParcelShopType(): ?string
     {
         return $this->parcelShopType;
     }
 
     /**
-     * @param string $parcelShopType
+     * @param string|null $parcelShopType
      *
      * @return ParcelShop
      */
-    public function setParcelShopType($parcelShopType)
+    public function setParcelShopType(?string $parcelShopType): ParcelShop
     {
         $this->parcelShopType = $parcelShopType;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getState()
+    public function getState(): ?string
     {
         return $this->state;
     }
 
     /**
-     * @param string $state
+     * @param string|null $state
      *
      * @return ParcelShop
      */
-    public function setState($state)
+    public function setState(?string $state): ParcelShop
     {
         $this->state = $state;
-
         return $this;
     }
 
     /**
-     * @return Limits
+     * @return Limits|null
      */
-    public function getLimits()
+    public function getLimits(): ?Limits
     {
         return $this->limits;
     }
 
     /**
-     * @param Limits $limits
+     * @param Limits|null $limits
      *
      * @return ParcelShop
      */
-    public function setLimits($limits)
+    public function setLimits(?Limits $limits): ParcelShop
     {
         $this->limits = $limits;
-
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getBrand()
+    public function getBrand(): ?string
     {
         return $this->brand;
     }
 
     /**
-     * @param mixed $brand
+     * @param string|null $brand
      *
      * @return ParcelShop
      */
-    public function setBrand($brand)
+    public function setBrand(?string $brand): ParcelShop
     {
         $this->brand = $brand;
-
         return $this;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getClientDepartmentNum(): ?string
+    {
+        return $this->clientDepartmentNum;
+    }
+
+    /**
+     * @param string|null $clientDepartmentNum
+     *
+     * @return ParcelShop
+     */
+    public function setClientDepartmentNum(?string $clientDepartmentNum): ParcelShop
+    {
+        $this->clientDepartmentNum = $clientDepartmentNum;
+        return $this;
+    }
+
 }

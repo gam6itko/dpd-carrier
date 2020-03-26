@@ -6,49 +6,48 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class Services extends ArrayLike
 {
-    /** @var string[] */
+    /** @var string[]|null */
     protected $serviceCode;
 
-    /** @var int */
+    /** @var int|null */
     protected $days;
 
     /**
-     * @return \string[]
+     * @return string[]|null
      */
-    public function getServiceCode()
+    public function getServiceCode(): ?array
     {
         return $this->serviceCode;
     }
 
     /**
-     * @param \string[] $serviceCode
+     * @param string[]|null $serviceCode
      *
      * @return Services
      */
-    public function setServiceCode($serviceCode)
+    public function setServiceCode(?array $serviceCode): Services
     {
         $this->serviceCode = $serviceCode;
-
         return $this;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getDays()
+    public function getDays(): ?int
     {
         return $this->days;
     }
 
     /**
-     * @param int $days
+     * @param int|null $days
      *
      * @return Services
      */
-    public function setDays($days)
+    public function setDays(?int $days): Services
     {
         $this->days = $days;
-
         return $this;
     }
+
 }

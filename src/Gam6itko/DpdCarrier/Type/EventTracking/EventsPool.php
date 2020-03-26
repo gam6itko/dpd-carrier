@@ -7,95 +7,63 @@ namespace Gam6itko\DpdCarrier\Type\EventTracking;
  */
 class EventsPool
 {
-    /** @var int */
+    /** @var int|null */
     protected $docId;
 
-    /** @var string DATE_ATOM */
+    /** @var string|null DATE_ATOM */
     protected $docDate;
 
-    /** @var int */
+    /** @var int|null */
     protected $clientNumber;
 
-    /** @var bool */
+    /** @var bool|null */
     protected $resultComplete;
 
-    /** @var Event[] */
+    /** @var Event[]|null */
     protected $event;
 
-    /**
-     * @return int
-     */
-    public function getDocId()
+    public function getDocId(): ?int
     {
         return $this->docId;
     }
 
-    /**
-     * @param int $docId
-     *
-     * @return EventsPool
-     */
-    public function setDocId($docId)
+    public function setDocId(?int $docId): EventsPool
     {
         $this->docId = $docId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDocDate()
+    public function getDocDate(): ?string
     {
         return $this->docDate;
     }
 
-    /**
-     * @param string $docDate
-     *
-     * @return EventsPool
-     */
-    public function setDocDate($docDate)
+    public function setDocDate(?string $docDate): EventsPool
     {
         $this->docDate = $docDate;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getClientNumber()
+    public function getClientNumber(): ?int
     {
         return $this->clientNumber;
     }
 
-    /**
-     * @param int $clientNumber
-     *
-     * @return EventsPool
-     */
-    public function setClientNumber($clientNumber)
+    public function setClientNumber(?int $clientNumber): EventsPool
     {
         $this->clientNumber = $clientNumber;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isResultComplete()
+    public function getResultComplete(): ?bool
     {
         return $this->resultComplete;
     }
 
-    /**
-     * @param bool $resultComplete
-     *
-     * @return EventsPool
-     */
-    public function setResultComplete($resultComplete)
+    public function setResultComplete(?bool $resultComplete): EventsPool
     {
         $this->resultComplete = $resultComplete;
 
@@ -103,21 +71,19 @@ class EventsPool
     }
 
     /**
-     * @return Event[]
+     * @return Event[]|null
      */
-    public function getEvents()
+    public function getEvent(): ?array
     {
         return $this->event;
     }
 
     /**
-     * @param Event[] $events
-     *
-     * @return EventsPool
+     * @param Event[]|null $event
      */
-    public function setEvents($events)
+    public function setEvent(?array $event): EventsPool
     {
-        $this->event = $events;
+        $this->event = $event;
 
         return $this;
     }

@@ -4,51 +4,35 @@ namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class Terminal extends AbstractParcelStore
 {
-    /** @var string */
+    /** @var string|null */
     protected $terminalCode;
 
-    /** @var string */
+    /** @var string|null */
     protected $terminalName;
 
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->getTerminalCode();
     }
 
-    /**
-     * @return string
-     */
-    public function getTerminalCode()
+    public function getTerminalCode(): ?string
     {
         return $this->terminalCode;
     }
 
-    /**
-     * @param string $terminalCode
-     *
-     * @return Terminal
-     */
-    public function setTerminalCode($terminalCode)
+    public function setTerminalCode(?string $terminalCode): Terminal
     {
         $this->terminalCode = $terminalCode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTerminalName()
+    public function getTerminalName(): ?string
     {
         return $this->terminalName;
     }
 
-    /**
-     * @param string $terminalName
-     *
-     * @return Terminal
-     */
-    public function setTerminalName($terminalName)
+    public function setTerminalName(?string $terminalName): Terminal
     {
         $this->terminalName = $terminalName;
 

@@ -7,164 +7,108 @@ namespace Gam6itko\DpdCarrier\Type\EventTracking;
  */
 class Event
 {
-    /** @var string */
+    /** @var string|null */
     protected $clientOrderNr;
 
-    /** @var string */
+    /** @var string|null */
     protected $dpdOrderNr;
 
-    /** @var int */
+    /** @var int|null */
     protected $eventNumber;
 
-    /** @var string */
+    /** @var string|null */
     protected $eventCode;
 
-    /** @var string */
+    /** @var string|null */
     protected $eventName;
 
-    /** @var string */
+    /** @var string|null */
     protected $reasonName;
 
-    /** @var string DATE_ATOM */
+    /** @var string|null DATE_ATOM */
     protected $eventDate;
 
-    /** @var EventParameter[] */
+    /** @var EventParameter[]|null */
     protected $parameter;
 
-    /**
-     * @return string
-     */
-    public function getClientOrderNr()
+    public function getClientOrderNr(): ?string
     {
         return $this->clientOrderNr;
     }
 
-    /**
-     * @param string $clientOrderNr
-     *
-     * @return Event
-     */
-    public function setClientOrderNr($clientOrderNr)
+    public function setClientOrderNr(?string $clientOrderNr): Event
     {
         $this->clientOrderNr = $clientOrderNr;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDpdOrderNr()
+    public function getDpdOrderNr(): ?string
     {
         return $this->dpdOrderNr;
     }
 
-    /**
-     * @param string $dpdOrderNr
-     *
-     * @return Event
-     */
-    public function setDpdOrderNr($dpdOrderNr)
+    public function setDpdOrderNr(?string $dpdOrderNr): Event
     {
         $this->dpdOrderNr = $dpdOrderNr;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getEventNumber()
+    public function getEventNumber(): ?int
     {
         return $this->eventNumber;
     }
 
-    /**
-     * @param int $eventNumber
-     *
-     * @return Event
-     */
-    public function setEventNumber($eventNumber)
+    public function setEventNumber(?int $eventNumber): Event
     {
         $this->eventNumber = $eventNumber;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEventCode()
+    public function getEventCode(): ?string
     {
         return $this->eventCode;
     }
 
-    /**
-     * @param string $eventCode
-     *
-     * @return Event
-     */
-    public function setEventCode($eventCode)
+    public function setEventCode(?string $eventCode): Event
     {
         $this->eventCode = $eventCode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEventName()
+    public function getEventName(): ?string
     {
         return $this->eventName;
     }
 
-    /**
-     * @param string $eventName
-     *
-     * @return Event
-     */
-    public function setEventName($eventName)
+    public function setEventName(?string $eventName): Event
     {
         $this->eventName = $eventName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReasonName()
+    public function getReasonName(): ?string
     {
         return $this->reasonName;
     }
 
-    /**
-     * @param string $reasonName
-     *
-     * @return Event
-     */
-    public function setReasonName($reasonName)
+    public function setReasonName(?string $reasonName): Event
     {
         $this->reasonName = $reasonName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEventDate()
+    public function getEventDate(): ?string
     {
         return $this->eventDate;
     }
 
-    /**
-     * @param string $eventDate
-     *
-     * @return Event
-     */
-    public function setEventDate($eventDate)
+    public function setEventDate(?string $eventDate): Event
     {
         $this->eventDate = $eventDate;
 
@@ -172,21 +116,19 @@ class Event
     }
 
     /**
-     * @return EventParameter[]
+     * @return EventParameter[]|null
      */
-    public function getParameters()
+    public function getParameter(): ?array
     {
         return $this->parameter;
     }
 
     /**
-     * @param EventParameter[] $parameters
-     *
-     * @return Event
+     * @param EventParameter[]|null $parameter
      */
-    public function setParameters($parameters)
+    public function setParameter(?array $parameter): Event
     {
-        $this->parameter = $parameters;
+        $this->parameter = $parameter;
 
         return $this;
     }

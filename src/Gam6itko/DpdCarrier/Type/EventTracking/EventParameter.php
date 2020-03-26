@@ -7,92 +7,60 @@ namespace Gam6itko\DpdCarrier\Type\EventTracking;
  */
 class EventParameter
 {
-    /** @var string */
+    /** @var string|null */
     protected $paramName;
 
-    /** @var string */
+    /** @var string|null */
     private $valueString;
 
-    /** @var float */
+    /** @var float|null */
     private $valueDecimal;
 
-    /** @var string DATE_ATOM */
+    /** @var string|null DATE_ATOM */
     private $valueDateTime;
 
-    /**
-     * @return string
-     */
-    public function getParamName()
+    public function getParamName(): ?string
     {
         return $this->paramName;
     }
 
-    /**
-     * @param string $paramName
-     *
-     * @return EventParameter
-     */
-    public function setParamName($paramName)
+    public function setParamName(?string $paramName): EventParameter
     {
         $this->paramName = $paramName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValueString()
+    public function getValueString(): ?string
     {
         return $this->valueString;
     }
 
-    /**
-     * @param string $valueString
-     *
-     * @return EventParameter
-     */
-    public function setValueString($valueString)
+    public function setValueString(?string $valueString): EventParameter
     {
         $this->valueString = $valueString;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getValueDecimal()
+    public function getValueDecimal(): ?float
     {
         return $this->valueDecimal;
     }
 
-    /**
-     * @param float $valueDecimal
-     *
-     * @return EventParameter
-     */
-    public function setValueDecimal($valueDecimal)
+    public function setValueDecimal(?float $valueDecimal): EventParameter
     {
         $this->valueDecimal = $valueDecimal;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValueDateTime()
+    public function getValueDateTime(): ?string
     {
         return $this->valueDateTime;
     }
 
-    /**
-     * @param string $valueDateTime
-     *
-     * @return EventParameter
-     */
-    public function setValueDateTime($valueDateTime)
+    public function setValueDateTime(?string $valueDateTime): EventParameter
     {
         $this->valueDateTime = $valueDateTime;
 

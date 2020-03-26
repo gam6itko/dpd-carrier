@@ -6,10 +6,10 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class GeoCoordinates extends ArrayLike
 {
-    /** @var float */
+    /** @var float|null */
     protected $latitude;
 
-    /** @var float */
+    /** @var float|null */
     protected $longitude;
 
     /**
@@ -18,49 +18,48 @@ class GeoCoordinates extends ArrayLike
      * @param float $latitude
      * @param float $longitude
      */
-    public function __construct($latitude, $longitude)
+    public function __construct(?float $latitude, ?float $longitude)
     {
         $this->latitude = $latitude;
         $this->longitude = $longitude;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getLatitude()
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
     /**
-     * @param float $latitude
+     * @param float|null $latitude
      *
      * @return GeoCoordinates
      */
-    public function setLatitude($latitude)
+    public function setLatitude(?float $latitude): GeoCoordinates
     {
         $this->latitude = $latitude;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getLongitude()
+    public function getLongitude(): ?float
     {
         return $this->longitude;
     }
 
     /**
-     * @param float $longitude
+     * @param float|null $longitude
      *
      * @return GeoCoordinates
      */
-    public function setLongitude($longitude)
+    public function setLongitude(?float $longitude): GeoCoordinates
     {
         $this->longitude = $longitude;
-
         return $this;
     }
+
 }

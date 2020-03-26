@@ -4,49 +4,48 @@ namespace Gam6itko\DpdCarrier\Type\Order;
 
 class DataInternational
 {
-    /** @var string */
+    /** @var string|null */
     protected $currency;
 
-    /** @var string */
+    /** @var string|null */
     protected $currencyDeclaredValue;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->currency;
     }
 
     /**
-     * @param string $currency
+     * @param string|null $currency
      *
      * @return DataInternational
      */
-    public function setCurrency($currency)
+    public function setCurrency(?string $currency): DataInternational
     {
         $this->currency = $currency;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCurrencyDeclaredValue()
+    public function getCurrencyDeclaredValue(): ?string
     {
         return $this->currencyDeclaredValue;
     }
 
     /**
-     * @param string $currencyDeclaredValue
+     * @param string|null $currencyDeclaredValue
      *
      * @return DataInternational
      */
-    public function setCurrencyDeclaredValue($currencyDeclaredValue)
+    public function setCurrencyDeclaredValue(?string $currencyDeclaredValue): DataInternational
     {
         $this->currencyDeclaredValue = $currencyDeclaredValue;
-
         return $this;
     }
+
 }

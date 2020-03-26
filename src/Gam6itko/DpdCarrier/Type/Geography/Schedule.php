@@ -6,49 +6,48 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class Schedule extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $operation;
 
-    /** @var TimeTable[] */
+    /** @var TimeTable[]|null */
     protected $timetable;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOperation()
+    public function getOperation(): ?string
     {
         return $this->operation;
     }
 
     /**
-     * @param string $operation
+     * @param string|null $operation
      *
      * @return Schedule
      */
-    public function setOperation($operation)
+    public function setOperation(?string $operation): Schedule
     {
         $this->operation = $operation;
-
         return $this;
     }
 
     /**
-     * @return TimeTable[]
+     * @return TimeTable[]|null
      */
-    public function getTimetable()
+    public function getTimetable(): ?array
     {
         return $this->timetable;
     }
 
     /**
-     * @param TimeTable[] $timetable
+     * @param TimeTable[]|null $timetable
      *
      * @return Schedule
      */
-    public function setTimetable(array $timetable)
+    public function setTimetable(?array $timetable): Schedule
     {
         $this->timetable = $timetable;
-
         return $this;
     }
+
 }

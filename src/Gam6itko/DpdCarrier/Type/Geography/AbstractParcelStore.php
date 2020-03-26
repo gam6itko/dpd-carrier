@@ -7,57 +7,41 @@ use Gam6itko\DpdCarrier\Type\ExtraService;
 
 abstract class AbstractParcelStore extends ArrayLike
 {
-    /** @var Address */
+    /** @var Address|null */
     protected $address;
 
-    /** @var GeoCoordinates */
+    /** @var GeoCoordinates|null */
     protected $geoCoordinates;
 
-    /** @var Schedule[] */
+    /** @var Schedule[]|null */
     protected $schedule;
 
-    /** @var ExtraService[] */
+    /** @var ExtraService[]|null */
     protected $extraService;
 
-    /** @var Services */
+    /** @var Services|null */
     protected $services;
 
-    abstract public function getCode();
+    abstract public function getCode(): ?string;
 
-    /**
-     * @return Address
-     */
-    public function getAddress()
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
 
-    /**
-     * @param Address $address
-     *
-     * @return self
-     */
-    public function setAddress($address)
+    public function setAddress(?Address $address): AbstractParcelStore
     {
         $this->address = $address;
 
         return $this;
     }
 
-    /**
-     * @return GeoCoordinates
-     */
-    public function getGeoCoordinates()
+    public function getGeoCoordinates(): ?GeoCoordinates
     {
         return $this->geoCoordinates;
     }
 
-    /**
-     * @param GeoCoordinates $geoCoordinates
-     *
-     * @return self
-     */
-    public function setGeoCoordinates($geoCoordinates)
+    public function setGeoCoordinates(?GeoCoordinates $geoCoordinates): AbstractParcelStore
     {
         $this->geoCoordinates = $geoCoordinates;
 
@@ -65,19 +49,17 @@ abstract class AbstractParcelStore extends ArrayLike
     }
 
     /**
-     * @return Schedule[]
+     * @return Schedule[]|null
      */
-    public function getSchedule()
+    public function getSchedule(): ?array
     {
         return $this->schedule;
     }
 
     /**
-     * @param Schedule[] $schedule
-     *
-     * @return self
+     * @param Schedule[]|null $schedule
      */
-    public function setSchedule($schedule)
+    public function setSchedule(?array $schedule): AbstractParcelStore
     {
         $this->schedule = $schedule;
 
@@ -85,39 +67,29 @@ abstract class AbstractParcelStore extends ArrayLike
     }
 
     /**
-     * @return ExtraService[]
+     * @return ExtraService[]|null
      */
-    public function getExtraService()
+    public function getExtraService(): ?array
     {
         return $this->extraService;
     }
 
     /**
-     * @param ExtraService[] $extraService
-     *
-     * @return self
+     * @param ExtraService[]|null $extraService
      */
-    public function setExtraService($extraService)
+    public function setExtraService(?array $extraService): AbstractParcelStore
     {
         $this->extraService = $extraService;
 
         return $this;
     }
 
-    /**
-     * @return Services
-     */
-    public function getServices()
+    public function getServices(): ?Services
     {
         return $this->services;
     }
 
-    /**
-     * @param Services $services
-     *
-     * @return self
-     */
-    public function setServices($services)
+    public function setServices(?Services $services): AbstractParcelStore
     {
         $this->services = $services;
 

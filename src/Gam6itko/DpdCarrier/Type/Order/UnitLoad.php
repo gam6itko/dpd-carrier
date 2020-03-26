@@ -6,187 +6,180 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class UnitLoad extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $article;
 
-    /** @var string */
+    /** @var string|null */
     protected $descript;
 
-    /** @var float */
+    /** @var float|null */
     protected $declared_value;
 
-    /** @var string */
+    /** @var string|null */
     protected $parcel_num;
 
-    /** @var float */
+    /** @var float|null */
     protected $npp_amount;
 
-    /** @var float */
+    /** @var float|null */
     protected $vat_percent;
 
-    /** @var float */
+    /** @var float|null */
     protected $without_vat;
 
-    /** @var float */
+    /** @var float|null */
     protected $count;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getArticle()
+    public function getArticle(): ?string
     {
         return $this->article;
     }
 
     /**
-     * @param string $article
+     * @param string|null $article
      *
      * @return UnitLoad
      */
-    public function setArticle($article)
+    public function setArticle(?string $article): UnitLoad
     {
         $this->article = $article;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDescript()
+    public function getDescript(): ?string
     {
         return $this->descript;
     }
 
     /**
-     * @param string $descript
+     * @param string|null $descript
      *
      * @return UnitLoad
      */
-    public function setDescript($descript)
+    public function setDescript(?string $descript): UnitLoad
     {
         $this->descript = $descript;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getDeclaredValue()
+    public function getDeclaredValue(): ?float
     {
         return $this->declared_value;
     }
 
     /**
-     * @param float $declared_value
+     * @param float|null $declared_value
      *
      * @return UnitLoad
      */
-    public function setDeclaredValue($declared_value)
+    public function setDeclaredValue(?float $declared_value): UnitLoad
     {
         $this->declared_value = $declared_value;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getParcelNum()
+    public function getParcelNum(): ?string
     {
         return $this->parcel_num;
     }
 
     /**
-     * @param string $parcel_num
+     * @param string|null $parcel_num
      *
      * @return UnitLoad
      */
-    public function setParcelNum($parcel_num)
+    public function setParcelNum(?string $parcel_num): UnitLoad
     {
         $this->parcel_num = $parcel_num;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getNppAmount()
+    public function getNppAmount(): ?float
     {
         return $this->npp_amount;
     }
 
     /**
-     * @param float $npp_amount
+     * @param float|null $npp_amount
      *
      * @return UnitLoad
      */
-    public function setNppAmount($npp_amount)
+    public function setNppAmount(?float $npp_amount): UnitLoad
     {
         $this->npp_amount = $npp_amount;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getVatPercent()
+    public function getVatPercent(): ?float
     {
         return $this->vat_percent;
     }
 
     /**
-     * @param float $vat_percent
+     * @param float|null $vat_percent
      *
      * @return UnitLoad
      */
-    public function setVatPercent($vat_percent)
+    public function setVatPercent(?float $vat_percent): UnitLoad
     {
         $this->vat_percent = $vat_percent;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getWithoutVat()
+    public function getWithoutVat(): ?float
     {
         return $this->without_vat;
     }
 
     /**
-     * @param float $without_vat
+     * @param float|null $without_vat
      *
      * @return UnitLoad
      */
-    public function setWithoutVat($without_vat)
+    public function setWithoutVat(?float $without_vat): UnitLoad
     {
         $this->without_vat = $without_vat;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getCount()
+    public function getCount(): ?float
     {
         return $this->count;
     }
 
     /**
-     * @param float $count
+     * @param float|null $count
      *
      * @return UnitLoad
      */
-    public function setCount($count)
+    public function setCount(?float $count): UnitLoad
     {
         $this->count = $count;
-
         return $this;
     }
+
 }

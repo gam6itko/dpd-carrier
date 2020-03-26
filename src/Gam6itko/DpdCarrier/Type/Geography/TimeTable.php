@@ -4,49 +4,47 @@ namespace Gam6itko\DpdCarrier\Type\Geography;
 
 class TimeTable
 {
-    /** @var string */
+    /** @var string|null */
     protected $weekDays;
 
-    /** @var string */
+    /** @var string|null */
     protected $workTime;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWeekDays()
+    public function getWeekDays(): ?string
     {
         return $this->weekDays;
     }
 
     /**
-     * @param string $weekDays
+     * @param string|null $weekDays
      *
      * @return TimeTable
      */
-    public function setWeekDays($weekDays)
+    public function setWeekDays(?string $weekDays): TimeTable
     {
         $this->weekDays = $weekDays;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWorkTime()
+    public function getWorkTime(): ?string
     {
         return $this->workTime;
     }
 
     /**
-     * @param string $workTime
+     * @param string|null $workTime
      *
      * @return TimeTable
      */
-    public function setWorkTime($workTime)
+    public function setWorkTime(?string $workTime): TimeTable
     {
         $this->workTime = $workTime;
-
         return $this;
     }
 }

@@ -6,118 +6,114 @@ use Gam6itko\DpdCarrier\Type\AbstractDeliveryPoint;
 
 class City extends AbstractDeliveryPoint
 {
-    /** @var string */
+    /** @var string|null */
     protected $countryName;
 
-    /** @var string */
+    /** @var string|null */
     protected $regionName;
 
-    /** @var string */
+    /** @var string|null */
     protected $abbreviation;
 
-    /** @var string */
+    /** @var string|null */
     protected $indexMin;
 
-    /** @var string */
+    /** @var string|null */
     protected $indexMax;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCountryName()
+    public function getCountryName(): ?string
     {
         return $this->countryName;
     }
 
     /**
-     * @param string $countryName
+     * @param string|null $countryName
      *
      * @return City
      */
-    public function setCountryName($countryName)
+    public function setCountryName(?string $countryName): City
     {
         $this->countryName = $countryName;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getRegionName()
+    public function getRegionName(): ?string
     {
         return $this->regionName;
     }
 
     /**
-     * @param string $regionName
+     * @param string|null $regionName
      *
      * @return City
      */
-    public function setRegionName($regionName)
+    public function setRegionName(?string $regionName): City
     {
         $this->regionName = $regionName;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAbbreviation()
+    public function getAbbreviation(): ?string
     {
         return $this->abbreviation;
     }
 
     /**
-     * @param string $abbreviation
+     * @param string|null $abbreviation
      *
      * @return City
      */
-    public function setAbbreviation($abbreviation)
+    public function setAbbreviation(?string $abbreviation): City
     {
         $this->abbreviation = $abbreviation;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIndexMin()
+    public function getIndexMin(): ?string
     {
         return $this->indexMin;
     }
 
     /**
-     * @param string $indexMin
+     * @param string|null $indexMin
      *
      * @return City
      */
-    public function setIndexMin($indexMin)
+    public function setIndexMin(?string $indexMin): City
     {
         $this->indexMin = $indexMin;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIndexMax()
+    public function getIndexMax(): ?string
     {
         return $this->indexMax;
     }
 
     /**
-     * @param string $indexMax
+     * @param string|null $indexMax
      *
      * @return City
      */
-    public function setIndexMax($indexMax)
+    public function setIndexMax(?string $indexMax): City
     {
         $this->indexMax = $indexMax;
-
         return $this;
     }
+
 }

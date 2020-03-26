@@ -9,406 +9,378 @@ use Gam6itko\DpdCarrier\Type\Parcel;
 
 class Order extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $orderNumberInternal;
 
-    /** @var string */
+    /** @var string|null */
     protected $serviceCode;
 
-    /** @var string */
+    /** @var string|null */
     protected $serviceVariant;
 
-    /** @var int */
+    /** @var int|null */
     protected $cargoNumPack;
 
-    /** @var float */
+    /** @var float|null */
     protected $cargoWeight;
 
-    /** @var float */
+    /** @var float|null */
     protected $cargoVolume;
 
-    /** @var bool */
+    /** @var bool|null */
     protected $cargoRegistered = false;
 
-    /** @var float */
+    /** @var float|null */
     protected $cargoValue;
 
-    /** @var string */
+    /** @var string|null */
     protected $cargoCategory;
 
-    /** @var string */
+    /** @var string|null */
     protected $deliveryTimePeriod;
 
-    /** @var string */
+    /** @var string|null */
     protected $paymentType;
 
-    /** @var Parameter */
+    /** @var Parameter|null */
     protected $extraParam;
 
-    /** @var DataInternational */
+    /** @var DataInternational|null */
     protected $dataInt;
 
-    /** @var ClientAddress */
+    /** @var ClientAddress|null */
     protected $receiverAddress;
 
-    /** @var ExtraService[] */
+    /** @var ExtraService[]|null */
     protected $extraService;
 
-    /** @var Parcel[] */
+    /** @var Parcel[]|null */
     protected $parcel;
 
-    /** @var UnitLoad */
+    /** @var UnitLoad|null */
     protected $unitLoad;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOrderNumberInternal()
+    public function getOrderNumberInternal(): ?string
     {
         return $this->orderNumberInternal;
     }
 
     /**
-     * @param string $orderNumberInternal
+     * @param string|null $orderNumberInternal
      *
      * @return Order
      */
-    public function setOrderNumberInternal($orderNumberInternal)
+    public function setOrderNumberInternal(?string $orderNumberInternal): Order
     {
         $this->orderNumberInternal = $orderNumberInternal;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getServiceCode()
+    public function getServiceCode(): ?string
     {
         return $this->serviceCode;
     }
 
     /**
-     * @param string $serviceCode
+     * @param string|null $serviceCode
      *
      * @return Order
      */
-    public function setServiceCode($serviceCode)
+    public function setServiceCode(?string $serviceCode): Order
     {
         $this->serviceCode = $serviceCode;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getServiceVariant()
+    public function getServiceVariant(): ?string
     {
         return $this->serviceVariant;
     }
 
     /**
-     * @param string $serviceVariant
+     * @param string|null $serviceVariant
      *
      * @return Order
      */
-    public function setServiceVariant($serviceVariant)
+    public function setServiceVariant(?string $serviceVariant): Order
     {
         $this->serviceVariant = $serviceVariant;
-
         return $this;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getCargoNumPack()
+    public function getCargoNumPack(): ?int
     {
         return $this->cargoNumPack;
     }
 
     /**
-     * @param int $cargoNumPack
+     * @param int|null $cargoNumPack
      *
      * @return Order
      */
-    public function setCargoNumPack($cargoNumPack)
+    public function setCargoNumPack(?int $cargoNumPack): Order
     {
         $this->cargoNumPack = $cargoNumPack;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getCargoWeight()
+    public function getCargoWeight(): ?float
     {
         return $this->cargoWeight;
     }
 
     /**
-     * @param float $cargoWeight
+     * @param float|null $cargoWeight
      *
      * @return Order
      */
-    public function setCargoWeight($cargoWeight)
+    public function setCargoWeight(?float $cargoWeight): Order
     {
         $this->cargoWeight = $cargoWeight;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getCargoVolume()
+    public function getCargoVolume(): ?float
     {
         return $this->cargoVolume;
     }
 
     /**
-     * @param float $cargoVolume
+     * @param float|null $cargoVolume
      *
      * @return Order
      */
-    public function setCargoVolume($cargoVolume)
+    public function setCargoVolume(?float $cargoVolume): Order
     {
         $this->cargoVolume = $cargoVolume;
-
         return $this;
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isCargoRegistered()
+    public function getCargoRegistered(): ?bool
     {
         return $this->cargoRegistered;
     }
 
     /**
-     * @param bool $cargoRegistered
+     * @param bool|null $cargoRegistered
      *
      * @return Order
      */
-    public function setCargoRegistered($cargoRegistered)
+    public function setCargoRegistered(?bool $cargoRegistered): Order
     {
         $this->cargoRegistered = $cargoRegistered;
-
         return $this;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getCargoValue()
+    public function getCargoValue(): ?float
     {
         return $this->cargoValue;
     }
 
     /**
-     * @param float $cargoValue
+     * @param float|null $cargoValue
      *
      * @return Order
      */
-    public function setCargoValue($cargoValue)
+    public function setCargoValue(?float $cargoValue): Order
     {
         $this->cargoValue = $cargoValue;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCargoCategory()
+    public function getCargoCategory(): ?string
     {
         return $this->cargoCategory;
     }
 
     /**
-     * @param string $cargoCategory
+     * @param string|null $cargoCategory
      *
      * @return Order
      */
-    public function setCargoCategory($cargoCategory)
+    public function setCargoCategory(?string $cargoCategory): Order
     {
         $this->cargoCategory = $cargoCategory;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDeliveryTimePeriod()
+    public function getDeliveryTimePeriod(): ?string
     {
         return $this->deliveryTimePeriod;
     }
 
     /**
-     * @param string $deliveryTimePeriod
+     * @param string|null $deliveryTimePeriod
      *
      * @return Order
      */
-    public function setDeliveryTimePeriod($deliveryTimePeriod)
+    public function setDeliveryTimePeriod(?string $deliveryTimePeriod): Order
     {
         $this->deliveryTimePeriod = $deliveryTimePeriod;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPaymentType()
+    public function getPaymentType(): ?string
     {
         return $this->paymentType;
     }
 
     /**
-     * @param string $paymentType
+     * @param string|null $paymentType
      *
      * @return Order
      */
-    public function setPaymentType($paymentType)
+    public function setPaymentType(?string $paymentType): Order
     {
         $this->paymentType = $paymentType;
-
         return $this;
     }
 
     /**
-     * @return Parameter
+     * @return Parameter|null
      */
-    public function getExtraParam()
+    public function getExtraParam(): ?Parameter
     {
         return $this->extraParam;
     }
 
     /**
-     * @param Parameter $extraParam
+     * @param Parameter|null $extraParam
      *
      * @return Order
      */
-    public function setExtraParam($extraParam)
+    public function setExtraParam(?Parameter $extraParam): Order
     {
         $this->extraParam = $extraParam;
-
         return $this;
     }
 
     /**
-     * @return DataInternational
+     * @return DataInternational|null
      */
-    public function getDataInt()
+    public function getDataInt(): ?DataInternational
     {
         return $this->dataInt;
     }
 
     /**
-     * @param DataInternational $dataInt
+     * @param DataInternational|null $dataInt
      *
      * @return Order
      */
-    public function setDataInt($dataInt)
+    public function setDataInt(?DataInternational $dataInt): Order
     {
         $this->dataInt = $dataInt;
-
         return $this;
     }
 
     /**
-     * @return ClientAddress
+     * @return ClientAddress|null
      */
-    public function getReceiverAddress()
+    public function getReceiverAddress(): ?ClientAddress
     {
         return $this->receiverAddress;
     }
 
     /**
-     * @param ClientAddress $receiverAddress
+     * @param ClientAddress|null $receiverAddress
      *
      * @return Order
      */
-    public function setReceiverAddress($receiverAddress)
+    public function setReceiverAddress(?ClientAddress $receiverAddress): Order
     {
         $this->receiverAddress = $receiverAddress;
-
         return $this;
     }
 
     /**
-     * @return ExtraService[]
+     * @return ExtraService[]|null
      */
-    public function getExtraService()
+    public function getExtraService(): ?array
     {
         return $this->extraService;
     }
 
     /**
-     * @param ExtraService[] $extraServices
+     * @param ExtraService[]|null $extraService
      *
      * @return Order
      */
-    public function setExtraService(array $extraServices)
+    public function setExtraService(?array $extraService): Order
     {
-        $this->extraService = $extraServices;
-
+        $this->extraService = $extraService;
         return $this;
     }
 
     /**
-     * @return Order
+     * @return Parcel[]|null
      */
-    public function addExtraService(ExtraService $extraService)
+    public function getParcel(): ?array
     {
-        $this->extraService[] = $extraService;
-
-        return $this;
+        return $this->parcel;
     }
 
     /**
-     * @return self
-     */
-    public function addParcel(Parcel $parcel)
-    {
-        $this->parcel[] = $parcel;
-
-        return $this;
-    }
-
-    /**
-     * @param Parcel[] $parcel
+     * @param Parcel[]|null $parcel
      *
      * @return Order
      */
-    public function setParcel(array $parcel)
+    public function setParcel(?array $parcel): Order
     {
         $this->parcel = $parcel;
-
         return $this;
     }
 
     /**
-     * @return UnitLoad
+     * @return UnitLoad|null
      */
-    public function getUnitLoad()
+    public function getUnitLoad(): ?UnitLoad
     {
         return $this->unitLoad;
     }
 
     /**
-     * @param UnitLoad $unitLoad
+     * @param UnitLoad|null $unitLoad
      *
      * @return Order
      */
-    public function setUnitLoad($unitLoad)
+    public function setUnitLoad(?UnitLoad $unitLoad): Order
     {
         $this->unitLoad = $unitLoad;
-
         return $this;
     }
+
 }

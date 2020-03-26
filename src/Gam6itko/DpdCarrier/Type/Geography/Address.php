@@ -6,206 +6,138 @@ use Gam6itko\DpdCarrier\Type\AbstractDeliveryPoint;
 
 class Address extends AbstractDeliveryPoint
 {
-    /** @var string */
+    /** @var string|null */
     protected $regionName;
 
-    /** @var string */
+    /** @var string|null */
     protected $street;
 
-    /** @var string */
+    /** @var string|null */
     protected $streetAbbr;
 
-    /** @var string */
+    /** @var string|null */
     protected $houseNo;
 
-    /** @var string */
+    /** @var string|null */
     protected $building;
 
-    /** @var string */
+    /** @var string|null */
     protected $structure;
 
-    /** @var string */
+    /** @var string|null */
     protected $ownership;
 
-    /** @var string */
+    /** @var string|null */
     protected $descript;
 
-    /** @var string */
+    /** @var string|null */
     protected $index;
 
-    /**
-     * @return string
-     */
-    public function getRegionName()
+    public function getRegionName(): ?string
     {
         return $this->regionName;
     }
 
-    /**
-     * @param string $regionName
-     *
-     * @return Address
-     */
-    public function setRegionName($regionName)
+    public function setRegionName(?string $regionName): Address
     {
         $this->regionName = $regionName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreet()
+    public function getStreet(): ?string
     {
         return $this->street;
     }
 
-    /**
-     * @param string $street
-     *
-     * @return Address
-     */
-    public function setStreet($street)
+    public function setStreet(?string $street): Address
     {
         $this->street = $street;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreetAbbr()
+    public function getStreetAbbr(): ?string
     {
         return $this->streetAbbr;
     }
 
-    /**
-     * @param string $streetAbbr
-     *
-     * @return Address
-     */
-    public function setStreetAbbr($streetAbbr)
+    public function setStreetAbbr(?string $streetAbbr): Address
     {
         $this->streetAbbr = $streetAbbr;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNo()
+    public function getHouseNo(): ?string
     {
         return $this->houseNo;
     }
 
-    /**
-     * @param string $houseNo
-     *
-     * @return Address
-     */
-    public function setHouseNo($houseNo)
+    public function setHouseNo(?string $houseNo): Address
     {
         $this->houseNo = $houseNo;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBuilding()
+    public function getBuilding(): ?string
     {
         return $this->building;
     }
 
-    /**
-     * @param string $building
-     *
-     * @return Address
-     */
-    public function setBuilding($building)
+    public function setBuilding(?string $building): Address
     {
         $this->building = $building;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStructure()
+    public function getStructure(): ?string
     {
         return $this->structure;
     }
 
-    /**
-     * @param string $structure
-     *
-     * @return Address
-     */
-    public function setStructure($structure)
+    public function setStructure(?string $structure): Address
     {
         $this->structure = $structure;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOwnership()
+    public function getOwnership(): ?string
     {
         return $this->ownership;
     }
 
-    /**
-     * @param string $ownership
-     *
-     * @return Address
-     */
-    public function setOwnership($ownership)
+    public function setOwnership(?string $ownership): Address
     {
         $this->ownership = $ownership;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescript()
+    public function getDescript(): ?string
     {
         return $this->descript;
     }
 
-    /**
-     * @param string $descript
-     *
-     * @return Address
-     */
-    public function setDescript($descript)
+    public function setDescript(?string $descript): Address
     {
         $this->descript = $descript;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIndex()
+    public function getIndex(): ?string
     {
         return $this->index;
     }
 
-    /**
-     * @param string $index
-     */
-    public function setIndex($index)
+    public function setIndex(?string $index): Address
     {
         $this->index = $index;
+
+        return $this;
     }
 }

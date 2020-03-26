@@ -4,72 +4,70 @@ namespace Gam6itko\DpdCarrier\Type\Order;
 
 class ClientAddressStatus
 {
-    /** @var string */
+    /** @var string|null */
     protected $code;
 
-    /** @var string */
+    /** @var string|null */
     protected $status;
 
-    /** @var string */
+    /** @var string|null */
     protected $errorMessage;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     /**
-     * @param string $code
+     * @param string|null $code
      *
      * @return ClientAddressStatus
      */
-    public function setCode($code)
+    public function setCode(?string $code): ClientAddressStatus
     {
         $this->code = $code;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
     /**
-     * @param string $status
+     * @param string|null $status
      *
      * @return ClientAddressStatus
      */
-    public function setStatus($status)
+    public function setStatus(?string $status): ClientAddressStatus
     {
         $this->status = $status;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getErrorMessage()
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
 
     /**
-     * @param string $errorMessage
+     * @param string|null $errorMessage
      *
      * @return ClientAddressStatus
      */
-    public function setErrorMessage($errorMessage)
+    public function setErrorMessage(?string $errorMessage): ClientAddressStatus
     {
         $this->errorMessage = $errorMessage;
-
         return $this;
     }
+
 }

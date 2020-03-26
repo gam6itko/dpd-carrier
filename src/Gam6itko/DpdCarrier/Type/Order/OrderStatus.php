@@ -6,95 +6,92 @@ use Gam6itko\DpdCarrier\Type\ArrayLike;
 
 class OrderStatus extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $orderNumberInternal;
 
-    /** @var string */
+    /** @var string|null */
     protected $orderNum;
 
-    /** @var string */
+    /** @var string|null */
     protected $status;
 
-    /** @var string */
+    /** @var string|null */
     protected $errorMessage;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOrderNumberInternal()
+    public function getOrderNumberInternal(): ?string
     {
         return $this->orderNumberInternal;
     }
 
     /**
-     * @param string $orderNumberInternal
+     * @param string|null $orderNumberInternal
      *
      * @return OrderStatus
      */
-    public function setOrderNumberInternal($orderNumberInternal)
+    public function setOrderNumberInternal(?string $orderNumberInternal): OrderStatus
     {
         $this->orderNumberInternal = $orderNumberInternal;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOrderNum()
+    public function getOrderNum(): ?string
     {
         return $this->orderNum;
     }
 
     /**
-     * @param string $orderNum
+     * @param string|null $orderNum
      *
      * @return OrderStatus
      */
-    public function setOrderNum($orderNum)
+    public function setOrderNum(?string $orderNum): OrderStatus
     {
         $this->orderNum = $orderNum;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
     /**
-     * @param string $status
+     * @param string|null $status
      *
      * @return OrderStatus
      */
-    public function setStatus($status)
+    public function setStatus(?string $status): OrderStatus
     {
         $this->status = $status;
-
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getErrorMessage()
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
 
     /**
-     * @param string $errorMessage
+     * @param string|null $errorMessage
      *
      * @return OrderStatus
      */
-    public function setErrorMessage($errorMessage)
+    public function setErrorMessage(?string $errorMessage): OrderStatus
     {
         $this->errorMessage = $errorMessage;
-
         return $this;
     }
+
 }
