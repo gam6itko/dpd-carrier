@@ -4,10 +4,10 @@ namespace Gam6itko\DpdCarrier\Type;
 
 class ExtraService extends ArrayLike
 {
-    /** @var string */
+    /** @var string|null */
     protected $esCode;
 
-    /** @var Parameter */
+    /** @var Parameter|null */
     protected $param;
 
     /**
@@ -22,24 +22,24 @@ class ExtraService extends ArrayLike
         $this->param = $param;
     }
 
-    public function getEsCode(): string
+    public function getEsCode(): ?string
     {
         return $this->esCode;
     }
 
-    public function setEsCode(string $esCode): ExtraService
+    public function setEsCode(?string $esCode): ExtraService
     {
         $this->esCode = $esCode;
 
         return $this;
     }
 
-    public function getParam(): Parameter
+    public function getParam(): ?Parameter
     {
         return $this->param;
     }
 
-    public function setParam(Parameter $param): ExtraService
+    public function setParam(?Parameter $param): ExtraService
     {
         $this->param = $param;
 

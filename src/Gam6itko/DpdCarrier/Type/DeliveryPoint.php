@@ -4,10 +4,10 @@ namespace Gam6itko\DpdCarrier\Type;
 
 class DeliveryPoint extends AbstractDeliveryPoint
 {
-    /** @var string */
+    /** @var string|null */
     protected $index;
 
-    /** @var string */
+    /** @var string|null */
     protected $countryName;
 
     public function __construct(?int $cityId = null)
@@ -15,23 +15,27 @@ class DeliveryPoint extends AbstractDeliveryPoint
         $this->cityId = $cityId;
     }
 
-    public function getIndex(): string
+    public function getIndex(): ?string
     {
         return $this->index;
     }
 
-    public function setIndex(string $index): void
+    public function setIndex(?string $index): DeliveryPoint
     {
         $this->index = $index;
+
+        return $this;
     }
 
-    public function getCountryName(): string
+    public function getCountryName(): ?string
     {
         return $this->countryName;
     }
 
-    public function setCountryName(string $countryName): void
+    public function setCountryName(?string $countryName): DeliveryPoint
     {
         $this->countryName = $countryName;
+
+        return $this;
     }
 }
