@@ -13,8 +13,8 @@ class StateParcels
     /** @var float|null */
     protected $clientNumber;
 
-    /** @var bool|null */
-    protected $resultComplete;
+    /** @var bool */
+    protected $resultComplete = false;
 
     /** @var StateParcel[]|null */
     protected $states;
@@ -77,11 +77,11 @@ class StateParcels
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getResultComplete(): ?bool
+    public function isResultComplete(): bool
     {
-        return $this->resultComplete;
+        return $this->resultComplete ?? false;
     }
 
     /**

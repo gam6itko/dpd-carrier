@@ -16,7 +16,7 @@ class EventsPool
     /** @var int|null */
     protected $clientNumber;
 
-    /** @var bool|null */
+    /** @var bool */
     protected $resultComplete;
 
     /** @var Event[]|null */
@@ -58,9 +58,9 @@ class EventsPool
         return $this;
     }
 
-    public function getResultComplete(): ?bool
+    public function isResultComplete(): bool
     {
-        return $this->resultComplete;
+        return $this->resultComplete ?? false;
     }
 
     public function setResultComplete(?bool $resultComplete): EventsPool

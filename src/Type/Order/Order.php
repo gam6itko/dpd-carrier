@@ -27,7 +27,7 @@ class Order extends ArrayLike
     /** @var float|null */
     protected $cargoVolume;
 
-    /** @var bool|null */
+    /** @var bool */
     protected $cargoRegistered = false;
 
     /** @var float|null */
@@ -175,11 +175,11 @@ class Order extends ArrayLike
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getCargoRegistered(): ?bool
+    public function isCargoRegistered(): bool
     {
-        return $this->cargoRegistered;
+        return $this->cargoRegistered ?? false;
     }
 
     /**

@@ -57,7 +57,7 @@ class DeliveryOptions extends ArrayLike
 
     public function isSelfPickup(): bool
     {
-        return $this->selfPickup;
+        return $this->selfPickup ?? false;
     }
 
     public function setSelfPickup(bool $selfPickup): DeliveryOptions
@@ -69,7 +69,7 @@ class DeliveryOptions extends ArrayLike
 
     public function isSelfDelivery(): bool
     {
-        return $this->selfDelivery;
+        return $this->selfDelivery ?? false;
     }
 
     public function setSelfDelivery(bool $selfDelivery): DeliveryOptions

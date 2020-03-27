@@ -29,8 +29,8 @@ class StateParcel
     /** @var string|null */
     protected $dpdParcelReNr;
 
-    /** @var bool|null */
-    protected $isReturn;
+    /** @var bool */
+    protected $isReturn = false;
 
     /** @var string|null Date */
     protected $planDeliveryDate;
@@ -226,11 +226,11 @@ class StateParcel
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getIsReturn(): ?bool
+    public function isReturn(): bool
     {
-        return $this->isReturn;
+        return $this->isReturn ?? false;
     }
 
     /**
