@@ -22,32 +22,23 @@ class Services extends ArrayLike
 
     /**
      * @param string[]|null $serviceCode
-     *
-     * @return Services
      */
     public function setServiceCode(?array $serviceCode): Services
     {
         $this->serviceCode = $serviceCode;
+
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getDays(): ?int
     {
         return $this->days;
     }
 
-    /**
-     * @param int|null $days
-     *
-     * @return Services
-     */
     public function setDays(?int $days): Services
     {
         $this->days = $days;
+
         return $this;
     }
-
 }

@@ -19,79 +19,51 @@ class StateParcels
     /** @var StateParcel[]|null */
     protected $states;
 
-    /**
-     * @return int|null
-     */
     public function getDocId(): ?int
     {
         return $this->docId;
     }
 
-    /**
-     * @param int|null $docId
-     *
-     * @return StateParcels
-     */
     public function setDocId(?int $docId): StateParcels
     {
         $this->docId = $docId;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDocDate(): ?string
     {
         return $this->docDate;
     }
 
-    /**
-     * @param string|null $docDate
-     *
-     * @return StateParcels
-     */
     public function setDocDate(?string $docDate): StateParcels
     {
         $this->docDate = $docDate;
+
         return $this;
     }
 
-    /**
-     * @return float|null
-     */
     public function getClientNumber(): ?float
     {
         return $this->clientNumber;
     }
 
-    /**
-     * @param float|null $clientNumber
-     *
-     * @return StateParcels
-     */
     public function setClientNumber(?float $clientNumber): StateParcels
     {
         $this->clientNumber = $clientNumber;
+
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isResultComplete(): bool
     {
         return $this->resultComplete ?? false;
     }
 
-    /**
-     * @param bool|null $resultComplete
-     *
-     * @return StateParcels
-     */
     public function setResultComplete(?bool $resultComplete): StateParcels
     {
         $this->resultComplete = $resultComplete;
+
         return $this;
     }
 
@@ -105,13 +77,11 @@ class StateParcels
 
     /**
      * @param StateParcel[]|null $states
-     *
-     * @return StateParcels
      */
     public function setStates(?array $states): StateParcels
     {
         $this->states = $states;
+
         return $this;
     }
-
 }

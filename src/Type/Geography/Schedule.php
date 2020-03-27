@@ -12,22 +12,15 @@ class Schedule extends ArrayLike
     /** @var TimeTable[]|null */
     protected $timetable;
 
-    /**
-     * @return string|null
-     */
     public function getOperation(): ?string
     {
         return $this->operation;
     }
 
-    /**
-     * @param string|null $operation
-     *
-     * @return Schedule
-     */
     public function setOperation(?string $operation): Schedule
     {
         $this->operation = $operation;
+
         return $this;
     }
 
@@ -41,13 +34,11 @@ class Schedule extends ArrayLike
 
     /**
      * @param TimeTable[]|null $timetable
-     *
-     * @return Schedule
      */
     public function setTimetable(?array $timetable): Schedule
     {
         $this->timetable = $timetable;
+
         return $this;
     }
-
 }
