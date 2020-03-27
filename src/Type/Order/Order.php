@@ -61,268 +61,190 @@ class Order extends ArrayLike
     protected $unitLoad;
 
     /**
-     * @return string|null
+     * @return Order
      */
+    public function addExtraService(ExtraService $extraService)
+    {
+        $this->extraService[] = $extraService;
+
+        return $this;
+    }
+
+    /**
+     * @return self
+     */
+    public function addParcel(Parcel $parcel)
+    {
+        $this->parcel[] = $parcel;
+
+        return $this;
+    }
+
     public function getOrderNumberInternal(): ?string
     {
         return $this->orderNumberInternal;
     }
 
-    /**
-     * @param string|null $orderNumberInternal
-     *
-     * @return Order
-     */
     public function setOrderNumberInternal(?string $orderNumberInternal): Order
     {
         $this->orderNumberInternal = $orderNumberInternal;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getServiceCode(): ?string
     {
         return $this->serviceCode;
     }
 
-    /**
-     * @param string|null $serviceCode
-     *
-     * @return Order
-     */
     public function setServiceCode(?string $serviceCode): Order
     {
         $this->serviceCode = $serviceCode;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getServiceVariant(): ?string
     {
         return $this->serviceVariant;
     }
 
-    /**
-     * @param string|null $serviceVariant
-     *
-     * @return Order
-     */
     public function setServiceVariant(?string $serviceVariant): Order
     {
         $this->serviceVariant = $serviceVariant;
+
         return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getCargoNumPack(): ?int
     {
         return $this->cargoNumPack;
     }
 
-    /**
-     * @param int|null $cargoNumPack
-     *
-     * @return Order
-     */
     public function setCargoNumPack(?int $cargoNumPack): Order
     {
         $this->cargoNumPack = $cargoNumPack;
+
         return $this;
     }
 
-    /**
-     * @return float|null
-     */
     public function getCargoWeight(): ?float
     {
         return $this->cargoWeight;
     }
 
-    /**
-     * @param float|null $cargoWeight
-     *
-     * @return Order
-     */
     public function setCargoWeight(?float $cargoWeight): Order
     {
         $this->cargoWeight = $cargoWeight;
+
         return $this;
     }
 
-    /**
-     * @return float|null
-     */
     public function getCargoVolume(): ?float
     {
         return $this->cargoVolume;
     }
 
-    /**
-     * @param float|null $cargoVolume
-     *
-     * @return Order
-     */
     public function setCargoVolume(?float $cargoVolume): Order
     {
         $this->cargoVolume = $cargoVolume;
+
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isCargoRegistered(): bool
     {
         return $this->cargoRegistered ?? false;
     }
 
-    /**
-     * @param bool|null $cargoRegistered
-     *
-     * @return Order
-     */
     public function setCargoRegistered(?bool $cargoRegistered): Order
     {
         $this->cargoRegistered = $cargoRegistered;
+
         return $this;
     }
 
-    /**
-     * @return float|null
-     */
     public function getCargoValue(): ?float
     {
         return $this->cargoValue;
     }
 
-    /**
-     * @param float|null $cargoValue
-     *
-     * @return Order
-     */
     public function setCargoValue(?float $cargoValue): Order
     {
         $this->cargoValue = $cargoValue;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCargoCategory(): ?string
     {
         return $this->cargoCategory;
     }
 
-    /**
-     * @param string|null $cargoCategory
-     *
-     * @return Order
-     */
     public function setCargoCategory(?string $cargoCategory): Order
     {
         $this->cargoCategory = $cargoCategory;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDeliveryTimePeriod(): ?string
     {
         return $this->deliveryTimePeriod;
     }
 
-    /**
-     * @param string|null $deliveryTimePeriod
-     *
-     * @return Order
-     */
     public function setDeliveryTimePeriod(?string $deliveryTimePeriod): Order
     {
         $this->deliveryTimePeriod = $deliveryTimePeriod;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPaymentType(): ?string
     {
         return $this->paymentType;
     }
 
-    /**
-     * @param string|null $paymentType
-     *
-     * @return Order
-     */
     public function setPaymentType(?string $paymentType): Order
     {
         $this->paymentType = $paymentType;
+
         return $this;
     }
 
-    /**
-     * @return Parameter|null
-     */
     public function getExtraParam(): ?Parameter
     {
         return $this->extraParam;
     }
 
-    /**
-     * @param Parameter|null $extraParam
-     *
-     * @return Order
-     */
     public function setExtraParam(?Parameter $extraParam): Order
     {
         $this->extraParam = $extraParam;
+
         return $this;
     }
 
-    /**
-     * @return DataInternational|null
-     */
     public function getDataInt(): ?DataInternational
     {
         return $this->dataInt;
     }
 
-    /**
-     * @param DataInternational|null $dataInt
-     *
-     * @return Order
-     */
     public function setDataInt(?DataInternational $dataInt): Order
     {
         $this->dataInt = $dataInt;
+
         return $this;
     }
 
-    /**
-     * @return ClientAddress|null
-     */
     public function getReceiverAddress(): ?ClientAddress
     {
         return $this->receiverAddress;
     }
 
-    /**
-     * @param ClientAddress|null $receiverAddress
-     *
-     * @return Order
-     */
     public function setReceiverAddress(?ClientAddress $receiverAddress): Order
     {
         $this->receiverAddress = $receiverAddress;
+
         return $this;
     }
 
@@ -336,12 +258,11 @@ class Order extends ArrayLike
 
     /**
      * @param ExtraService[]|null $extraService
-     *
-     * @return Order
      */
     public function setExtraService(?array $extraService): Order
     {
         $this->extraService = $extraService;
+
         return $this;
     }
 
@@ -355,32 +276,23 @@ class Order extends ArrayLike
 
     /**
      * @param Parcel[]|null $parcel
-     *
-     * @return Order
      */
     public function setParcel(?array $parcel): Order
     {
         $this->parcel = $parcel;
+
         return $this;
     }
 
-    /**
-     * @return UnitLoad|null
-     */
     public function getUnitLoad(): ?UnitLoad
     {
         return $this->unitLoad;
     }
 
-    /**
-     * @param UnitLoad|null $unitLoad
-     *
-     * @return Order
-     */
     public function setUnitLoad(?UnitLoad $unitLoad): Order
     {
         $this->unitLoad = $unitLoad;
+
         return $this;
     }
-
 }

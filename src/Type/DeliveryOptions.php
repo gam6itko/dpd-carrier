@@ -38,6 +38,14 @@ class DeliveryOptions extends ArrayLike
     }
 
     /**
+     * @return string
+     */
+    public function getServiceCode()
+    {
+        return $this->serviceCode;
+    }
+
+    /**
      * @param string|array $serviceCode
      *
      * @return DeliveryOptions

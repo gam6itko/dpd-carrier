@@ -84,7 +84,10 @@ abstract class AbstractParcelStore extends ArrayLike
         return $this;
     }
 
-    public function getServices(): ?Services
+    /**
+     * @return Services|Services[]|null
+     */
+    public function getServices()
     {
         return $this->services;
     }
