@@ -49,6 +49,8 @@ abstract class AbstractWebService
      * @param $methodName
      *
      * @return array|mixed|\stdClass
+     *
+     * @throws \SoapFault
      */
     protected function doRequest(string $methodName, array $array = [], ?string $wrapIn = 'request')
     {
