@@ -22,16 +22,16 @@ class Parcel extends ArrayLike
     /** @var int */
     protected $box_needed;
 
-    /** @var float */
+    /** @var float Kilograms */
     protected $weight;
 
-    /** @var float */
+    /** @var float Centimeters */
     protected $length;
 
-    /** @var float */
+    /** @var float Centimeters */
     protected $height;
 
-    /** @var float */
+    /** @var float Centimeters */
     protected $width;
 
     /** @var int */
@@ -50,10 +50,10 @@ class Parcel extends ArrayLike
     protected $quantity;
 
     /**
-     * @param float|int $weight In kilograms
-     * @param float|int $length In meters
-     * @param float|int $height In meters
-     * @param float|int $width In meters
+     * @param float|int $weight Kilograms
+     * @param float|int $length Centimeters
+     * @param float|int $height Centimeters
+     * @param float|int $width Centimeters
      */
     public function __construct(float $weight = 0, float $length = 0, float $height = 0, float $width = 0)
     {
@@ -68,7 +68,7 @@ class Parcel extends ArrayLike
         return $this->number;
     }
 
-    public function setNumber(string $number): Parcel
+    public function setNumber(string $number): self
     {
         $this->number = $number;
 
@@ -80,55 +80,79 @@ class Parcel extends ArrayLike
         return $this->box_needed;
     }
 
-    public function setBoxNeeded(int $box_needed): Parcel
+    public function setBoxNeeded(int $box_needed): self
     {
         $this->box_needed = $box_needed;
 
         return $this;
     }
 
+    /**
+     * @return float Kilograms
+     */
     public function getWeight(): float
     {
         return $this->weight;
     }
 
-    public function setWeight(float $weight): Parcel
+    /**
+     * @param float $weight Kilograms
+     */
+    public function setWeight(float $weight): self
     {
         $this->weight = $weight;
 
         return $this;
     }
 
+    /**
+     * @return float Centimeters
+     */
     public function getLength(): float
     {
         return $this->length;
     }
 
-    public function setLength(float $length): Parcel
+    /**
+     * @param float $length Centimeters
+     */
+    public function setLength(float $length): self
     {
         $this->length = $length;
 
         return $this;
     }
 
+    /**
+     * @return float Centimeters
+     */
     public function getHeight(): float
     {
         return $this->height;
     }
 
-    public function setHeight(float $height): Parcel
+    /**
+     * @param float $height Centimeters
+     */
+    public function setHeight(float $height): self
     {
         $this->height = $height;
 
         return $this;
     }
 
+    /**
+     * @return float Centimeters
+     */
     public function getWidth(): float
     {
         return $this->width;
     }
 
-    public function setWidth(float $width): Parcel
+    /**
+     * @param float $width Centimeters
+     */
+    public function setWidth(float $width): self
     {
         $this->width = $width;
 
@@ -140,7 +164,7 @@ class Parcel extends ArrayLike
         return $this->number_for_print;
     }
 
-    public function setNumberForPrint(int $number_for_print): Parcel
+    public function setNumberForPrint(int $number_for_print): self
     {
         $this->number_for_print = $number_for_print;
 
@@ -152,7 +176,7 @@ class Parcel extends ArrayLike
         return $this->insuranceCost;
     }
 
-    public function setInsuranceCost(float $insuranceCost): Parcel
+    public function setInsuranceCost(float $insuranceCost): self
     {
         $this->insuranceCost = $insuranceCost;
 
@@ -164,7 +188,7 @@ class Parcel extends ArrayLike
         return $this->insuranceCostVat;
     }
 
-    public function setInsuranceCostVat(float $insuranceCostVat): Parcel
+    public function setInsuranceCostVat(float $insuranceCostVat): self
     {
         $this->insuranceCostVat = $insuranceCostVat;
 
@@ -176,7 +200,7 @@ class Parcel extends ArrayLike
         return $this->codAmount;
     }
 
-    public function setCodAmount(float $codAmount): Parcel
+    public function setCodAmount(float $codAmount): self
     {
         $this->codAmount = $codAmount;
 
@@ -188,7 +212,7 @@ class Parcel extends ArrayLike
         return $this->quantity;
     }
 
-    public function setQuantity(float $quantity): Parcel
+    public function setQuantity(float $quantity): self
     {
         $this->quantity = $quantity;
 
