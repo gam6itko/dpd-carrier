@@ -50,12 +50,10 @@ class Parcel extends ArrayLike
     protected $quantity;
 
     /**
-     * Parcel constructor.
-     *
-     * @param float|int $weight
-     * @param float|int $length
-     * @param float|int $height
-     * @param float|int $width
+     * @param float|int $weight In kilograms
+     * @param float|int $length In meters
+     * @param float|int $height In meters
+     * @param float|int $width In meters
      */
     public function __construct(float $weight = 0, float $length = 0, float $height = 0, float $width = 0)
     {
