@@ -2,6 +2,7 @@
 
 namespace Gam6itko\DpdCarrier\Tests\WebService;
 
+use Gam6itko\DpdCarrier\Enum\ExtraServiceCode;
 use Gam6itko\DpdCarrier\Enum\ServiceCode;
 use Gam6itko\DpdCarrier\Type\DeliveryPoint;
 use Gam6itko\DpdCarrier\Type\Geography\Address;
@@ -33,8 +34,20 @@ class GeographyTest extends AbstractDpdServiceTestCase
             ->setRegionCode(77);
         $result = $this->getDpdWebService()->getParcelShops($point);
         self::assertNotEmpty($result);
-        self::assertInstanceOf(ParcelShop::class, $result[0]);
-        self::assertInstanceOf(Limits::class, $result[0]->getLimits());
+        self::assertInstanceOf(ParcelShop::class, $point = $result[0]);
+        self::assertInstanceOf(Limits::class, $point->getLimits());
+
+        foreach ($result as $point) {
+            $extraServices = $point->getExtraService();
+            if ($extraServices) {
+                foreach ($extraServices as $service) {
+                    if ($service->getEsCode() === ExtraServiceCode::OZD) {
+                        self::assertIsArray($params = $service->getParams());
+                        self::assertSame($service->getParam(), $params[0]);
+                    }
+                }
+            }
+        }
     }
 
     public function testGetTerminalsSelfDelivery2()

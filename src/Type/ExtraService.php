@@ -7,15 +7,16 @@ class ExtraService extends ArrayLike
     /** @var string|null */
     protected $esCode;
 
-    /** @var Parameter|null */
+    /**
+     * @var Parameter|null Parameter that we send to the server
+     */
     protected $param;
 
     /**
-     * ExtraService constructor.
-     *
-     * @param string    $esCode
-     * @param Parameter $param
+     * @var Parameter[]|null Parameters received from the server
      */
+    protected $params;
+
     public function __construct(?string $esCode = null, Parameter $param = null)
     {
         $this->esCode = $esCode;
@@ -36,7 +37,7 @@ class ExtraService extends ArrayLike
 
     public function getParam(): ?Parameter
     {
-        return $this->param;
+        return $this->param ?? $this->params[0] ?? null;
     }
 
     public function setParam(?Parameter $param): ExtraService
@@ -44,5 +45,10 @@ class ExtraService extends ArrayLike
         $this->param = $param;
 
         return $this;
+    }
+
+    public function getParams(): ?array
+    {
+        return $this->params;
     }
 }
