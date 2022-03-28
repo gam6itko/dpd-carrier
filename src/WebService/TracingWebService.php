@@ -13,12 +13,12 @@ class TracingWebService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/tracing?wsdl';
+        return 'https://wstest.dpd.ru/services/tracing?wsdl';
     }
 
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/tracing?wsdl';
+        return 'https://ws.dpd.ru/services/tracing?wsdl';
     }
 
     protected function getClassmap(): array

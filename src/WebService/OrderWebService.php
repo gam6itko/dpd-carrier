@@ -15,12 +15,12 @@ class OrderWebService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/order2?wsdl';
+        return 'https://wstest.dpd.ru/services/order2?wsdl';
     }
 
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/order2?wsdl';
+        return 'https://ws.dpd.ru/services/order2?wsdl';
     }
 
     protected function getClassmap(): array

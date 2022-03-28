@@ -15,12 +15,12 @@ class EventTrackingWebService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/event-tracking?wsdl';
+        return 'https://wstest.dpd.ru/services/event-tracking?wsdl';
     }
 
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/event-tracking?wsdl';
+        return 'https://ws.dpd.ru/services/event-tracking?wsdl';
     }
 
     protected function getClassmap(): array

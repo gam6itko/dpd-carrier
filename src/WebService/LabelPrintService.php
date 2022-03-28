@@ -9,18 +9,18 @@ use Gam6itko\DpdCarrier\Type\OrderLabels;
 use Gam6itko\DpdCarrier\Type\OrderLabelsFile;
 
 /**
- * @see http://ws.dpd.ru/services/label-print?xsd=1
+ * @see https://ws.dpd.ru/services/label-print?xsd=1
  */
 class LabelPrintService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/label-print?wsdl';
+        return 'https://wstest.dpd.ru/services/label-print?wsdl';
     }
 
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/label-print?wsdl';
+        return 'https://ws.dpd.ru/services/label-print?wsdl';
     }
 
     protected function getClassmap(): array

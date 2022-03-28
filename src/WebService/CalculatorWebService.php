@@ -13,7 +13,7 @@ class CalculatorWebService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/calculator2?wsdl';
+        return 'https://wstest.dpd.ru/services/calculator2?wsdl';
     }
 
     /**
@@ -21,7 +21,7 @@ class CalculatorWebService extends AbstractWebService
      */
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/calculator2?wsdl';
+        return 'https://ws.dpd.ru/services/calculator2?wsdl';
     }
 
     protected function getClassmap(): array

@@ -6,12 +6,12 @@ class NLWebService extends AbstractWebService
 {
     protected function getWsdlTest(): string
     {
-        return 'http://wstest.dpd.ru/services/nl?wsdl';
+        return 'https://wstest.dpd.ru/services/nl?wsdl';
     }
 
     protected function getWsdlProd(): string
     {
-        return 'http://ws.dpd.ru/services/nl?wsdl';
+        return 'https://ws.dpd.ru/services/nl?wsdl';
     }
 
     /**
